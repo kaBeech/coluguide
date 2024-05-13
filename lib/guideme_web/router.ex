@@ -20,6 +20,7 @@ defmodule GuidemeWeb.Router do
     get "/", PageController, :home
 
     live "/hype", HypeLive
+    live "/boilerplate-docs", BoilerplateDocsLive
   end
 
   # Other scopes may use custom stacks.
