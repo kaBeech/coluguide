@@ -10,7 +10,7 @@ defmodule GuidemeWeb.HypeLive do
     <h1>Hype</h1>
     <div>
       <div style="width: 100%" class="meter">
-        <span style={"display: block; width: #{@hype}%; background-color: #00ddbb;"}>
+        <span style={"display: block; width: #{@hype}%; background-color: #00ddbb; color: #000000"}>
           <%= @hype %>%
         </span>
       </div>
