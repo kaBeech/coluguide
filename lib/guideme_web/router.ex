@@ -21,6 +21,7 @@ defmodule GuidemeWeb.Router do
 
     live "/hype", HypeLive
     live "/boilerplate-docs", BoilerplateDocsLive
+    live "/guide", GuideLive
   end
 
   # Other scopes may use custom stacks.
