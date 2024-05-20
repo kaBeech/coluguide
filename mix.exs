@@ -13,6 +13,15 @@ defmodule Guideme.MixProject do
     ]
   end
 
+  # config :guideme, :pow_assent,
+  #   providers: [
+  #     github: [
+  #       client_id: "CLIENT_ID",
+  #       client_secret: "CLIENT_SECRET",
+  #       strategy: Assent.Strategy.Github
+  #     ]
+  #   ]
+
   # Configuration for the OTP application.
   #
   # Type `mix help compile.app` for more information.
@@ -58,7 +67,10 @@ defmodule Guideme.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.2"},
-      {:pow, "~> 1.0.38"}
+      {:pow, "~> 1.0.38"},
+      {:pow_assent, "~> 0.4.18"},
+      {:certifi, "~> 2.4"},
+      {:ssl_verify_fun, "~> 1.1"}
     ]
   end
 
