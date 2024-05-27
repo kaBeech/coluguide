@@ -6,7 +6,7 @@
 
 ## Next
 
-- Add Frontent Functions
+- Add Frontend Functions
 
 ## Features to make sure to add
 
