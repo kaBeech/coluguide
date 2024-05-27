@@ -24,6 +24,7 @@
   <.link :if={is_nil(Pow.Plug.current_user(@conn))} navigate={~p"/registration/new"}>
     Registration
   </.link>
+  <br />
   <.link :if={is_nil(Pow.Plug.current_user(@conn))} navigate={~p"/session/new"}>Sign In</.link>
   <!-- <form class="row marginBottom2"> -->
   <!--   <input id="greet-input" placeholder="Enter your name..." /> -->
