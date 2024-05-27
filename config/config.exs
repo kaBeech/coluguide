@@ -7,9 +7,14 @@
 # General application configuration
 import Config
 
-config :guideme,
+config :guideme, :pow,
   ecto_repos: [Guideme.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  user: Guideme.Users.User,
+  repo: Guideme.Repo,
+  extensions: [PowResetPassword, PowEmailConfirmation],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  mailer_backend: GuidemeWeb.Pow.Mailer
 
 # Configures the endpoint
 config :guideme, GuidemeWeb.Endpoint,
