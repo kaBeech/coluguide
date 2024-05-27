@@ -7,9 +7,11 @@
 # General application configuration
 import Config
 
-config :guideme, :pow,
+config :guideme,
   ecto_repos: [Guideme.Repo],
-  generators: [timestamp_type: :utc_datetime],
+  generators: [timestamp_type: :utc_datetime]
+
+config :guideme, :pow,
   user: Guideme.Users.User,
   repo: Guideme.Repo,
   extensions: [PowResetPassword, PowEmailConfirmation],
