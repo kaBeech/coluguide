@@ -20,6 +20,11 @@
     </a>
   </div>
   <PowAssent.Phoenix.HTML.CoreComponents.provider_links conn={@conn} />
+  <.link :if={Pow.Plug.current_user(@conn)} href={~p"/session"} method="delete">Sign out</.link>
+  <.link :if={is_nil(Pow.Plug.current_user(@conn))} navigate={~p"/registration/new"}>
+    Registration
+  </.link>
+  <.link :if={is_nil(Pow.Plug.current_user(@conn))} navigate={~p"/session/new"}>Sign In</.link>
   <form class="row marginBottom2">
     <input id="greet-input" placeholder="Enter your name..." />
     <button type="submit">Greet</button>
