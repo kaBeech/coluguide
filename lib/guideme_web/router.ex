@@ -3,6 +3,9 @@ defmodule GuidemeWeb.Router do
   use Pow.Phoenix.Router
   use PowAssent.Phoenix.Router
 
+  use Pow.Extension.Phoenix.Router,
+    extensions: [PowResetPassword, PowEmailConfirmation]
+
   pipeline :browser do
     plug(:accepts, ["html"])
     plug(:fetch_session)
@@ -33,6 +36,7 @@ defmodule GuidemeWeb.Router do
     pipe_through :browser
 
     pow_routes()
+    pow_extension_routes()
     pow_assent_routes()
   end
 
