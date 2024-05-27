@@ -15,6 +15,11 @@ defmodule GuidemeWeb.Router do
     plug(:put_secure_browser_headers)
   end
 
+  pipeline :auth do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
   pipeline :api do
     plug(:accepts, ["json"])
   end
@@ -45,6 +50,7 @@ defmodule GuidemeWeb.Router do
 
     get("/", PageController, :home)
 
+    pipe_through(:auth)
     live("/hype", HypeLive)
     live("/boilerplate-docs", BoilerplateDocsLive)
     live("/guide", GuideLive)
