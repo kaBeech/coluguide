@@ -6,7 +6,7 @@
 
 ## Next
 
-- Add Frontend Functions
+- Add Frontend Functions? Actually I might do more Backend structure first
 
 ## Features to make sure to add
 
