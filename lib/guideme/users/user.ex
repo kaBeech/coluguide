@@ -8,6 +8,7 @@ defmodule Guideme.Users.User do
 
   schema "users" do
     field :role, :string, default: "user"
+    has_many :reviewed_guides, Guideme.ReviewRecords.ReviewedGuide
 
     pow_user_fields()
 
@@ -19,6 +20,14 @@ defmodule Guideme.Users.User do
     user_or_changeset
     |> Ecto.Changeset.cast(attrs, [:role])
     |> Ecto.Changeset.validate_inclusion(:role, ~w(user editor admin))
+  end
+
+  @spec changeset_reviewed_guides(Ecto.Schema.t() | Ecto.Changeset.t(), map()) ::
+          Ecto.Changeset.t()
+  def changeset_reviewed_guides(user_or_changeset, attrs) do
+    user_or_changeset
+    |> Ecto.Changeset.cast(attrs, [:reviewed_guide_ids])
+    |> Ecto.Changeset.validate_required([:reviewed_guide_ids])
   end
 
   def changeset(user_or_changeset, attrs) do
