@@ -8,7 +8,7 @@ defmodule Guideme.Guides.Guide do
     field :chapter, :string
     field :short_title, :string
     field :icon, :string
-    has_many :steps, Guideme.Guides.Step
+    has_many :steps, Guideme.Steps.Step
 
     timestamps(type: :utc_datetime)
   end
