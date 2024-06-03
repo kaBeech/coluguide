@@ -395,8 +395,12 @@ button {
   gap: 2rem;
 }
 
-.width100 {
+.widthMax {
   width: 100%;
+}
+
+.width8 {
+  width: 8rem;
 }
 
 .margin0 {
