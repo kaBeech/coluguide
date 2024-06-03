@@ -431,6 +431,22 @@ button {
   margin-top: 2rem;
 }
 
+.marginLeftAuto {
+  margin-left: auto;
+}
+
+.marginRightAuto {
+  margin-right: auto;
+}
+
+.marginLeft2 {
+  margin-left: 2rem;
+}
+
+.marginRight2 {
+  margin-right: 2rem;
+}
+
 .marginHorizPoint5 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
