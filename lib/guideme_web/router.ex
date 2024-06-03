@@ -59,9 +59,11 @@ defmodule GuidemeWeb.Router do
     get("/", PageController, :home)
 
     pipe_through(:auth)
-    live("/hype", HypeLive)
-    live("/boilerplate-docs", BoilerplateDocsLive)
-    live("/guide", GuideLive)
+    live "/hype", HypeLive
+    live "/boilerplate-docs", BoilerplateDocsLive
+    live "/guide", GuideLive
+    live "/create", CreateGuideLive
+    live "/all-guides", AllGuidesLive
   end
 
   # Other scopes may use custom stacks.

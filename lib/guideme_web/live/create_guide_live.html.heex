@@ -1,0 +1,26 @@
+<h1>
+  Create New Guide
+</h1>
+<.form for={@form} phx-submit="create">
+  <div class="flex column gap1">
+    <.input field={@form[:chapter]} type="text" placeholder="Chapter..." autocomplete="off" />
+    <.input field={@form[:title]} type="text" placeholder="Guide Title..." autocomplete="off" />
+    <.input
+      field={@form[:short_title]}
+      type="text"
+      placeholder="Short Title..."
+      autocomplete="off"
+    />
+    <.input
+      field={@form[:category]}
+      type="text"
+      placeholder="Category: 'chapter' or 'standard'..."
+      autocomplete="off"
+    />
+    <.input field={@form[:icon]} type="text" placeholder="Icon..." autocomplete="off" />
+    <.input field={@form[:steps]} type="text" placeholder="Steps..." autocomplete="off" />
+    <.button>
+      Create Guide
+    </.button>
+  </div>
+</.form>
