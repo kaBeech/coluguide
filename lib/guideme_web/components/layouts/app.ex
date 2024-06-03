@@ -1,5 +1,5 @@
 defmodule GuidemeWeb.Layouts.App do
-  alias Phoenix.LiveView.JS
+  use GuidemeWeb, :live_view
 
   def toggle_greeting do
     JS.toggle(to: "#greeting")
