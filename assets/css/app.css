@@ -314,39 +314,6 @@ button {
   margin-right: 5px;
 }
 
-/* Classes from Tauri */
-
-.container {
-  margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.logo {
-  /* height: 6em; */
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
-}
-
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
-}
-
-.logoFont {
-  font-size: 8rem;
-  padding: 1rem;
-  padding-bottom: 0.5rem;
-}
-
-.row {
-  display: flex;
-  justify-content: center;
-}
-
 /* Util Classes */
 
 .flex {
@@ -490,6 +457,38 @@ button {
 }
 
 /* Custom Classes */
+
+
+.container {
+  margin: 0;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  /* height: 6em; */
+  padding: 1.5em;
+  will-change: filter;
+  transition: 0.75s;
+}
+
+.logo.glow:hover {
+  filter: drop-shadow(0 0 2em #24c8db);
+}
+
+.logoFont {
+  font-size: 8rem;
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
 
 .textBright {
   color: var(--guideme-text-bright);
