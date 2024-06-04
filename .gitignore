@@ -1,6 +1,7 @@
 /.lexical/
 .scratch
 .todo
+fly.toml
 
 # The directory Mix will write compiled artifacts to.
 /_build/
