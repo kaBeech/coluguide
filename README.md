@@ -1,13 +1,12 @@
 # GuideMe
 
-GuideMe is a knowledge enhancement application I originally built using Tauri,
-then rebuilt as a web application in Elixir with Phoenix and LiveView
+GuideMe is a knowledge enhancement application I originally built using Tauri, and am now
+rebuilding as a web application in Elixir with Phoenix and LiveView
 
-Currently the functionality is specific to how we're using it at work, but I 
-figure I'll make the code available in case it's useful for someone out there.
-Eventually I plan to make a demo site and actual documentation but for now I'm
-focused on building out the functionality we need and our specific implementation 
-(i.e. our data, deployment, etc.) 
+Currently the functionality is specific to how we're using it at work, but I figure I'll 
+make the code available in case it's useful for someone out there. Eventually I plan to make 
+a demo site and actual documentation but for now I'm focused on building out the functionality 
+we need and our specific implementation (i.e. our data, deployment, etc.) 
 
 To start the Phoenix server:
 
