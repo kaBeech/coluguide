@@ -6,7 +6,7 @@ defmodule GuidemeWeb.GuideLive do
     {:ok, assign(socket, guide: nil)}
   end
 
-  def example_steps do
+  defp example_steps do
     [
       %{
         full_text: "Step 1"
@@ -20,22 +20,27 @@ defmodule GuidemeWeb.GuideLive do
     ]
   end
 
+  defp get_last_char(text) do
+    String.slice(text, -2..-1)
+  end
+
   def render_step(assigns) do
     ~H"""
     <div class="flex textBigger justifyCenter gap1">
-      <span id="link1" phx-click="toggle" phx-value-to="#link1" class="link">
+      <span id="link1" phx-click="toggle" phx-value-to="#link1" class="textDull">
         
       </span>
-      <span class="link">
+      <span class="textDull">
         
       </span>
-      <span class="link">
+      <span class="textDull">
         
       </span>
       <span>
         <input type="checkbox" />
       </span>
       <span class="marginBottom1">
+        <span class="textDull"><%= get_last_char(@full_text) %>.</span>
         <%= @full_text %>
       </span>
     </div>
@@ -61,17 +66,7 @@ defmodule GuidemeWeb.GuideLive do
     <h2>
       Please select an option below by clicking an <span class="link">orange file </span>
     </h2>
-    <%= for step <- [
-      %{
-        full_text: "Step 1"
-      },
-      %{
-        full_text: "Step 2"
-      },
-      %{
-        full_text: "Step 3"
-      }
-    ] do %>
+    <%= for step <- example_steps() do %>
       <%= render_step(step) %>
     <% end %>
     """
