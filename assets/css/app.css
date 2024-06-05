@@ -370,6 +370,10 @@ button {
   width: 8rem;
 }
 
+.widthFit {
+  width: fit-content;
+}
+
 .margin0 {
   margin: 0;
 }
