@@ -10,4 +10,4 @@
 
 ## Features to make sure to add
 
-- MMS delivery lookup
+- Delivery lookup
