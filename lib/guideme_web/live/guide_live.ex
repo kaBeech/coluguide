@@ -12,7 +12,7 @@ defmodule GuidemeWeb.GuideLive do
         full_text: "Step 1"
       },
       %{
-        full_text: "Step 2"
+        full_text: "This is Step 2"
       },
       %{
         full_text: "Step 3"
@@ -26,7 +26,7 @@ defmodule GuidemeWeb.GuideLive do
 
   def render_step(assigns) do
     ~H"""
-    <div class="flex textBigger justifyCenter gap1">
+    <div class="flex justifyLeft gap1">
       <span id="link1" phx-click="toggle" phx-value-to="#link1" class="textDull">
         
       </span>
@@ -39,36 +39,38 @@ defmodule GuidemeWeb.GuideLive do
       <span>
         <input type="checkbox" />
       </span>
-      <span class="marginBottom1">
-        <span class="textDull"><%= get_last_char(@full_text) %>.</span>
-        <%= @full_text %>
-      </span>
+      <span class="textDull"><%= get_last_char(@full_text) %>.</span>
+      <%= @full_text %>
     </div>
     """
   end
 
   def render(assigns) do
     ~H"""
-    <div class="flex textBigger justifyCenter gap1">
-      <span id="link1" phx-click="toggle" phx-value-to="#link1" class="link">
-        
-      </span>
-      <span class="link">
-        
-      </span>
-      <span class="link">
-        
-      </span>
-      <span>
-        <input type="checkbox" />
-      </span>
+    <div class="flex column alignCenter textBigger">
+      <div class="flex justifyCenter gap1">
+        <span id="link1" phx-click="toggle" phx-value-to="#link1" class="link">
+          
+        </span>
+        <span class="link">
+          
+        </span>
+        <span class="link">
+          
+        </span>
+        <span>
+          <input type="checkbox" />
+        </span>
+      </div>
+      <h2>
+        Please select an option below by clicking an <span class="link">orange file </span>
+      </h2>
+      <div class="flex column justifyCenter widthFit gap1">
+        <%= for step <- example_steps() do %>
+          <%= render_step(step) %>
+        <% end %>
+      </div>
     </div>
-    <h2>
-      Please select an option below by clicking an <span class="link">orange file </span>
-    </h2>
-    <%= for step <- example_steps() do %>
-      <%= render_step(step) %>
-    <% end %>
     """
   end
 
