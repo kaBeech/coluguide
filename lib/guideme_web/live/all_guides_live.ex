@@ -27,9 +27,22 @@ defmodule GuidemeWeb.AllGuidesLive do
     <h2>
       Please select an option below by clicking an <span class="link">orange file </span>
     </h2>
+    <h3>
+      All Guides
+    </h3>
     <ul>
       <%= for guide <- @guides do %>
         <li><%= guide.title %></li>
+      <% end %>
+    </ul>
+    <h3>
+      Chapters
+    </h3>
+    <ul>
+      <%= for guide <- @guides do %>
+        <%= if guide.category == "chapter" do %>
+          <li><%= guide.title %><%= guide.icon %></li>
+        <% end %>
       <% end %>
     </ul>
     """
