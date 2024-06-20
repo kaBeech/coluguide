@@ -18,11 +18,15 @@
             elixir
             erlang
             postgresql
+            inotify-tools
             sl
           ];
 
           shellHook = ''
             echo "Hello, world!"
+            mix deps.get
+            mix deps.compile
+            mix ecto.setup
           '';
         };
   };
