@@ -1,7 +1,6 @@
 defmodule GuidemeWeb.CreateGuideLive do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
-  # import Phoenix.HTML.Form
   alias Guideme.{Guides, Guides.Guide}
 
   def mount(_params, _session, socket) do
