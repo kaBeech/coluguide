@@ -63,7 +63,7 @@ defmodule GuidemeWeb.Router do
     live "/boilerplate-docs", BoilerplateDocsLive
     live "/guide", GuideLive
     live "/guide/:id", GuideLive
-    live "/guide-demo", GuideDemoLive
+    live "/guide-example", GuideExampleLive
     live "/create", CreateGuideLive
     live "/all-guides", AllGuidesLive
     live "/chapters", ChaptersLive

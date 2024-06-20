@@ -4,29 +4,31 @@
   <div :if={is_nil(Pow.Plug.current_user(@conn))} class="row marginBottom2">
     <a href="session/new">
       <div class="logo glow">
-        <div class="logoFont">󰞈</div>
+        <!-- <div class="logoFont">󰞈</div> -->
+        <div class="logoFont"></div>
       </div>
     </a>
     <a href="registration/new">
       <div class="logo glow">
-        <div class="logoFont">󱁻</div>
+        <!-- <div class="logoFont">󱁻</div> -->
+        <div class="logoFont">󱃔</div>
       </div>
     </a>
   </div>
   <div :if={Pow.Plug.current_user(@conn)} class="row marginBottom2">
-    <a href="hype">
+    <a href="chapters">
       <div class="logo glow">
-        <div class="logoFont">󰞈</div>
+        <div class="logoFont"></div>
         <p class="lineHeightBigger textBright">
-          Get Hype!
+          Chapters
         </p>
       </div>
     </a>
-    <a href="guide-demo">
+    <a href="guide-example">
       <div class="logo glow">
-        <div class="logoFont">󱁻</div>
+        <div class="logoFont">󱃔</div>
         <p class="lineHeightBigger textBright">
-          Example Guides
+          Example Guide
         </p>
       </div>
     </a>
