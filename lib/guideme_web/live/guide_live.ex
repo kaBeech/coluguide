@@ -1,6 +1,7 @@
 defmodule GuidemeWeb.GuideLive do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
+  import Step
 
   def mount(_params, _session, socket) do
     {:ok, assign(socket, guide: nil)}
@@ -20,36 +21,11 @@ defmodule GuidemeWeb.GuideLive do
     ]
   end
 
-  defp get_last_char(text) do
-    String.slice(text, -2..-1)
-  end
-
-  def render_step(assigns) do
-    ~H"""
-    <div class="flex justifyLeft gap1">
-      <span id="link1" phx-click="toggle" phx-value-to="#link1" class="textDull">
-        
-      </span>
-      <span class="textDull">
-        
-      </span>
-      <span class="textDull">
-        
-      </span>
-      <span>
-        <input type="checkbox" />
-      </span>
-      <span class="textDull"><%= get_last_char(@full_text) %>.</span>
-      <%= @full_text %>
-    </div>
-    """
-  end
-
   def render(assigns) do
     ~H"""
     <div class="flex column alignCenter textBigger">
       <div class="flex justifyCenter gap1">
-        <span id="link1" phx-click="toggle" phx-value-to="#link1" class="link">
+        <span class="link">
           
         </span>
         <span class="link">
@@ -72,10 +48,5 @@ defmodule GuidemeWeb.GuideLive do
       </div>
     </div>
     """
-  end
-
-  def handle_event("toggle", %{"to" => to}, socket) do
-    JS.toggle(to: to)
-    {:noreply, socket}
   end
 end
