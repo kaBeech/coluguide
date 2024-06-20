@@ -14,18 +14,21 @@ defmodule GuidemeWeb.GuideLive do
         external_link:
           "https://www.hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html#module-attributes",
         image: nil,
+        details_link: nil,
         number: "1"
       },
       %{
         full_text: "This is Step 2",
         external_link: nil,
         image: "https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png",
+        details_link: nil,
         number: "2"
       },
       %{
         full_text: "Step 3",
         external_link: nil,
         image: nil,
+        details_link: "test_guide_id",
         number: "3"
       }
     ]

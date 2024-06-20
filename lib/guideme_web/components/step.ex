@@ -33,9 +33,15 @@ defmodule Step do
           
         </span>
       <% end %>
-      <span class="textDull">
-        
-      </span>
+      <%= if @details_link do %>
+        <a href={"/guide/?id=" <> @details_link}>
+          
+        </a>
+      <% else %>
+        <span class="textDull">
+          
+        </span>
+      <% end %>
       <span>
         <input type="checkbox" />
       </span>
