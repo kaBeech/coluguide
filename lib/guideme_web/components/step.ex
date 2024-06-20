@@ -3,10 +3,6 @@ defmodule Step do
   use Phoenix.Component
   alias Phoenix.LiveView.JS
 
-  defp get_last_char(text) do
-    String.slice(text, -2..-1)
-  end
-
   def render_step(assigns) do
     ~H"""
     <div class="flex justifyLeft gap1">
