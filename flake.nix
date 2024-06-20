@@ -17,9 +17,7 @@
           buildInputs = with pkgs; [
             elixir
             erlang
-            postgresql
             inotify-tools
-            sl
           ];
 
           shellHook = ''
