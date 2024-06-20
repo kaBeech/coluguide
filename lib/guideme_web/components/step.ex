@@ -10,9 +10,15 @@ defmodule Step do
   def render_step(assigns) do
     ~H"""
     <div class="flex justifyLeft gap1">
-      <span class="textDull">
-        
-      </span>
+      <%= if @external_link do %>
+        <a href={@external_link} target="_blank" rel="noopener noreferrer">
+          
+        </a>
+      <% else %>
+        <span class="textDull">
+          
+        </span>
+      <% end %>
       <span class="textDull" phx-click={JS.toggle(to: "#image-step" <> @number)}>
         
       </span>
