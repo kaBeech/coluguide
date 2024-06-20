@@ -19,12 +19,24 @@ defmodule Step do
           
         </span>
       <% end %>
-      <span class="textDull" phx-click={JS.toggle(to: "#image-step" <> @number)}>
-        
-      </span>
-      <span id={"image-step" <> @number} class="textDull hidden">
-        IMAGE!
-      </span>
+      <%= if @image do %>
+        <span class="link pointer" phx-click={JS.toggle(to: "#image-step" <> @number)}>
+          
+        </span>
+        <div
+          id={"image-step" <> @number}
+          phx-click={JS.toggle(to: "#image-step" <> @number)}
+          class="hidden"
+        >
+          <div class="dimScreenImageHolder">
+            <img class="textDull" src={@image} />
+          </div>
+        </div>
+      <% else %>
+        <span class="textDull">
+          
+        </span>
+      <% end %>
       <span class="textDull">
         
       </span>

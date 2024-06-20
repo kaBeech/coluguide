@@ -11,19 +11,22 @@ defmodule GuidemeWeb.GuideLive do
     [
       %{
         full_text: "Step 1",
-        number: "1",
         external_link:
-          "https://www.hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html#module-attributes"
+          "https://www.hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html#module-attributes",
+        image: nil,
+        number: "1"
       },
       %{
         full_text: "This is Step 2",
-        number: "2",
-        external_link: nil
+        external_link: nil,
+        image: "https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png",
+        number: "2"
       },
       %{
         full_text: "Step 3",
-        number: "3",
-        external_link: nil
+        external_link: nil,
+        image: nil,
+        number: "3"
       }
     ]
   end
