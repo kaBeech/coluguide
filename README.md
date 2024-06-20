@@ -9,8 +9,8 @@ make the code available in case it's useful for someone out there. Eventually I 
 a demo site and actual documentation but for now I'm focused on building out the functionality 
 we need and our specific implementation (i.e. our data, custom pages, deployment, etc.) 
 
-May require: 
-  * Linux(https://linux.org/) (such as [Ubuntu](https://ubuntu.com/) [WSL2 for Windows](https://learn.microsoft.com/en-us/windows/wsl/install)) or [MacOS](https://www.apple.com/macos/)
+May require access to/knowledge of: 
+  * [Linux](https://linux.org/) (such as [Ubuntu](https://ubuntu.com/) or [WSL2 for Windows](https://learn.microsoft.com/en-us/windows/wsl/install)) or [MacOS](https://www.apple.com/macos/)
   * [Postgres](https://postgresql.org/)
   * [Git](https://git-scm.com/)
   * [Curl](https://curl.se/)
