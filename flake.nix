@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "A flake for starting a GuideMe development environment";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -17,9 +17,7 @@
           buildInputs = with pkgs; [
             elixir
             erlang
-            postgresql
             inotify-tools
-            sl
           ];
 
           shellHook = ''
