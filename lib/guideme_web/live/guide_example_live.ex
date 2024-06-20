@@ -1,4 +1,4 @@
-defmodule GuidemeWeb.GuideLive do
+defmodule GuidemeWeb.GuideExampleLive do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
   import Step

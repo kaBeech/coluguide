@@ -62,8 +62,12 @@ defmodule GuidemeWeb.Router do
     live "/hype", HypeLive
     live "/boilerplate-docs", BoilerplateDocsLive
     live "/guide", GuideLive
+    live "/guide/:id", GuideLive
+    live "/guide-example", GuideExampleLive
     live "/create", CreateGuideLive
     live "/all-guides", AllGuidesLive
+    live "/chapters", ChaptersLive
+    live "/make-me-admin", MakeMeAdminLive
   end
 
   # Other scopes may use custom stacks.
