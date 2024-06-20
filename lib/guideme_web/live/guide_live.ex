@@ -10,13 +10,16 @@ defmodule GuidemeWeb.GuideLive do
   defp example_steps do
     [
       %{
-        full_text: "Step 1"
+        full_text: "Step 1",
+        number: "1"
       },
       %{
-        full_text: "This is Step 2"
+        full_text: "This is Step 2",
+        number: "2"
       },
       %{
-        full_text: "Step 3"
+        full_text: "Step 3",
+        number: "3"
       }
     ]
   end
