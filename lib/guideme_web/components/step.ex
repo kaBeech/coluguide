@@ -34,7 +34,7 @@ defmodule Step do
         </span>
       <% end %>
       <%= if @details_link do %>
-        <a href={"/guide/?id=" <> @details_link}>
+        <a href={"/guide/" <> @details_link}>
           
         </a>
       <% else %>
