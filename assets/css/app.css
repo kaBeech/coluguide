@@ -324,6 +324,14 @@ button {
   flex-direction: column;
 }
 
+.row {
+  flex-direction: row;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
 .centerContents {
   display: flex;
   flex-direction: column;
@@ -487,11 +495,6 @@ button {
   font-size: 8rem;
   padding: 1rem;
   padding-bottom: 0.5rem;
-}
-
-.row {
-  display: flex;
-  justify-content: center;
 }
 
 .textBright {

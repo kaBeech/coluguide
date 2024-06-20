@@ -1,7 +1,7 @@
 <.flash_group flash={@flash} />
 <div class="container flex column alignCenter">
   <h1 class="marginBottom1">Welcome to GuideMe!</h1>
-  <div :if={is_nil(Pow.Plug.current_user(@conn))} class="row marginBottom2">
+  <div :if={is_nil(Pow.Plug.current_user(@conn))} class="flex justifyCenter marginBottom2">
     <a href="session/new">
       <div class="logo glow">
         <!-- <div class="logoFont">󰞈</div> -->
@@ -15,7 +15,7 @@
       </div>
     </a>
   </div>
-  <div :if={Pow.Plug.current_user(@conn)} class="row marginBottom2">
+  <div :if={Pow.Plug.current_user(@conn)} class="flex justifyCenter marginBottom2">
     <a href="chapters">
       <div class="logo glow">
         <div class="logoFont"></div>
