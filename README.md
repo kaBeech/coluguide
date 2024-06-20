@@ -24,4 +24,5 @@ To run :
   * From the top level directory, run `nix develop`
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
-Then you can visit [`localhost:4000`](http://localhost:4000) from your browser!
+Then you can visit [`localhost:4000`](http://localhost:4000) from your browser! You may 
+want to customize authentication and Postgres configuration
