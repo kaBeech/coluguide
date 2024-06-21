@@ -66,8 +66,13 @@ defmodule GuidemeWeb.Router do
     live "/guide-example", GuideExampleLive
     live "/create", CreateGuideLive
     live "/all-guides", AllGuidesLive
-    live "/chapters", ChaptersLive
     live "/make-me-admin", MakeMeAdminLive
+    live "/chapters", ChaptersLive
+    # live "/chapters", ChapterLive.Index, :index
+    live "/chapters/new", ChapterLive.Index, :new
+    live "/chapters/:id/edit", ChapterLive.Index, :edit
+    live "/chapters/:id", ChapterLive.Show, :show
+    live "/chapters/:id/show/edit", ChapterLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
