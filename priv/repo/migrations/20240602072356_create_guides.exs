@@ -3,7 +3,7 @@ defmodule Guideme.Repo.Migrations.CreateGuides do
 
   def change do
     create table(:guides) do
-      add :chapter, :text
+      add :chapter_id, references(:chapters, on_delete: :nothing)
       add :title, :text
       add :short_title, :string
       add :category, :string
@@ -11,5 +11,7 @@ defmodule Guideme.Repo.Migrations.CreateGuides do
 
       timestamps(type: :utc_datetime)
     end
+
+    create index(:guides, [:chapter_id])
   end
 end
