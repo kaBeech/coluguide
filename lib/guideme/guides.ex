@@ -49,8 +49,9 @@ defmodule Guideme.Guides do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_guide(attrs \\ %{}) do
-    %Guide{}
+  def create_guide(chapter, attrs \\ %{}) do
+    chapter
+    |> Ecto.build_assoc(:guides)
     |> Guide.changeset(attrs)
     |> Repo.insert()
   end
