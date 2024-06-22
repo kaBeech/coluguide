@@ -1,0 +1,41 @@
+<.header>
+  Listing Reviewed guides
+  <:actions>
+    <.link patch={~p"/reviewed_guides/new"}>
+      <.button>New Reviewed guide</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="reviewed_guides"
+  rows={@streams.reviewed_guides}
+  row_click={fn {_id, reviewed_guide} -> JS.navigate(~p"/reviewed_guides/#{reviewed_guide}") end}
+>
+  <:col :let={{_id, reviewed_guide}} label="Reviewed at"><%= reviewed_guide.reviewed_at %></:col>
+  <:action :let={{_id, reviewed_guide}}>
+    <div class="sr-only">
+      <.link navigate={~p"/reviewed_guides/#{reviewed_guide}"}>Show</.link>
+    </div>
+    <.link patch={~p"/reviewed_guides/#{reviewed_guide}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, reviewed_guide}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: reviewed_guide.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="reviewed_guide-modal" show on_cancel={JS.patch(~p"/reviewed_guides")}>
+  <.live_component
+    module={GuidemeWeb.ReviewedGuideLive.FormComponent}
+    id={@reviewed_guide.id || :new}
+    title={@page_title}
+    action={@live_action}
+    reviewed_guide={@reviewed_guide}
+    patch={~p"/reviewed_guides"}
+  />
+</.modal>
