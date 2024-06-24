@@ -11,7 +11,7 @@ defmodule Guideme.GuidesFixtures do
     {:ok, guide} =
       attrs
       |> Enum.into(%{
-        category: "some category",
+        template: "some template",
         chapter: "some chapter",
         icon: "some icon",
         short_title: "some short_title",

@@ -20,7 +20,7 @@ defmodule GuidemeWeb.GuideLive.FormComponent do
         phx-submit="save"
       >
         <.input field={@form[:title]} type="text" label="Title" />
-        <.input field={@form[:category]} type="text" label="Category" />
+        <.input field={@form[:template]} type="text" label="Template" />
         <.input field={@form[:short_title]} type="text" label="Short title" />
         <.input field={@form[:icon]} type="text" label="Icon" />
         <:actions>

@@ -13,7 +13,7 @@ defmodule GuidemeWeb.ChaptersLive do
     <h1>Chapters</h1>
     <ul class="flex row wrap">
       <%= for guide <- @guides do %>
-        <%= if guide.category == "chapter" do %>
+        <%= if guide.template == "chapter" do %>
           <li class="flex column alignCenter">
             <a class="logo glow" href={"/guide/" <> to_string(guide.id)}>
               <span class="logoFont"><%= guide.icon %></span>

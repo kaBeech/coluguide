@@ -4,7 +4,7 @@ defmodule Guideme.Guides.Guide do
 
   schema "guides" do
     field :title, :string
-    field :category, :string
+    field :template, :string
     belongs_to :chapter, Guideme.Chapters.Chapter
     field :short_title, :string
     field :icon, :string
@@ -17,7 +17,7 @@ defmodule Guideme.Guides.Guide do
   @doc false
   def changeset(guide, attrs) do
     guide
-    |> cast(attrs, [:chapter_id, :title, :short_title, :category, :icon])
-    |> validate_required([:chapter_id, :title, :short_title, :category])
+    |> cast(attrs, [:chapter_id, :title, :short_title, :template, :icon])
+    |> validate_required([:chapter_id, :title, :short_title, :template])
   end
 end

@@ -6,7 +6,7 @@ defmodule Guideme.Repo.Migrations.CreateGuides do
       add :chapter_id, references(:chapters, on_delete: :nothing)
       add :title, :text
       add :short_title, :string
-      add :category, :string
+      add :template, :string
       add :icon, :string
 
       timestamps(type: :utc_datetime)
