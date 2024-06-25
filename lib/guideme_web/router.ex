@@ -90,12 +90,12 @@ defmodule GuidemeWeb.Router do
     live "/steps/:id", StepLive.Show, :show
     live "/steps/:id/show/edit", StepLive.Show, :edit
 
-    live "/step_images", StepImagesLive.Index, :index
-    live "/step_images/new", StepImagesLive.Index, :new
-    live "/step_images/:id/edit", StepImagesLive.Index, :edit
+    live "/step_images", StepImageLive.Index, :index
+    live "/step_images/new", StepImageLive.Index, :new
+    live "/step_images/:id/edit", StepImageLive.Index, :edit
 
-    live "/step_images/:id", StepImagesLive.Show, :show
-    live "/step_images/:id/show/edit", StepImagesLive.Show, :edit
+    live "/step_images/:id", StepImageLive.Show, :show
+    live "/step_images/:id/show/edit", StepImageLive.Show, :edit
 
     live "/details_links", DetailsLinkLive.Index, :index
     live "/details_links/new", DetailsLinkLive.Index, :new
