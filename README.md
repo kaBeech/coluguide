@@ -19,7 +19,7 @@ To run :
   
   * [Install Nix](https://nixos.org/download/)
   * [Enable Flakes](https://nixos.wiki/wiki/Flakes)
-  * [Initialize a Postgres database](https://www.postgresql.org/docs/current/tutorial-start.html)
+  * [Ensure Postgres is running](https://www.postgresql.org/docs/current/tutorial-start.html)
   * [Clone this repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
   * From the top level directory, run `nix develop`
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
