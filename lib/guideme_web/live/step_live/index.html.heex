@@ -13,6 +13,7 @@
   row_click={fn {_id, step} -> JS.navigate(~p"/steps/#{step}") end}
 >
   <:col :let={{_id, step}} label="Full text"><%= step.full_text %></:col>
+  <:col :let={{_id, step}} label="Number"><%= step.number %></:col>
   <:col :let={{_id, step}} label="External link"><%= step.external_link %></:col>
   <:action :let={{_id, step}}>
     <div class="sr-only">

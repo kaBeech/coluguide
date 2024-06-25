@@ -20,6 +20,7 @@ defmodule GuidemeWeb.StepLive.FormComponent do
         phx-submit="save"
       >
         <.input field={@form[:full_text]} type="text" label="Full text" />
+        <.input field={@form[:number]} type="number" label="Number" />
         <.input field={@form[:external_link]} type="text" label="External link" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Step</.button>
