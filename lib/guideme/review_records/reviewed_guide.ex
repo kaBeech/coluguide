@@ -5,7 +5,7 @@ defmodule Guideme.ReviewRecords.ReviewedGuide do
   schema "reviewed_guides" do
     field :reviewed_at, :date
     belongs_to :user, Guideme.Users.User
-    belongs_to :guide, Guideme.Guides.Guide
+    has_one :guide, Guideme.Guides.Guide
 
     timestamps(type: :utc_datetime)
   end

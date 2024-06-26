@@ -4,7 +4,7 @@ defmodule Guideme.Steps.DetailsLink do
 
   schema "details_links" do
     belongs_to :step, Guideme.Steps.Step
-    belongs_to :guide, Guideme.Guides.Guide
+    has_one :guide, Guideme.Guides.Guide
 
     timestamps(type: :utc_datetime)
   end
