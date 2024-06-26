@@ -19,5 +19,6 @@ defmodule Guideme.Guides.Guide do
     guide
     |> cast(attrs, [:chapter_id, :title, :short_title, :template_id, :icon])
     |> validate_required([:chapter_id, :title, :short_title, :template_id])
+    |> unique_constraint(:short_title)
   end
 end
