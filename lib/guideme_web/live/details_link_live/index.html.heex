@@ -1,0 +1,40 @@
+<.header>
+  Listing Details links
+  <:actions>
+    <.link patch={~p"/details_links/new"}>
+      <.button>New Details link</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="details_links"
+  rows={@streams.details_links}
+  row_click={fn {_id, details_link} -> JS.navigate(~p"/details_links/#{details_link}") end}
+>
+  <:action :let={{_id, details_link}}>
+    <div class="sr-only">
+      <.link navigate={~p"/details_links/#{details_link}"}>Show</.link>
+    </div>
+    <.link patch={~p"/details_links/#{details_link}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, details_link}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: details_link.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="details_link-modal" show on_cancel={JS.patch(~p"/details_links")}>
+  <.live_component
+    module={GuidemeWeb.DetailsLinkLive.FormComponent}
+    id={@details_link.id || :new}
+    title={@page_title}
+    action={@live_action}
+    details_link={@details_link}
+    patch={~p"/details_links"}
+  />
+</.modal>

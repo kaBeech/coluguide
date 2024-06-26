@@ -16,12 +16,12 @@ defmodule Step do
         </span>
       <% end %>
       <%= if @image do %>
-        <span class="link pointer" phx-click={JS.toggle(to: "#image-step" <> @number)}>
+        <span class="link pointer" phx-click={JS.toggle(to: "#image-step2" <> to_string(@number))}>
           
         </span>
         <div
-          id={"image-step" <> @number}
-          phx-click={JS.toggle(to: "#image-step" <> @number)}
+          id={"image-step"  <> to_string(@number)}
+          phx-click={JS.toggle(to: "#image-step" <> to_string(@number))}
           class="hidden"
         >
           <div class="dimScreenImageHolder">

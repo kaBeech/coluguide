@@ -3,7 +3,7 @@ defmodule Guideme.Repo.Migrations.CreateStepImages do
 
   def change do
     create table(:step_images) do
-      add :src, :string
+      add :image_id, references(:images, on_delete: :nothing)
       add :alt, :string
       add :step_id, references(:steps, on_delete: :nothing)
 

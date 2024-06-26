@@ -12,5 +12,6 @@ defmodule Guideme.Repo.Migrations.CreateReviewedGuides do
 
     create index(:reviewed_guides, [:user_id])
     create index(:reviewed_guides, [:guide_id])
+    create unique_index(:reviewed_guides, [:guide_id, :user_id])
   end
 end

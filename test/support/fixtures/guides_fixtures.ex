@@ -11,7 +11,7 @@ defmodule Guideme.GuidesFixtures do
     {:ok, guide} =
       attrs
       |> Enum.into(%{
-        category: "some category",
+        template: "some template",
         chapter: "some chapter",
         icon: "some icon",
         short_title: "some short_title",
@@ -20,5 +20,19 @@ defmodule Guideme.GuidesFixtures do
       |> Guideme.Guides.create_guide()
 
     guide
+  end
+
+  @doc """
+  Generate a template.
+  """
+  def template_fixture(attrs \\ %{}) do
+    {:ok, template} =
+      attrs
+      |> Enum.into(%{
+        name: "some name"
+      })
+      |> Guideme.Guides.create_template()
+
+    template
   end
 end

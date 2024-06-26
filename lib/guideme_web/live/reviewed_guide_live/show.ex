@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.ChapterLive.Show do
+defmodule GuidemeWeb.ReviewedGuideLive.Show do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
 
-  alias Guideme.Chapters
+  alias Guideme.ReviewRecords
 
   @impl true
   def mount(_params, _session, socket) do
@@ -14,9 +14,9 @@ defmodule GuidemeWeb.ChapterLive.Show do
     {:noreply,
      socket
      |> assign(:page_title, page_title(socket.assigns.live_action))
-     |> assign(:chapter, Chapters.get_chapter!(id))}
+     |> assign(:reviewed_guide, ReviewRecords.get_reviewed_guide!(id))}
   end
 
-  defp page_title(:show), do: "Show Chapter"
-  defp page_title(:edit), do: "Edit Chapter"
+  defp page_title(:show), do: "Show Reviewed guide"
+  defp page_title(:edit), do: "Edit Reviewed guide"
 end

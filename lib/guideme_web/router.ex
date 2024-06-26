@@ -61,18 +61,55 @@ defmodule GuidemeWeb.Router do
     pipe_through(:auth)
     live "/hype", HypeLive
     live "/boilerplate-docs", BoilerplateDocsLive
-    live "/guide", GuideLive
-    live "/guide/:id", GuideLive
-    live "/guide-example", GuideExampleLive
-    live "/create", CreateGuideLive
-    live "/all-guides", AllGuidesLive
     live "/make-me-admin", MakeMeAdminLive
+
     live "/chapters", ChaptersLive
+
     live "/chapters/list", ChapterLive.Index, :index
     live "/chapters/new", ChapterLive.Index, :new
     live "/chapters/:id/edit", ChapterLive.Index, :edit
     live "/chapters/:id", ChapterLive.Show, :show
     live "/chapters/:id/show/edit", ChapterLive.Show, :edit
+
+    live "/guide", GuideLive
+    live "/guide/:id", GuideLive
+    live "/guide-example", GuideExampleLive
+    live "/all-guides", AllGuidesLive
+    live "/create", CreateGuideLive
+
+    live "/guides", GuideLive.Index, :index
+    live "/guides/new", GuideLive.Index, :new
+    live "/guides/:id/edit", GuideLive.Index, :edit
+    live "/guides/:id", GuideLive.Show, :show
+    live "/guides/:id/show/edit", GuideLive.Show, :edit
+
+    live "/steps", StepLive.Index, :index
+    live "/steps/new", StepLive.Index, :new
+    live "/steps/:id/edit", StepLive.Index, :edit
+
+    live "/steps/:id", StepLive.Show, :show
+    live "/steps/:id/show/edit", StepLive.Show, :edit
+
+    live "/step_images", StepImageLive.Index, :index
+    live "/step_images/new", StepImageLive.Index, :new
+    live "/step_images/:id/edit", StepImageLive.Index, :edit
+
+    live "/step_images/:id", StepImageLive.Show, :show
+    live "/step_images/:id/show/edit", StepImageLive.Show, :edit
+
+    live "/details_links", DetailsLinkLive.Index, :index
+    live "/details_links/new", DetailsLinkLive.Index, :new
+    live "/details_links/:id/edit", DetailsLinkLive.Index, :edit
+
+    live "/details_links/:id", DetailsLinkLive.Show, :show
+    live "/details_links/:id/show/edit", DetailsLinkLive.Show, :edit
+
+    live "/reviewed_guides", ReviewedGuideLive.Index, :index
+    live "/reviewed_guides/new", ReviewedGuideLive.Index, :new
+    live "/reviewed_guides/:id/edit", ReviewedGuideLive.Index, :edit
+
+    live "/reviewed_guides/:id", ReviewedGuideLive.Show, :show
+    live "/reviewed_guides/:id/show/edit", ReviewedGuideLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.

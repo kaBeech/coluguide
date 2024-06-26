@@ -1,0 +1,25 @@
+<.header>
+  Step image <%= @step_image.id %>
+  <:subtitle>This is a step_image record from your database.</:subtitle>
+  <:actions>
+    <.link patch={~p"/step_images/#{@step_image}/show/edit"} phx-click={JS.push_focus()}>
+      <.button>Edit step_image</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+</.list>
+
+<.back navigate={~p"/step_images"}>Back to step_images</.back>
+
+<.modal :if={@live_action == :edit} id="step_image-modal" show on_cancel={JS.patch(~p"/step_images/#{@step_image}")}>
+  <.live_component
+    module={GuidemeWeb.StepImageLive.FormComponent}
+    id={@step_image.id}
+    title={@page_title}
+    action={@live_action}
+    step_image={@step_image}
+    patch={~p"/step_images/#{@step_image}"}
+  />
+</.modal>

@@ -40,7 +40,7 @@ defmodule GuidemeWeb.AllGuidesLive do
     </h3>
     <ul>
       <%= for guide <- @guides do %>
-        <%= if guide.category == "chapter" do %>
+        <%= if guide.template == "chapter" do %>
           <li><%= guide.title %><%= guide.icon %></li>
         <% end %>
       <% end %>
