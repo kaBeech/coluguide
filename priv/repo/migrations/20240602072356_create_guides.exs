@@ -13,6 +13,7 @@ defmodule Guideme.Repo.Migrations.CreateGuides do
     end
 
     create index(:guides, [:chapter_id])
+    create index(:guides, [:template_id])
     create unique_index(:guides, [:short_title])
   end
 end
