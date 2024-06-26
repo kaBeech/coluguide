@@ -46,7 +46,7 @@ Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   step_id: 1
 })
 
-Guideme.Repo.insert!(%Guideme.DetailsLinks.DetailsLink{
+Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
   step_id: 1,
   guide_id: 1
 })
