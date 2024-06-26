@@ -3,7 +3,7 @@ defmodule Guideme.Steps.StepImage do
   import Ecto.Changeset
 
   schema "step_images" do
-    has_one :image, Guideme.Images.Image
+    belongs_to :image, Guideme.Images.Image
     field :alt, :string
     belongs_to :step, Guideme.Steps.Step
 

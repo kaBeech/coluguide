@@ -4,7 +4,7 @@ defmodule Guideme.Guides.Guide do
 
   schema "guides" do
     field :title, :string
-    has_one :template, Guideme.Guides.Template
+    belongs_to :template, Guideme.Guides.Template
     belongs_to :chapter, Guideme.Chapters.Chapter
     field :short_title, :string
     field :icon, :string
