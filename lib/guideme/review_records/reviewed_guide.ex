@@ -15,5 +15,6 @@ defmodule Guideme.ReviewRecords.ReviewedGuide do
     reviewed_guide
     |> cast(attrs, [:reviewed_at, :user_id, :guide_id])
     |> validate_required([:reviewed_at, :user_id, :guide_id])
+    |> unique_constraint([:guide_id, :user_id])
   end
 end
