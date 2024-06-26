@@ -7,5 +7,12 @@ defmodule Guideme.Repo.Migrations.CreateChapters do
 
       timestamps(type: :utc_datetime)
     end
+
+    create(
+      unique_index(
+        :chapters,
+        [:title]
+      )
+    )
   end
 end
