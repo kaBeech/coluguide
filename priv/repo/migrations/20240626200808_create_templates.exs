@@ -8,11 +8,6 @@ defmodule Guideme.Repo.Migrations.CreateTemplates do
       timestamps(type: :utc_datetime)
     end
 
-    create(
-      unique_index(
-        :templates,
-        [:name]
-      )
-    )
+    create(unique_index(:templates, [:name]))
   end
 end
