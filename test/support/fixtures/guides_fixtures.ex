@@ -21,4 +21,18 @@ defmodule Guideme.GuidesFixtures do
 
     guide
   end
+
+  @doc """
+  Generate a template.
+  """
+  def template_fixture(attrs \\ %{}) do
+    {:ok, template} =
+      attrs
+      |> Enum.into(%{
+        name: "some name"
+      })
+      |> Guideme.Guides.create_template()
+
+    template
+  end
 end
