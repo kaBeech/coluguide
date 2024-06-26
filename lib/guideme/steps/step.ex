@@ -18,5 +18,6 @@ defmodule Guideme.Steps.Step do
     step
     |> cast(attrs, [:full_text, :number, :external_link, :guide_id])
     |> validate_required([:full_text, :number, :guide_id])
+    |> unique_constraint([:number, :guide_id])
   end
 end
