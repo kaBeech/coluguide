@@ -60,7 +60,7 @@ Guideme.Repo.insert!(%Guideme.Chapters.Chapter{
 
 Guideme.Repo.insert!(%Guideme.Guides.Guide{
   title: "Using GuideMe",
-  short_title: "Using GuideMe",
+  name: "Using GuideMe",
   icon: "󱃔 ",
   template_id: 1,
   chapter_id: 1
@@ -68,7 +68,7 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
 
 Guideme.Repo.insert!(%Guideme.Guides.Guide{
   title: "Use a Guide",
-  short_title: "Use a Guide",
+  name: "Use a Guide",
   template_id: 2,
   chapter_id: 1
 })

@@ -8,7 +8,7 @@ defmodule Guideme.GuidesTest do
 
     import Guideme.GuidesFixtures
 
-    @invalid_attrs %{title: nil, template: nil, chapter: nil, short_title: nil, icon: nil}
+    @invalid_attrs %{title: nil, template: nil, chapter: nil, name: nil, icon: nil}
 
     test "list_guides/0 returns all guides" do
       guide = guide_fixture()
@@ -21,13 +21,13 @@ defmodule Guideme.GuidesTest do
     end
 
     test "create_guide/1 with valid data creates a guide" do
-      valid_attrs = %{title: "some title", template: "some template", chapter: "some chapter", short_title: "some short_title", icon: "some icon"}
+      valid_attrs = %{title: "some title", template: "some template", chapter: "some chapter", name: "some name", icon: "some icon"}
 
       assert {:ok, %Guide{} = guide} = Guides.create_guide(valid_attrs)
       assert guide.title == "some title"
       assert guide.template == "some template"
       assert guide.chapter == "some chapter"
-      assert guide.short_title == "some short_title"
+      assert guide.name == "some name"
       assert guide.icon == "some icon"
     end
 
@@ -37,13 +37,13 @@ defmodule Guideme.GuidesTest do
 
     test "update_guide/2 with valid data updates the guide" do
       guide = guide_fixture()
-      update_attrs = %{title: "some updated title", template: "some updated template", chapter: "some updated chapter", short_title: "some updated short_title", icon: "some updated icon"}
+      update_attrs = %{title: "some updated title", template: "some updated template", chapter: "some updated chapter", name: "some updated name", icon: "some updated icon"}
 
       assert {:ok, %Guide{} = guide} = Guides.update_guide(guide, update_attrs)
       assert guide.title == "some updated title"
       assert guide.template == "some updated template"
       assert guide.chapter == "some updated chapter"
-      assert guide.short_title == "some updated short_title"
+      assert guide.name == "some updated name"
       assert guide.icon == "some updated icon"
     end
 

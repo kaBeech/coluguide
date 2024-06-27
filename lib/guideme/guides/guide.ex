@@ -6,7 +6,7 @@ defmodule Guideme.Guides.Guide do
     field :title, :string
     belongs_to :template, Guideme.Guides.Template
     belongs_to :chapter, Guideme.Chapters.Chapter
-    field :short_title, :string
+    field :name, :string
     field :icon, :string
     has_many :linked_to_by, Guideme.Steps.Step
     has_many :users_have_reviewed, Guideme.ReviewRecords.ReviewedGuide
@@ -17,8 +17,8 @@ defmodule Guideme.Guides.Guide do
   @doc false
   def changeset(guide, attrs) do
     guide
-    |> cast(attrs, [:chapter_id, :title, :short_title, :template_id, :icon])
-    |> validate_required([:chapter_id, :title, :short_title, :template_id])
-    |> unique_constraint(:short_title)
+    |> cast(attrs, [:chapter_id, :title, :name, :template_id, :icon])
+    |> validate_required([:chapter_id, :title, :name, :template_id])
+    |> unique_constraint(:name)
   end
 end
