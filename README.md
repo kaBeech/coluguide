@@ -23,7 +23,7 @@ To run :
   * [Clone this repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
   * From the top level directory, run `nix develop`
   * Initialize GuideMe with `guideme-init`
-  * Start the Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+  * Start the GuideMe endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Then you can visit [`localhost:4000`](http://localhost:4000) from your browser! You may 
 wish to customize authentication and Postgres configuration
