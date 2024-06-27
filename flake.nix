@@ -9,6 +9,7 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    guideme-init = import ./scripts/guideme-init.nix { inherit pkgs; };
   in
   {
     devShells.${system}.default = 
@@ -18,14 +19,8 @@
             elixir
             erlang
             inotify-tools
+            guideme-init
           ];
-
-          shellHook = ''
-            echo "Hello, world!"
-            mix deps.get
-            mix deps.compile
-            mix ecto.setup
-          '';
         };
   };
 }
