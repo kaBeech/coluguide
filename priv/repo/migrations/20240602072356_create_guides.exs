@@ -8,6 +8,7 @@ defmodule Guideme.Repo.Migrations.CreateGuides do
       add :name, :string
       add :template_id, references(:templates, on_delete: :nothing)
       add :icon, :string
+      add :introduction, :text
 
       timestamps(type: :utc_datetime)
     end
