@@ -1,5 +1,5 @@
 {
-  description = "A flake for starting a GuideMe development environment";
+  description = "A flake for starting a GuideMe development shell";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -23,16 +23,7 @@
           ];
 
           shellHook = ''
-            cat << EOF
-            Welcome to the GuideMe Development Environment!
-            
-            If you haven't yet done so, run `guideme-init` initalize GuideMe
-
-            After that, you can start the GuideMe server with `mix phx.server`
-            or inside IEx with `iex -S mix phx.server`
-
-            Have fun!
-            EOF
+            cat ./scripts/dev-shell.txt
           '';
         };
   };
