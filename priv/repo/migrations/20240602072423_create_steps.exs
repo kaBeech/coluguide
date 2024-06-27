@@ -6,7 +6,7 @@ defmodule Guideme.Repo.Migrations.CreateSteps do
       add :full_text, :text
       add :number, :integer
       add :external_link, :string
-      add :guide_id, references(:guides, on_delete: :nothing)
+      add :guide_id, references(:guides, on_delete: :delete_all)
 
       timestamps(type: :utc_datetime)
     end
