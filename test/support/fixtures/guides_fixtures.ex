@@ -14,7 +14,7 @@ defmodule Guideme.GuidesFixtures do
         template: "some template",
         chapter: "some chapter",
         icon: "some icon",
-        short_title: "some short_title",
+        name: "some name",
         title: "some title"
       })
       |> Guideme.Guides.create_guide()

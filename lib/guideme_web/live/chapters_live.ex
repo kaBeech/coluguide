@@ -19,7 +19,7 @@ defmodule GuidemeWeb.ChaptersLive do
               <span class="logoFont"><%= guide.icon %></span>
             </a>
             <p class="lineHeightBigger textBright">
-              <%= guide.short_title %>
+              <%= guide.name %>
             </p>
           </li>
         <% end %>

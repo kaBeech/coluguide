@@ -21,7 +21,7 @@ defmodule GuidemeWeb.GuideLive.FormComponent do
       >
         <.input field={@form[:title]} type="text" label="Title" />
         <.input field={@form[:template]} type="text" label="Template" />
-        <.input field={@form[:short_title]} type="text" label="Short title" />
+        <.input field={@form[:name]} type="text" label="Short title" />
         <.input field={@form[:icon]} type="text" label="Icon" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Guide</.button>

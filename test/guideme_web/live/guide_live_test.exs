@@ -4,9 +4,9 @@ defmodule GuidemeWeb.GuideLiveTest do
   import Phoenix.LiveViewTest
   import Guideme.GuidesFixtures
 
-  @create_attrs %{template: "some template", icon: "some icon", short_title: "some short_title", title: "some title"}
-  @update_attrs %{template: "some updated template", icon: "some updated icon", short_title: "some updated short_title", title: "some updated title"}
-  @invalid_attrs %{template: nil, icon: nil, short_title: nil, title: nil}
+  @create_attrs %{template: "some template", icon: "some icon", name: "some name", title: "some title"}
+  @update_attrs %{template: "some updated template", icon: "some updated icon", name: "some updated name", title: "some updated title"}
+  @invalid_attrs %{template: nil, icon: nil, name: nil, title: nil}
 
   defp create_guide(_) do
     guide = guide_fixture()
