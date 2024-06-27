@@ -21,6 +21,19 @@
             inotify-tools
             guideme-init
           ];
+
+          shellHook = ''
+            cat << EOF
+            Welcome to the GuideMe Development Environment!
+            
+            If you haven't yet done so, run `guideme-init` initalize GuideMe
+
+            After that, you can start the GuideMe server with `mix phx.server`
+            or inside IEx with `iex -S mix phx.server`
+
+            Have fun!
+            EOF
+          '';
         };
   };
 }
