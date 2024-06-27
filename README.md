@@ -23,8 +23,11 @@ To run :
   * [Enable Flakes](https://nixos.wiki/wiki/Flakes): 
     `mkdir -p ~/.config/nix && echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf`
   * [Ensure Postgres is running](https://www.postgresql.org/docs/current/tutorial-start.html)
-  * [Clone this repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-  * From the top level directory, run `nix develop`
+    (the method for this will depend on your operating system/setup)
+  * [Clone this repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository):
+    `git clone https://github.com/kaBeech/guideme.git`
+  * Enter the newly cloned directory with `cd guideme`
+  * Enter the GuideMe development shell with `nix develop`
   * Initialize GuideMe with `guideme-init`
   * Start the GuideMe endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
