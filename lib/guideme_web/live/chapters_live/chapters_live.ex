@@ -12,23 +12,26 @@ defmodule GuidemeWeb.ChaptersLive do
 
   def render(assigns) do
     ~H"""
-    <h1>Chapters</h1>
-    <ul class="flex row wrap">
-      <%= for guide <- @guides do %>
-        <%= if guide.template_id == 1 do %>
-          <li class="flex column alignCenter">
-            <a class="logo glow" href={"/guides/" <> to_string(guide.id)}>
-              <span class="logoFont"><%= guide.icon %></span>
-            </a>
-            <p class="lineHeightBigger textBright">
-              <%= guide.name %>
-            </p>
-          </li>
+    <div class="flex column alignCenter">
+      <h1>Chapters</h1>
+      <ul class="flex row wrap">
+        <%= for guide <- @guides do %>
+          <%= if guide.template_id == 1 do %>
+            <li class="flex column alignCenter">
+              <a class="logo glow" href={"/guides/" <> to_string(guide.id)}>
+                <span class="logoFont"><%= guide.icon %></span>
+              </a>
+              <p class="lineHeightBigger textBright">
+                <%= guide.name %>
+              </p>
+            </li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
-    <br />
-    <%= render_navbar(assigns) %>
+      </ul>
+      <div class="flex justifyCenter marginTop2" style="margin-right:1.2rem;">
+        <%= render_navbar(assigns) %>
+      </div>
+    </div>
     """
   end
 end
