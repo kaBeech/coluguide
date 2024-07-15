@@ -60,7 +60,6 @@ defmodule GuidemeWeb.Router do
 
     pipe_through(:auth)
     live "/hype", HypeLive
-    live "/boilerplate-docs", BoilerplateDocsLive
 
     live "/chapters", ChaptersLive
 
