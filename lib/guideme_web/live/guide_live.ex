@@ -62,7 +62,7 @@ defmodule GuidemeWeb.GuideLive do
   def render(assigns) do
     ~H"""
     <div class="flex column alignCenter textBigger">
-      <%= if @guide.template == "chapter" do %>
+      <%= if @guide.template_id == 1 do %>
         <div class="flex justifyCenter gap1">
           <span class="link">
             
