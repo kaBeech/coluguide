@@ -118,6 +118,7 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
+  external_link: "https://www.wikipedia.org/",
   full_text: "Clicking an orange   icon will open a relevant external link in 
     a new browser tab",
   guide_id: 2,
