@@ -73,7 +73,6 @@ defmodule GuidemeWeb.Router do
 
     live "/guide", GuideLive
     live "/guide/:id", GuideLive
-    live "/guide-example", GuideExampleLive
     live "/all-guides", AllGuidesLive
     live "/create", CreateGuideLive
 
