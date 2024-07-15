@@ -3,8 +3,18 @@ defmodule GuidemeWeb.GuideLive do
   use Phoenix.LiveView
   import Step
 
+  alias Guideme.{Guides}
+
+  @impl true
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, guide: nil)}
+    {:ok, socket}
+  end
+
+  @impl true
+  def handle_params(%{"id" => id}, _, socket) do
+    {:noreply,
+     socket
+     |> assign(:guide, Guides.get_guide!(id))}
   end
 
   defp example_steps do
@@ -60,6 +70,9 @@ defmodule GuidemeWeb.GuideLive do
       <h2>
         Please select an option below by clicking an <span class="link">orange file </span>
       </h2>
+      <h1>
+        <%= @guide.title %>
+      </h1>
       <div class="flex column justifyCenter widthFit gap1">
         <%= for step <- enumerate_steps(example_steps()) do %>
           <%= render_step(step) %>
