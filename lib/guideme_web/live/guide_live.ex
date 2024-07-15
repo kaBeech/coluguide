@@ -3,7 +3,7 @@ defmodule GuidemeWeb.GuideLive do
   use Phoenix.LiveView
   import Step
 
-  alias Guideme.{Guides}
+  alias Guideme.{Guides, Steps}
 
   @impl true
   def mount(_params, _session, socket) do
@@ -14,7 +14,8 @@ defmodule GuidemeWeb.GuideLive do
   def handle_params(%{"id" => id}, _, socket) do
     {:noreply,
      socket
-     |> assign(:guide, Guides.get_guide!(id))}
+     |> assign(:guide, Guides.get_guide!(id))
+     |> assign(:steps, map_sql_result(Steps.list_guide_steps!(elem(Integer.parse(id), 0))))}
   end
 
   defp example_steps do
@@ -50,6 +51,13 @@ defmodule GuidemeWeb.GuideLive do
     |> Enum.map(fn {e, i} -> Map.put(e, :number, to_string(i)) end)
   end
 
+  defp map_sql_result(%{rows: rows, columns: columns}) do
+    Enum.map(rows, fn row ->
+      Enum.zip(columns, row)
+      |> Enum.into(%{})
+    end)
+  end
+
   @impl true
   def render(assigns) do
     ~H"""
@@ -76,11 +84,56 @@ defmodule GuidemeWeb.GuideLive do
       <h1>
         <%= @guide.title %>
       </h1>
-      <div class="flex column justifyCenter widthFit gap1">
-        <%= for step <- enumerate_steps(example_steps()) do %>
-          <%= render_step(step) %>
+      <ul>
+        <%= for step <- @steps do %>
+          <div class="flex justifyLeft gap1">
+            <%= if step["external_link"] do %>
+              <a href={step["external_link"]} target="_blank" rel="noopener noreferrer">
+                
+              </a>
+            <% else %>
+              <span class="textDull">
+                
+              </span>
+            <% end %>
+            <%= if step["src"] do %>
+              <span
+                class="link pointer"
+                phx-click={JS.toggle(to: "#image-step" <> to_string(step["number"]))}
+              >
+                
+              </span>
+              <div
+                id={"image-step"  <> to_string(step["number"])}
+                phx-click={JS.toggle(to: "#image-step" <> to_string(step["number"]))}
+                class="hidden"
+              >
+                <div class="dimScreenImageHolder">
+                  <img class="textDull" src={"/images/" <> step["src"]} alt={step["alt"]} />
+                </div>
+              </div>
+            <% else %>
+              <span class="textDull">
+                
+              </span>
+            <% end %>
+            <%= if step["guide_id"] do %>
+              <a href={"/guide/" <> to_string(step["guide_id"])}>
+                
+              </a>
+            <% else %>
+              <span class="textDull">
+                
+              </span>
+            <% end %>
+            <span>
+              <input type="checkbox" />
+            </span>
+            <span class="textDull"><%= step["number"] %>.</span>
+            <%= step["full_text"] %>
+          </div>
         <% end %>
-      </div>
+      </ul>
     </div>
     """
   end
