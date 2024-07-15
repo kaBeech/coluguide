@@ -16,5 +16,10 @@ defmodule Guideme.Repo.Migrations.CreateGuides do
     create index(:guides, [:chapter_id])
     create index(:guides, [:template_id])
     create unique_index(:guides, [:name])
+
+    create index(:guides, [:chapter_id],
+             include: [:name, :template_id],
+             name: :guide_directory_covering_index
+           )
   end
 end
