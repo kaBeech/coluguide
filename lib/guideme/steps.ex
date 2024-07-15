@@ -22,6 +22,37 @@ defmodule Guideme.Steps do
   end
 
   @doc """
+  Returns the list of a guide's steps
+
+  Raises `Ecto.NoResultsError` if the Guide does not exist or has no steps.
+
+  ## Examples
+
+      iex> list_guide_steps!(123)
+      [%Step{}, ...]
+
+      iex> list_guide_steps!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+
+  def list_guide_steps!(id) do
+    Repo.query!(
+      "SELECT number, full_text, external_link, details_links.guide_id, src, alt " <>
+        "FROM steps " <>
+        "LEFT JOIN details_links " <>
+        "ON steps.id = details_links.step_id " <>
+        "LEFT JOIN step_images " <>
+        "ON steps.id = step_images.step_id " <>
+        "LEFT JOIN images " <>
+        "ON step_images.image_id = images.id " <>
+        "WHERE steps.guide_id = $1 " <>
+        "ORDER BY steps.number",
+      [id]
+    )
+  end
+
+  @doc """
   Gets a single step.
 
   Raises `Ecto.NoResultsError` if the Step does not exist.
