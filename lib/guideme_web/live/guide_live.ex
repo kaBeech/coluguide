@@ -1,6 +1,8 @@
 defmodule GuidemeWeb.GuideLive do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
+
+  import ConvertSQL
   import HeaderTutorial
   import Step
 
@@ -17,13 +19,6 @@ defmodule GuidemeWeb.GuideLive do
      socket
      |> assign(:guide, Guides.get_guide!(id))
      |> assign(:steps, map_sql_result(Steps.list_guide_steps!(elem(Integer.parse(id), 0))))}
-  end
-
-  defp map_sql_result(%{rows: rows, columns: columns}) do
-    Enum.map(rows, fn row ->
-      Enum.zip(columns, row)
-      |> Enum.into(%{})
-    end)
   end
 
   @impl true
