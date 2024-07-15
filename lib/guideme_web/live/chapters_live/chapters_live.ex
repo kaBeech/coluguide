@@ -15,7 +15,7 @@ defmodule GuidemeWeb.ChaptersLive do
       <%= for guide <- @guides do %>
         <%= if guide.template_id == 1 do %>
           <li class="flex column alignCenter">
-            <a class="logo glow" href={"/guide/" <> to_string(guide.id)}>
+            <a class="logo glow" href={"/guides/" <> to_string(guide.id)}>
               <span class="logoFont"><%= guide.icon %></span>
             </a>
             <p class="lineHeightBigger textBright">
