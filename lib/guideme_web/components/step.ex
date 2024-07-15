@@ -25,7 +25,7 @@ defmodule Step do
           class="hidden"
         >
           <div class="dimScreenImageHolder">
-            <img class="textDull" src={@image} />
+            <img class="textDull" src={"/images/" <> @image} />
           </div>
         </div>
       <% else %>

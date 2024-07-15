@@ -21,7 +21,7 @@ defmodule GuidemeWeb.GuideExampleLive do
         full_text: "This is Step 2",
         number: 2,
         external_link: nil,
-        image: "https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png",
+        image: "example_image.png",
         details_link: nil
       },
       %{
