@@ -1,0 +1,45 @@
+<.header>
+  Listing Step images
+  <:actions>
+    <.link patch={~p"/step_images/new"}>
+      <.button>New Step image</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="step_images"
+  rows={@streams.step_images}
+  row_click={fn {_id, step_image} -> JS.navigate(~p"/step_images/#{step_image}") end}
+>
+  <:action :let={{_id, step_image}}>
+    <div class="sr-only">
+      <.link navigate={~p"/step_images/#{step_image}"}>Show</.link>
+    </div>
+    <.link patch={~p"/step_images/#{step_image}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, step_image}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: step_image.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal
+  :if={@live_action in [:new, :edit]}
+  id="step_image-modal"
+  show
+  on_cancel={JS.patch(~p"/step_images")}
+>
+  <.live_component
+    module={GuidemeWeb.GenStepImageLive.FormComponent}
+    id={@step_image.id || :new}
+    title={@page_title}
+    action={@live_action}
+    step_image={@step_image}
+    patch={~p"/step_images"}
+  />
+</.modal>

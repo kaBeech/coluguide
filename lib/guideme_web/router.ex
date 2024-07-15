@@ -61,54 +61,52 @@ defmodule GuidemeWeb.Router do
     pipe_through(:auth)
     live "/hype", HypeLive
     live "/boilerplate-docs", BoilerplateDocsLive
-    live "/make-me-admin", MakeMeAdminLive
 
     live "/chapters", ChaptersLive
 
-    live "/chapters/list", ChapterLive.Index, :index
-    live "/chapters/new", ChapterLive.Index, :new
-    live "/chapters/:id/edit", ChapterLive.Index, :edit
-    live "/chapters/:id", ChapterLive.Show, :show
-    live "/chapters/:id/show/edit", ChapterLive.Show, :edit
+    live "/guides", GuideLive
+    live "/guides/:id", GuideLive
+    live "/guides/new", CreateGuideLive
 
-    live "/guide", GuideLive
-    live "/guide/:id", GuideLive
-    live "/all-guides", AllGuidesLive
-    live "/create", CreateGuideLive
+    live "/gen/chapters/list", GenChapterLive.Index, :index
+    live "/gen/chapters/new", GenChapterLive.Index, :new
+    live "/gen/chapters/:id/edit", GenChapterLive.Index, :edit
+    live "/gen/chapters/:id", GenChapterLive.Show, :show
+    live "/gen/chapters/:id/show/edit", GenChapterLive.Show, :edit
 
-    live "/guides", GuideLive.Index, :index
-    live "/guides/new", GuideLive.Index, :new
-    live "/guides/:id/edit", GuideLive.Index, :edit
-    live "/guides/:id", GuideLive.Show, :show
-    live "/guides/:id/show/edit", GuideLive.Show, :edit
+    live "/gen/guides", GenGuideLive.Index, :index
+    live "/gen/guides/new", GenGuideLive.Index, :new
+    live "/gen/guides/:id/edit", GenGuideLive.Index, :edit
+    live "/gen/guides/:id", GenGuideLive.Show, :show
+    live "/gen/guides/:id/show/edit", GenGuideLive.Show, :edit
 
-    live "/steps", StepLive.Index, :index
-    live "/steps/new", StepLive.Index, :new
-    live "/steps/:id/edit", StepLive.Index, :edit
+    live "/gen/steps", GenStepLive.Index, :index
+    live "/gen/steps/new", GenStepLive.Index, :new
+    live "/gen/steps/:id/edit", GenStepLive.Index, :edit
 
-    live "/steps/:id", StepLive.Show, :show
-    live "/steps/:id/show/edit", StepLive.Show, :edit
+    live "/gen/steps/:id", GenStepLive.Show, :show
+    live "/gen/steps/:id/show/edit", GenStepLive.Show, :edit
 
-    live "/step_images", StepImageLive.Index, :index
-    live "/step_images/new", StepImageLive.Index, :new
-    live "/step_images/:id/edit", StepImageLive.Index, :edit
+    live "/gen/step_images", GenStepImageLive.Index, :index
+    live "/gen/step_images/new", GenStepImageLive.Index, :new
+    live "/gen/step_images/:id/edit", GenStepImageLive.Index, :edit
 
-    live "/step_images/:id", StepImageLive.Show, :show
-    live "/step_images/:id/show/edit", StepImageLive.Show, :edit
+    live "/gen/step_images/:id", GenStepImageLive.Show, :show
+    live "/gen/step_images/:id/show/edit", GenStepImageLive.Show, :edit
 
-    live "/details_links", DetailsLinkLive.Index, :index
-    live "/details_links/new", DetailsLinkLive.Index, :new
-    live "/details_links/:id/edit", DetailsLinkLive.Index, :edit
+    live "/gen/details_links", GenDetailsLinkLive.Index, :index
+    live "/gen/details_links/new", GenDetailsLinkLive.Index, :new
+    live "/gen/details_links/:id/edit", GenDetailsLinkLive.Index, :edit
 
-    live "/details_links/:id", DetailsLinkLive.Show, :show
-    live "/details_links/:id/show/edit", DetailsLinkLive.Show, :edit
+    live "/gen/details_links/:id", GenDetailsLinkLive.Show, :show
+    live "/gen/details_links/:id/show/edit", GenDetailsLinkLive.Show, :edit
 
-    live "/reviewed_guides", ReviewedGuideLive.Index, :index
-    live "/reviewed_guides/new", ReviewedGuideLive.Index, :new
-    live "/reviewed_guides/:id/edit", ReviewedGuideLive.Index, :edit
+    live "/gen/reviewed_guides", GenReviewedGuideLive.Index, :index
+    live "/gen/reviewed_guides/new", GenReviewedGuideLive.Index, :new
+    live "/gen/reviewed_guides/:id/edit", GenReviewedGuideLive.Index, :edit
 
-    live "/reviewed_guides/:id", ReviewedGuideLive.Show, :show
-    live "/reviewed_guides/:id/show/edit", ReviewedGuideLive.Show, :edit
+    live "/gen/reviewed_guides/:id", GenReviewedGuideLive.Show, :show
+    live "/gen/reviewed_guides/:id/show/edit", GenReviewedGuideLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
