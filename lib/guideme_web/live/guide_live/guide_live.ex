@@ -4,6 +4,7 @@ defmodule GuidemeWeb.GuideLive do
 
   import ConvertSQL
   import HeaderTutorial
+  import NavBar
   import Step
 
   alias Guideme.{Guides, Steps}
@@ -34,6 +35,7 @@ defmodule GuidemeWeb.GuideLive do
       <ul>
         <%= render_steps(assigns) %>
       </ul>
+      <%= render_navbar(assigns) %>
     </div>
     """
   end

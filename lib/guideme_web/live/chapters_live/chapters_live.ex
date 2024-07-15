@@ -2,6 +2,8 @@ defmodule GuidemeWeb.ChaptersLive do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
 
+  import NavBar
+
   alias Guideme.{Guides}
 
   def mount(_params, _session, socket) do
@@ -25,6 +27,8 @@ defmodule GuidemeWeb.ChaptersLive do
         <% end %>
       <% end %>
     </ul>
+    <br />
+    <%= render_navbar(assigns) %>
     """
   end
 end
