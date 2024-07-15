@@ -50,6 +50,7 @@ defmodule GuidemeWeb.GuideLive do
     |> Enum.map(fn {e, i} -> Map.put(e, :number, to_string(i)) end)
   end
 
+  @impl true
   def render(assigns) do
     ~H"""
     <div class="flex column alignCenter textBigger">
