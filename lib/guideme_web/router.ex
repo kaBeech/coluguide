@@ -67,6 +67,8 @@ defmodule GuidemeWeb.Router do
     live "/guides/:id", GuideLive
     live "/guides/new", CreateGuideLive
 
+    ### Generated views temporarily here for modeling - will delete later ###
+
     live "/gen/chapters/list", GenChapterLive.Index, :index
     live "/gen/chapters/new", GenChapterLive.Index, :new
     live "/gen/chapters/:id/edit", GenChapterLive.Index, :edit
