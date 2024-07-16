@@ -3,22 +3,18 @@
 </h1>
 <.form for={@form} phx-submit="create">
   <div class="flex column gap1">
-    <.input field={@form[:chapter]} type="text" placeholder="Chapter..." autocomplete="off" />
+    <div class="flex gap1">
+      <label for="chapter_id">Select Chapter ID</label>
+      <.input field={@form[:chapter_id]} type="select" options={[1]} id="chapter_id" />
+    </div>
     <.input field={@form[:title]} type="text" placeholder="Guide Title..." autocomplete="off" />
-    <.input
-      field={@form[:name]}
-      type="text"
-      placeholder="Short Title..."
-      autocomplete="off"
-    />
-    <.input
-      field={@form[:template]}
-      type="text"
-      placeholder="Template: 'chapter' or 'standard'..."
-      autocomplete="off"
-    />
-    <.input field={@form[:icon]} type="text" placeholder="Icon..." autocomplete="off" />
-    <.input field={@form[:steps]} type="text" placeholder="Steps..." autocomplete="off" />
+    <.input field={@form[:name]} type="text" placeholder="Short Title..." autocomplete="off" />
+    <div class="flex gap1">
+      <label for="template_id">Template: Select 1 for Chapter, 2 for Standard</label>
+      <.input field={@form[:template_id]} type="select" options={[1, 2]} id="chapter_id" />
+    </div>
+    <!-- <.input field={@form[:icon]} type="text" placeholder="Icon..." autocomplete="off" /> -->
+    <!-- <.input field={@form[:steps]} type="text" placeholder="Steps..." autocomplete="off" /> -->
     <.button>
       Create Guide
     </.button>
