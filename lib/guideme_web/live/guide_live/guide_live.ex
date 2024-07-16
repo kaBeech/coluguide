@@ -29,7 +29,7 @@ defmodule GuidemeWeb.GuideLive do
       <%= if @guide.template_id == 1 do %>
         <%= render_header_tutorial(assigns) %>
       <% end %>
-      <h1>
+      <h1 class="marginTop3">
         <%= @guide.title %>
       </h1>
       <ul>

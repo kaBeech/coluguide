@@ -298,6 +298,7 @@ button {
 button:hover {
   border-color: var(--guideme-button-border-interacted);
 }
+
 button:active {
   border-color: var(--guideme-button-border-interacted);
   background-color: var(--guideme-button-background-clicked);
@@ -414,6 +415,18 @@ button {
   margin-top: 2rem;
 }
 
+.marginTop3 {
+  margin-top: 3rem;
+}
+
+.marginTop4 {
+  margin-top: 4rem;
+}
+
+.marginTop5 {
+  margin-top: 5rem;
+}
+
 .marginLeftAuto {
   margin-left: auto;
 }
@@ -495,6 +508,18 @@ button {
   font-size: 8rem;
   padding: 1rem;
   padding-bottom: 0.5rem;
+}
+
+.hoverBright:hover {
+  color: var(--guideme-text-bright);
+}
+
+.hidden {
+  display: none;
+}
+
+.navTut:hover .hidden {
+  display: block;
 }
 
 .textBright {
