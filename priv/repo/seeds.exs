@@ -77,6 +77,13 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
   chapter_id: 1
 })
 
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "Use Step Icons",
+  name: "Use Step Icons",
+  template_id: 2,
+  chapter_id: 1
+})
+
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Use a Guide",
   guide_id: 1,
@@ -97,53 +104,51 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
-  full_text: "Underneath the title (and possibly indroduction) are one or more 
-    Steps to follow",
+  full_text: "Follow the steps underneath the title",
   guide_id: 2,
   number: 3
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
-  full_text: "Each Step has several associated icons and a checkbox that show 
-    before the Step's full text",
+  full_text: "Use the Step Icons to interact with the Guide",
   guide_id: 2,
   number: 4
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
-  full_text: "The icons are clickable if they're bright orange - dull teal 
+  full_text: "Step icons are clickable if they're bright orange - dull teal 
     icons are non-clickable placeholders",
-  guide_id: 2,
-  number: 5
+  guide_id: 3,
+  number: 1
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   external_link: "https://www.wikipedia.org/",
   full_text: "Clicking an orange   icon will open a relevant external link in 
     a new browser tab",
-  guide_id: 2,
-  number: 6
+  guide_id: 3,
+  number: 2
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Clicking an orange   icon will pop up a helpful image related to
     the step",
-  guide_id: 2,
-  number: 7
+  guide_id: 3,
+  number: 3
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Clicking an orange   icon will open another guide which covers 
     the step in more detail",
-  guide_id: 2,
-  number: 8
+  guide_id: 3,
+  number: 4
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Checkboxes are just there for a bit of pseudo-tactile 
     satisfaction",
-  guide_id: 2,
-  number: 9
+  guide_id: 3,
+  number: 5
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
@@ -214,4 +219,9 @@ Guideme.Repo.insert!(%Guideme.Steps.StepImage{
 Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
   step_id: 1,
   guide_id: 2
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+  step_id: 5,
+  guide_id: 3
 })
