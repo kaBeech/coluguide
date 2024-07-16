@@ -28,7 +28,7 @@ defmodule GuidemeWeb.ChaptersLive do
           <% end %>
         <% end %>
       </ul>
-      <div class="flex justifyCenter marginTop2" style="margin-right:1.2rem;">
+      <div class="flex justifyCenter marginTop2">
         <%= render_navbar(assigns) %>
       </div>
     </div>
