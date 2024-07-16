@@ -591,6 +591,11 @@ button {
   align-items: center;
 }
 
+.imageBorder {
+  border: 0.15rem solid var(--guideme-text-accent);
+  border-radius: 8px;
+}
+
 .moveDown {
   margin-top: 10%;
 }
