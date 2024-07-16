@@ -1,4 +1,4 @@
-defmodule GuidemeWeb.CreateGuideLive do
+defmodule GuidemeWeb.GuideLive.New do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
   alias Guideme.{Guides, Guides.Guide}

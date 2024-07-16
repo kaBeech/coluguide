@@ -63,7 +63,7 @@ defmodule GuidemeWeb.Router do
 
     live "/chapters", ChaptersLive
 
-    live "/guides/new", CreateGuideLive
+    live "/guides/new", GuideLive.New
     live "/guides/:id", GuideLive.Show
 
     ### Generated views temporarily here for modeling - will delete later ###
