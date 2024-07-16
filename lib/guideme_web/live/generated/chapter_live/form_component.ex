@@ -4,31 +4,6 @@ defmodule GuidemeWeb.GenChapterLive.FormComponent do
   alias Guideme.Chapters
 
   @impl true
-  def render(assigns) do
-    ~H"""
-    <div>
-      <.header>
-        <%= @title %>
-        <:subtitle>Use this form to manage chapter records in your database.</:subtitle>
-      </.header>
-
-      <.simple_form
-        for={@form}
-        id="chapter-form"
-        phx-target={@myself}
-        phx-change="validate"
-        phx-submit="save"
-      >
-        <.input field={@form[:title]} type="text" label="Title" />
-        <:actions>
-          <.button phx-disable-with="Saving...">Save Chapter</.button>
-        </:actions>
-      </.simple_form>
-    </div>
-    """
-  end
-
-  @impl true
   def update(%{chapter: chapter} = assigns, socket) do
     changeset = Chapters.change_chapter(chapter)
 
