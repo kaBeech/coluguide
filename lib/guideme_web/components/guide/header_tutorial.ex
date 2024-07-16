@@ -5,7 +5,7 @@ defmodule HeaderTutorial do
   def render_header_tutorial(assigns) do
     ~H"""
     <div class="flex column justifyLeft gap1">
-      <div class="flex justifyCenter gap1 textAccent">
+      <div class="flex justifyCenter gap1 textAccent navTutContainer">
         <p class="navTut textAccent">
           <span class="link">
             
@@ -38,6 +38,9 @@ defmodule HeaderTutorial do
             Click a <input type="checkbox" /> checkbox to track your progress
           </span>
         </p>
+        <span class="hoverHidden marginTop3 marginBottom1">
+          View hints by hovering over an <span class="link">orange icon</span> above
+        </span>
       </div>
     </div>
     """

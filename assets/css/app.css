@@ -403,6 +403,18 @@ button {
   margin-bottom: 2rem;
 }
 
+.marginBottom3 {
+  margin-bottom: 3rem;
+}
+
+.marginBottom4 {
+  margin-bottom: 4rem;
+}
+
+.marginBottom5 {
+  margin-bottom: 5rem;
+}
+
 .marginTop0 {
   margin-top: 0;
 }
@@ -520,6 +532,19 @@ button {
 
 .navTut:hover .hidden {
   display: block;
+  position: fixed;
+  top: 7.5%;
+  left: 25%;
+  width: 50%;
+  text-align: center;
+}
+
+.navTutContainer:hover .hoverHidden {
+  display: none;
+}
+
+.navTutContainer .hoverHidden {
+  position: absolute;
 }
 
 .textBright {
