@@ -38,7 +38,7 @@ defmodule Step do
           </span>
         <% end %>
         <%= if step["guide_id"] do %>
-          <a href={"/guides/" <> to_string(step["guide_id"])}>
+          <a href={"/guide/" <> to_string(step["guide_id"])}>
             
           </a>
         <% else %>
