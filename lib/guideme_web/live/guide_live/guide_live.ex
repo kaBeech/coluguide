@@ -21,22 +21,4 @@ defmodule GuidemeWeb.GuideLive do
      |> assign(:guide, Guides.get_guide!(id))
      |> assign(:steps, map_sql_result(Steps.list_guide_steps!(elem(Integer.parse(id), 0))))}
   end
-
-  @impl true
-  def render(assigns) do
-    ~H"""
-    <div class="flex column alignCenter textBigger">
-      <%= if @guide.template_id == 1 do %>
-        <%= render_header_tutorial(assigns) %>
-      <% end %>
-      <h1 class="marginTop5">
-        <%= @guide.title %>
-      </h1>
-      <ul>
-        <%= render_steps(assigns) %>
-      </ul>
-      <%= render_navbar(assigns) %>
-    </div>
-    """
-  end
 end
