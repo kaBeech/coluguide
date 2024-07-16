@@ -61,11 +61,16 @@ defmodule GuidemeWeb.Router do
     pipe_through(:auth)
     live "/hype", HypeLive
 
-    live "/chapters", ChapterLive.Index
-    live "/chapters/new", ChapterLive.New
+    live "/chapters/select", ChapterLive.Select
+    live "/chapters", ChapterLive.Index, :index
+    live "/chapters/new", ChapterLive.List, :new
+    # live "/chapters/new", ChapterLive.New
+    live "/chapters/:id/edit", ChapterLive.Index, :edit
+    live "/chapters/:id", ChapterLive.Show, :show
+    live "/chapters/:id/show/edit", ChapterLive.Show, :edit
 
-    live "/chapters/:id/guides/new", GuideLive.New
     live "/guides/:id", GuideLive.Show
+    live "/chapters/:id/guides/new", GuideLive.New
 
     ### Generated views temporarily here for modeling - will delete later ###
 
