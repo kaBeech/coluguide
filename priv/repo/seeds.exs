@@ -292,6 +292,13 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
   chapter_id: 2
 })
 
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "Move a piece to an empty space",
+  name: "Move a piece to an empty space in Chess",
+  template_id: 2,
+  chapter_id: 2
+})
+
 # Win a game of Chess - Steps
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Set up the game",
@@ -363,6 +370,18 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Make a special move",
   guide_id: 6,
   number: 3
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Don't make a move if it would checkmate your King!",
+  guide_id: 7,
+  number: 1
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Move one of your pieces in the regular way",
+  guide_id: 7,
+  number: 2
 })
 
 # Win a game of Chess - Step Images
