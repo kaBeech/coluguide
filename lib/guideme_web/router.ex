@@ -64,13 +64,11 @@ defmodule GuidemeWeb.Router do
     live "/chapters/select", ChapterLive.Select
     live "/chapters", ChapterLive.Index, :index
     live "/chapters/new", ChapterLive.List, :new
-    # live "/chapters/new", ChapterLive.New
     live "/chapters/:id/edit", ChapterLive.Index, :edit
     live "/chapters/:id", ChapterLive.Show, :show
     live "/chapters/:id/show/edit", ChapterLive.Show, :edit
 
     live "/guide/:id", GuideLive.Guide
-    # live "/chapters/:id/guides/new", GuideLive.New
     live "/guides", GuideLive.Index, :index
     live "/guides/new", GuideLive.Index, :new
     live "/guides/:id/edit", GuideLive.Index, :edit
@@ -78,18 +76,6 @@ defmodule GuidemeWeb.Router do
     live "/guides/:id/show/edit", GuideLive.Show, :edit
 
     ### Generated views temporarily here for modeling - will delete later ###
-
-    live "/gen/chapters/list", GenChapterLive.Index, :index
-    live "/gen/chapters/new", GenChapterLive.Index, :new
-    live "/gen/chapters/:id/edit", GenChapterLive.Index, :edit
-    live "/gen/chapters/:id", GenChapterLive.Show, :show
-    live "/gen/chapters/:id/show/edit", GenChapterLive.Show, :edit
-
-    live "/gen/guides", GenGuideLive.Index, :index
-    live "/gen/guides/new", GenGuideLive.Index, :new
-    live "/gen/guides/:id/edit", GenGuideLive.Index, :edit
-    live "/gen/guides/:id", GenGuideLive.Show, :show
-    live "/gen/guides/:id/show/edit", GenGuideLive.Show, :edit
 
     live "/gen/steps", GenStepLive.Index, :index
     live "/gen/steps/new", GenStepLive.Index, :new
