@@ -1,12 +1,11 @@
 # To Do
 
-## Last
+## Things to address
 
-- Add basic auth with Pow
-
-## Next
-
-- Add Frontend Functions? Actually I might do more Backend structure first
+- Make duplicate Chapter, Guide, Step, etc. tables. One will be used for 
+pre-seeded data, the other for user-created data. This way I (or other GuideMe 
+maintainers) can adjust pre-seeded content without getting id's mixed up with
+ids from user-created content.
 
 ## Features to make sure to add
 
