@@ -278,14 +278,14 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
 })
 
 Guideme.Repo.insert!(%Guideme.Guides.Guide{
-  title: "Set up a game of Chess",
+  title: "Set up the game",
   name: "Set up a game of Chess",
   template_id: 2,
   chapter_id: 2
 })
 
 Guideme.Repo.insert!(%Guideme.Guides.Guide{
-  title: "Take turns in Chess",
+  title: "Take turns",
   name: "Take turns in Chess",
   introduction: "Each player takes turns moving their pieces in one of the following ways:",
   template_id: 2,
