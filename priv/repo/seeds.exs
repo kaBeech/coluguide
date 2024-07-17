@@ -408,8 +408,8 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Capturing a piece means removing it from play",
-  guide_id: 7,
-  number: 3
+  guide_id: 8,
+  number: 1
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
