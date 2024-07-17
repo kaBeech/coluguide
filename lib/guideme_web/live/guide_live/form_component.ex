@@ -4,6 +4,16 @@ defmodule GuidemeWeb.GuideLive.FormComponent do
   alias Guideme.Guides
   alias Guideme.Chapters
 
+  defp list_chapter_ids do
+    Chapters.list_chapters()
+    |> Enum.map(&{&1.id, &1.title})
+  end
+
+  defp list_template_ids do
+    Guides.list_templates()
+    |> Enum.map(&{&1.id, &1.name})
+  end
+
   @impl true
   def render(assigns) do
     ~H"""
@@ -21,8 +31,18 @@ defmodule GuidemeWeb.GuideLive.FormComponent do
         phx-submit="save"
       >
         <.input field={@form[:title]} type="text" label="Title" />
-        <.input field={@form[:template_id]} type="text" label="Template ID" />
-        <.input field={@form[:chapter_id]} type="text" label="Chapter ID" />
+        <.input
+          field={@form[:template_id]}
+          type="select"
+          options={list_template_ids()}
+          label="Template ID"
+        />
+        <.input
+          field={@form[:chapter_id]}
+          type="select"
+          options={list_chapter_ids()}
+          label="Chapter ID"
+        />
         <.input field={@form[:name]} type="text" label="Short title" />
         <.input field={@form[:icon]} type="text" label="Icon" />
         <:actions>
