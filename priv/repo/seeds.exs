@@ -102,19 +102,19 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
-  full_text: "View Guides",
+  full_text: "Review new and updated Guides",
   guide_id: 1,
   number: 3
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
-  full_text: "Edit a Guide",
+  full_text: "Assign Guides to Users for review",
   guide_id: 1,
   number: 4
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
-  full_text: "Delete a Guide",
+  full_text: "Create, update, and delete Guides",
   guide_id: 1,
   number: 5
 })
