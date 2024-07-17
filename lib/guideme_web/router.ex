@@ -59,30 +59,41 @@ defmodule GuidemeWeb.Router do
     get("/", PageController, :home)
 
     pipe_through(:auth)
+
+    # Scratch
     live "/hype", HypeLive
 
+    # Chapters
     live "/chapters/select", ChapterLive.Select
+
+    # Chapter CRUD
     live "/chapters", ChapterLive.Index, :index
     live "/chapters/new", ChapterLive.List, :new
     live "/chapters/:id/edit", ChapterLive.Index, :edit
+
     live "/chapters/:id", ChapterLive.Show, :show
     live "/chapters/:id/show/edit", ChapterLive.Show, :edit
 
+    # Guides
     live "/guide/:id", GuideLive.Guide
+
+    # Guide CRUD
     live "/guides", GuideLive.Index, :index
     live "/guides/new", GuideLive.Index, :new
     live "/guides/:id/edit", GuideLive.Index, :edit
+
     live "/guides/:id", GuideLive.Show, :show
     live "/guides/:id/show/edit", GuideLive.Show, :edit
 
+    # Step CRUD
+    live "/steps", StepLive.Index, :index
+    live "/steps/new", StepLive.Index, :new
+    live "/steps/:id/edit", StepLive.Index, :edit
+
+    live "/steps/:id", StepLive.Show, :show
+    live "/steps/:id/show/edit", StepLive.Show, :edit
+
     ### Generated views temporarily here for modeling - will delete later ###
-
-    live "/gen/steps", GenStepLive.Index, :index
-    live "/gen/steps/new", GenStepLive.Index, :new
-    live "/gen/steps/:id/edit", GenStepLive.Index, :edit
-
-    live "/gen/steps/:id", GenStepLive.Show, :show
-    live "/gen/steps/:id/show/edit", GenStepLive.Show, :edit
 
     live "/gen/step_images", GenStepImageLive.Index, :index
     live "/gen/step_images/new", GenStepImageLive.Index, :new

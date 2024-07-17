@@ -1,7 +1,12 @@
-defmodule GuidemeWeb.GenStepLive.FormComponent do
+defmodule GuidemeWeb.StepLive.FormComponent do
   use GuidemeWeb, :live_component
 
-  alias Guideme.Steps
+  alias Guideme.{Steps, Guides}
+
+  defp list_guide_ids do
+    Guides.list_guides()
+    |> Enum.map(&{&1.name, &1.id})
+  end
 
   @impl true
   def render(assigns) do
@@ -19,6 +24,7 @@ defmodule GuidemeWeb.GenStepLive.FormComponent do
         phx-change="validate"
         phx-submit="save"
       >
+        <.input field={@form[:guide_id]} type="select" options={list_guide_ids()} label="Guide ID" />
         <.input field={@form[:full_text]} type="text" label="Full text" />
         <.input field={@form[:number]} type="number" label="Number" />
         <.input field={@form[:external_link]} type="text" label="External link" />
@@ -70,7 +76,10 @@ defmodule GuidemeWeb.GenStepLive.FormComponent do
   end
 
   defp save_step(socket, :new, step_params) do
-    case Steps.create_step(step_params) do
+    case Steps.create_step(
+           Guides.get_guide!(step_params["guide_id"]),
+           step_params
+         ) do
       {:ok, step} ->
         notify_parent({:saved, step})
 

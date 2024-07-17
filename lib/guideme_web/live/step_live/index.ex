@@ -1,4 +1,4 @@
-defmodule GuidemeWeb.GenStepLive.Index do
+defmodule GuidemeWeb.StepLive.Index do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
 
@@ -34,7 +34,7 @@ defmodule GuidemeWeb.GenStepLive.Index do
   end
 
   @impl true
-  def handle_info({GuidemeWeb.GenStepLive.FormComponent, {:saved, step}}, socket) do
+  def handle_info({GuidemeWeb.StepLive.FormComponent, {:saved, step}}, socket) do
     {:noreply, stream_insert(socket, :steps, step)}
   end
 
