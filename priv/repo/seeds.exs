@@ -253,7 +253,7 @@ Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-  step_id: 5,
+  step_id: 9,
   guide_id: 3
 })
 
