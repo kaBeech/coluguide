@@ -284,6 +284,14 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
   chapter_id: 2
 })
 
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "Take turns in Chess",
+  name: "Take turns in Chess",
+  introduction: "Each player takes turns moving their pieces in one of the following ways:",
+  template_id: 2,
+  chapter_id: 2
+})
+
 # Winning Chess - Steps
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Set up the game",
@@ -330,6 +338,30 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Choose who will play as which color",
   guide_id: 5,
+  number: 3
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "The player playing White goes first",
+  guide_id: 5,
+  number: 4
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Move to an empty space",
+  guide_id: 6,
+  number: 1
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Capture an opponent's piece",
+  guide_id: 6,
+  number: 2
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Make a special move",
+  guide_id: 6,
   number: 3
 })
 
