@@ -596,6 +596,10 @@ button {
   border-radius: 8px;
 }
 
+.imageAutoSize {
+  min-width: 30%;
+}
+
 .moveDown {
   margin-top: 10%;
 }

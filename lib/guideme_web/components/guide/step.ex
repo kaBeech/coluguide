@@ -29,7 +29,11 @@ defmodule Step do
             class="hidden"
           >
             <div class="dimScreenImageHolder">
-              <img class="textDull imageBorder" src={"/images/" <> step["src"]} alt={step["alt"]} />
+              <img
+                class="textDull imageBorder imageAutoSize"
+                src={"/images/" <> step["src"]}
+                alt={step["alt"]}
+              />
             </div>
           </div>
         <% else %>
