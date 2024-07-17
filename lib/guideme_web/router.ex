@@ -75,6 +75,9 @@ defmodule GuidemeWeb.Router do
 
     # pipe_through(:editor_or_admin)
 
+    # CRUD Directory
+    live "/crud", CRUDLive
+
     # Chapter CRUD
     live "/chapters", ChapterLive.Index, :index
     live "/chapters/new", ChapterLive.List, :new
