@@ -191,59 +191,59 @@ Guideme.Repo.insert!(%Guideme.Steps.StepImage{
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 2,
   alt: "A Guide's title is shown above its steps",
-  step_id: 2
+  step_id: 6
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 3,
   alt: "If a Guide has introductory information, it's shown below the title 
     and above the steps",
-  step_id: 3
+  step_id: 7
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 4,
   alt: "A Guide's steps are shown below its title (and introduction if any)",
-  step_id: 4
+  step_id: 8
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 5,
   alt: "The  ,  , and  icons and checkbox are shown before each step's 
     number and full text",
-  step_id: 5
+  step_id: 9
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 6,
   alt: "Bright orange icons are clickable, dull teal icons are non-clickable 
     placeholders.",
-  step_id: 6
+  step_id: 10
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 7,
   alt: "Orange   icons open a relevant external links in a new browser tab",
-  step_id: 7
+  step_id: 11
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 8,
   alt: "Image pop-ups show in the center of the screen and darken the rest of 
     the page",
-  step_id: 8
+  step_id: 12
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 9,
   alt: "Orange   icons are just links to other guides in GuideMe",
-  step_id: 9
+  step_id: 13
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 10,
   alt: "Marking checkboxes feels good and can help keep us organized",
-  step_id: 10
+  step_id: 14
 })
 
 # Use GuideMe - Details Links
