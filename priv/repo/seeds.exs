@@ -82,6 +82,34 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
 })
 
 Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "Create a Guide",
+  name: "Create a Guide",
+  template_id: 2,
+  chapter_id: 1
+})
+
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "View Guides",
+  name: "View Guides",
+  template_id: 2,
+  chapter_id: 1
+})
+
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "Edit a Guide",
+  name: "Edit a Guide",
+  template_id: 2,
+  chapter_id: 1
+})
+
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "Delete a Guide",
+  name: "Delete a Guide",
+  template_id: 2,
+  chapter_id: 1
+})
+
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
   title: "Use Step Icons",
   name: "Use Step Icons",
   template_id: 2,
