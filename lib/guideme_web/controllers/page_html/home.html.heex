@@ -2,16 +2,20 @@
 <div class="container flex column alignCenter">
   <h1 class="marginBottom1">Welcome to GuideMe!</h1>
   <div :if={is_nil(Pow.Plug.current_user(@conn))} class="flex justifyCenter marginBottom2">
-    <a href="session/new">
-      <div class="logo glow">
-        <!-- <div class="logoFont">󰞈</div> -->
-        <div class="logoFont"></div>
-      </div>
-    </a>
     <a href="registration/new">
       <div class="logo glow">
-        <!-- <div class="logoFont">󱁻</div> -->
+        <div class="logoFont"></div>
+        <p class="lineHeightBigger textBright">
+          Register
+        </p>
+      </div>
+    </a>
+    <a href="session/new">
+      <div class="logo glow">
         <div class="logoFont">󱃔</div>
+        <p class="lineHeightBigger textBright">
+          Sign In
+        </p>
       </div>
     </a>
   </div>
