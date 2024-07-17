@@ -10,6 +10,7 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
+# Core data
 Guideme.Repo.insert!(%Guideme.Guides.Template{
   name: "chapter"
 })
@@ -18,6 +19,7 @@ Guideme.Repo.insert!(%Guideme.Guides.Template{
   name: "standard"
 })
 
+# Using GuideMe - Images
 Guideme.Repo.insert!(%Guideme.Images.Image{
   src: "guide_template_standard.png"
 })
@@ -58,10 +60,12 @@ Guideme.Repo.insert!(%Guideme.Images.Image{
   src: "guide_checkbox.png"
 })
 
+# Using GuideMe - Chapters
 Guideme.Repo.insert!(%Guideme.Chapters.Chapter{
   title: "Using GuideMe"
 })
 
+# Using GuideMe - Guides
 Guideme.Repo.insert!(%Guideme.Guides.Guide{
   title: "Using GuideMe",
   name: "Using GuideMe",
@@ -84,6 +88,7 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
   chapter_id: 1
 })
 
+# Using GuideMe - Steps
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Use a Guide",
   guide_id: 1,
@@ -151,6 +156,7 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
   number: 5
 })
 
+# Using GuideMe - Step Images
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 1,
   alt: "An example Guide page showing the title, steps, and icons for each 
@@ -216,6 +222,7 @@ Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   step_id: 10
 })
 
+# Using GuideMe - Details Links
 Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
   step_id: 1,
   guide_id: 2
