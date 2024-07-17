@@ -306,6 +306,14 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
   chapter_id: 2
 })
 
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "Make a special move",
+  name: "Make a special move in Chess",
+  introduction: "Choose from one of the following special moves (if their conditions are met):",
+  template_id: 2,
+  chapter_id: 2
+})
+
 # Win a game of Chess - Steps
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Set up the game",
@@ -408,6 +416,36 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
     occupied by an opponent's piece to capture it",
   guide_id: 8,
   number: 3
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Check",
+  guide_id: 9,
+  number: 1
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Checkmate",
+  guide_id: 9,
+  number: 2
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "En passant",
+  guide_id: 9,
+  number: 3
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Castling",
+  guide_id: 9,
+  number: 4
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Pawn Promotion",
+  guide_id: 9,
+  number: 5
 })
 
 # Win a game of Chess - Step Images
