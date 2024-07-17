@@ -299,6 +299,13 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
   chapter_id: 2
 })
 
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "Capture an opponent's piece",
+  name: "Capture an opponent's piece in Chess",
+  template_id: 2,
+  chapter_id: 2
+})
+
 # Win a game of Chess - Steps
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Set up the game",
@@ -382,6 +389,25 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Move one of your pieces in the regular way",
   guide_id: 7,
   number: 2
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Capturing a piece means removing it from play",
+  guide_id: 7,
+  number: 1
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Don't make a move if it would checkmate your King!",
+  guide_id: 8,
+  number: 2
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Move one of your pieces in its regular way onto a space 
+    occupied by an opponent's piece to capture it",
+  guide_id: 8,
+  number: 3
 })
 
 # Win a game of Chess - Step Images
