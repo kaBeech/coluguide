@@ -6,12 +6,12 @@ defmodule GuidemeWeb.GuideLive.FormComponent do
 
   defp list_chapter_ids do
     Chapters.list_chapters()
-    |> Enum.map(&{&1.id, &1.title})
+    |> Enum.map(&{&1.title, &1.id})
   end
 
   defp list_template_ids do
     Guides.list_templates()
-    |> Enum.map(&{&1.id, &1.name})
+    |> Enum.map(&{&1.name, &1.id})
   end
 
   @impl true
