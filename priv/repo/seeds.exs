@@ -260,3 +260,54 @@ Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
   step_id: 5,
   guide_id: 3
 })
+
+# Winning Chess - Images
+
+# Winning Chess - Chapters
+Guideme.Repo.insert!(%Guideme.Chapters.Chapter{
+  title: "Winning Chess"
+})
+
+# Winning Chess - Guides
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "Winning Chess",
+  name: "Winning Chess",
+  icon: " ",
+  template_id: 1,
+  chapter_id: 2
+})
+
+# Winning Chess - Steps
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Set up the game",
+  guide_id: 4,
+  number: 1
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Each player takes turns moving their pieces",
+  guide_id: 4,
+  number: 2
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Avoid letting your King be checkmated (otherwise you lose)",
+  guide_id: 4,
+  number: 3
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Checkmate your opponent's King to win",
+  guide_id: 4,
+  number: 4
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Thank your opponent and clean up the game",
+  guide_id: 4,
+  number: 5
+})
+
+# Winning Chess - Step Images
+
+# Winning Chess - Details Links
