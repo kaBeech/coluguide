@@ -34,7 +34,7 @@ defmodule GuidemeWeb.ChapterLive.Index do
   end
 
   @impl true
-  def handle_info({GuidemeWeb.GenChapterLive.FormComponent, {:saved, chapter}}, socket) do
+  def handle_info({GuidemeWeb.ChapterLive.FormComponent, {:saved, chapter}}, socket) do
     {:noreply, stream_insert(socket, :chapters, chapter)}
   end
 

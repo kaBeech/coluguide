@@ -21,7 +21,7 @@
   on_cancel={JS.patch(~p"/chapters/#{@chapter}")}
 >
   <.live_component
-    module={GuidemeWeb.GenChapterLive.FormComponent}
+    module={GuidemeWeb.ChapterLive.FormComponent}
     id={@chapter.id}
     title={@page_title}
     action={@live_action}
