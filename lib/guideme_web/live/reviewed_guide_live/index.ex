@@ -1,4 +1,4 @@
-defmodule GuidemeWeb.GenReviewedGuideLive.Index do
+defmodule GuidemeWeb.ReviewedGuideLive.Index do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
 
@@ -35,7 +35,7 @@ defmodule GuidemeWeb.GenReviewedGuideLive.Index do
 
   @impl true
   def handle_info(
-        {GuidemeWeb.GenReviewedGuideLive.FormComponent, {:saved, reviewed_guide}},
+        {GuidemeWeb.ReviewedGuideLive.FormComponent, {:saved, reviewed_guide}},
         socket
       ) do
     {:noreply, stream_insert(socket, :reviewed_guides, reviewed_guide)}

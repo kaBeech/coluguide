@@ -110,12 +110,12 @@ defmodule GuidemeWeb.Router do
     live "/gen/step_images/:id", GenStepImageLive.Show, :show
     live "/gen/step_images/:id/show/edit", GenStepImageLive.Show, :edit
 
-    live "/gen/reviewed_guides", GenReviewedGuideLive.Index, :index
-    live "/gen/reviewed_guides/new", GenReviewedGuideLive.Index, :new
-    live "/gen/reviewed_guides/:id/edit", GenReviewedGuideLive.Index, :edit
+    live "/reviewed_guides", ReviewedGuideLive.Index, :index
+    live "/reviewed_guides/new", ReviewedGuideLive.Index, :new
+    live "/reviewed_guides/:id/edit", ReviewedGuideLive.Index, :edit
 
-    live "/gen/reviewed_guides/:id", GenReviewedGuideLive.Show, :show
-    live "/gen/reviewed_guides/:id/show/edit", GenReviewedGuideLive.Show, :edit
+    live "/reviewed_guides/:id", ReviewedGuideLive.Show, :show
+    live "/reviewed_guides/:id/show/edit", ReviewedGuideLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.

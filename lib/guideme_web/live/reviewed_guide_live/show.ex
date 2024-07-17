@@ -1,4 +1,4 @@
-defmodule GuidemeWeb.GenReviewedGuideLive.Show do
+defmodule GuidemeWeb.ReviewedGuideLive.Show do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
 

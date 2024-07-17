@@ -21,7 +21,7 @@
   on_cancel={JS.patch(~p"/reviewed_guides/#{@reviewed_guide}")}
 >
   <.live_component
-    module={GuidemeWeb.GenReviewedGuideLive.FormComponent}
+    module={GuidemeWeb.ReviewedGuideLive.FormComponent}
     id={@reviewed_guide.id}
     title={@page_title}
     action={@live_action}
