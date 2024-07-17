@@ -19,7 +19,7 @@ Guideme.Repo.insert!(%Guideme.Guides.Template{
   name: "standard"
 })
 
-# Using GuideMe - Images
+# Use GuideMe - Images
 Guideme.Repo.insert!(%Guideme.Images.Image{
   src: "guide_template_standard.png"
 })
@@ -60,15 +60,15 @@ Guideme.Repo.insert!(%Guideme.Images.Image{
   src: "guide_checkbox.png"
 })
 
-# Using GuideMe - Chapters
+# Use GuideMe - Chapters
 Guideme.Repo.insert!(%Guideme.Chapters.Chapter{
-  title: "Using GuideMe"
+  title: "Use GuideMe"
 })
 
-# Using GuideMe - Guides
+# Use GuideMe - Guides
 Guideme.Repo.insert!(%Guideme.Guides.Guide{
-  title: "Using GuideMe",
-  name: "Using GuideMe",
+  title: "Use GuideMe",
+  name: "Use GuideMe",
   icon: "󱃔 ",
   template_id: 1,
   chapter_id: 1
@@ -116,7 +116,7 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
   chapter_id: 1
 })
 
-# Using GuideMe - Steps
+# Use GuideMe - Steps
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Use a Guide",
   guide_id: 1,
@@ -184,7 +184,7 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
   number: 5
 })
 
-# Using GuideMe - Step Images
+# Use GuideMe - Step Images
 Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   image_id: 1,
   alt: "An example Guide page showing the title, steps, and icons for each 
@@ -250,7 +250,7 @@ Guideme.Repo.insert!(%Guideme.Steps.StepImage{
   step_id: 10
 })
 
-# Using GuideMe - Details Links
+# Use GuideMe - Details Links
 Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
   step_id: 1,
   guide_id: 2
@@ -261,17 +261,17 @@ Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
   guide_id: 3
 })
 
-# Winning Chess - Images
+# Win a game of Chess - Images
 
-# Winning Chess - Chapters
+# Win a game of Chess - Chapters
 Guideme.Repo.insert!(%Guideme.Chapters.Chapter{
-  title: "Winning Chess"
+  title: "Win a game of Chess"
 })
 
-# Winning Chess - Guides
+# Win a game of Chess - Guides
 Guideme.Repo.insert!(%Guideme.Guides.Guide{
-  title: "Winning Chess",
-  name: "Winning Chess",
+  title: "Win a game of Chess",
+  name: "Win a game of Chess",
   icon: " ",
   template_id: 1,
   chapter_id: 2
@@ -292,7 +292,7 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
   chapter_id: 2
 })
 
-# Winning Chess - Steps
+# Win a game of Chess - Steps
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Set up the game",
   guide_id: 4,
@@ -365,6 +365,6 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
   number: 3
 })
 
-# Winning Chess - Step Images
+# Win a game of Chess - Step Images
 
-# Winning Chess - Details Links
+# Win a game of Chess - Details Links
