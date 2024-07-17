@@ -116,6 +116,14 @@ defmodule GuidemeWeb.Router do
 
     live "/reviewed_guides/:id", ReviewedGuideLive.Show, :show
     live "/reviewed_guides/:id/show/edit", ReviewedGuideLive.Show, :edit
+
+    # Image CRUD
+    live "/images", ImageLive.Index, :index
+    live "/images/new", ImageLive.Index, :new
+    live "/images/:id/edit", ImageLive.Index, :edit
+
+    live "/images/:d", ImageLive.Show, :show
+    live "/images/:id/show/edit", ImageLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
