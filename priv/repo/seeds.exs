@@ -96,13 +96,13 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
-  full_text: "Create a Guide",
+  full_text: "Review Guides that have been assigned to you",
   guide_id: 1,
   number: 2
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
-  full_text: "Review new and updated Guides",
+  full_text: "See which updated Guides need to be reviewed again",
   guide_id: 1,
   number: 3
 })
