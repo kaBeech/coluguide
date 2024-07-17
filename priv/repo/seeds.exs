@@ -287,7 +287,8 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
 Guideme.Repo.insert!(%Guideme.Guides.Guide{
   title: "Take turns",
   name: "Take turns in Chess",
-  introduction: "Each player takes turns moving their pieces in one of the following ways:",
+  introduction: "Each player takes turns moving their pieces in one of the 
+    following ways:",
   template_id: 2,
   chapter_id: 2
 })
@@ -309,7 +310,17 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
 Guideme.Repo.insert!(%Guideme.Guides.Guide{
   title: "Make a special move",
   name: "Make a special move in Chess",
-  introduction: "Choose from one of the following special moves (if their conditions are met):",
+  introduction: "Choose from one of the following special moves (if their 
+    conditions are met):",
+  template_id: 2,
+  chapter_id: 2
+})
+
+Guideme.Repo.insert!(%Guideme.Guides.Guide{
+  title: "Make a regular move",
+  name: "Make a regular move in Chess",
+  introduction: "Each piece has regular moves it can make. Choose from the 
+    following pieces to see its regular moves:",
   template_id: 2,
   chapter_id: 2
 })
@@ -446,6 +457,44 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Pawn Promotion",
   guide_id: 9,
   number: 5
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Pawns move forward one (or sometimes two) spaces to an empty 
+    space, or capture diagonally forward",
+  guide_id: 10,
+  number: 1
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Rooks move horizontally or vertically any number of spaces",
+  guide_id: 10,
+  number: 2
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Knights move in an L-shape",
+  guide_id: 10,
+  number: 3
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Bishops move diagonally any number of spaces",
+  guide_id: 10,
+  number: 4
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Queens move horizontally, vertically, or diagonally any number 
+    of spaces",
+  guide_id: 10,
+  number: 5
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.Step{
+  full_text: "Kings move one space in any direction",
+  guide_id: 10,
+  number: 6
 })
 
 # Win a game of Chess - Step Images
