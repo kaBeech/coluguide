@@ -1,4 +1,4 @@
-defmodule GuidemeWeb.GenDetailsLinkLive.Index do
+defmodule GuidemeWeb.DetailsLinkLive.Index do
   use GuidemeWeb, :live_view
   use Phoenix.LiveView
 
@@ -34,7 +34,7 @@ defmodule GuidemeWeb.GenDetailsLinkLive.Index do
   end
 
   @impl true
-  def handle_info({GuidemeWeb.GenDetailsLinkLive.FormComponent, {:saved, details_link}}, socket) do
+  def handle_info({GuidemeWeb.DetailsLinkLive.FormComponent, {:saved, details_link}}, socket) do
     {:noreply, stream_insert(socket, :details_links, details_link)}
   end
 

@@ -12,6 +12,8 @@
   rows={@streams.details_links}
   row_click={fn {_id, details_link} -> JS.navigate(~p"/details_links/#{details_link}") end}
 >
+  <:col :let={{_id, details_link}} label="Guide ID"><%= details_link.guide_id %></:col>
+  <:col :let={{_id, details_link}} label="Step ID"><%= details_link.step_id %></:col>
   <:action :let={{_id, details_link}}>
     <div class="sr-only">
       <.link navigate={~p"/details_links/#{details_link}"}>Show</.link>
@@ -35,7 +37,7 @@
   on_cancel={JS.patch(~p"/details_links")}
 >
   <.live_component
-    module={GuidemeWeb.GenDetailsLinkLive.FormComponent}
+    module={GuidemeWeb.DetailsLinkLive.FormComponent}
     id={@details_link.id || :new}
     title={@page_title}
     action={@live_action}

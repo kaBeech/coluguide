@@ -93,6 +93,14 @@ defmodule GuidemeWeb.Router do
     live "/steps/:id", StepLive.Show, :show
     live "/steps/:id/show/edit", StepLive.Show, :edit
 
+    # Details Link CRUD
+    live "/details_links", DetailsLinkLive.Index, :index
+    live "/details_links/new", DetailsLinkLive.Index, :new
+    live "/details_links/:id/edit", DetailsLinkLive.Index, :edit
+
+    live "/details_links/:id", DetailsLinkLive.Show, :show
+    live "/details_links/:id/show/edit", DetailsLinkLive.Show, :edit
+
     ### Generated views temporarily here for modeling - will delete later ###
 
     live "/gen/step_images", GenStepImageLive.Index, :index
@@ -101,13 +109,6 @@ defmodule GuidemeWeb.Router do
 
     live "/gen/step_images/:id", GenStepImageLive.Show, :show
     live "/gen/step_images/:id/show/edit", GenStepImageLive.Show, :edit
-
-    live "/gen/details_links", GenDetailsLinkLive.Index, :index
-    live "/gen/details_links/new", GenDetailsLinkLive.Index, :new
-    live "/gen/details_links/:id/edit", GenDetailsLinkLive.Index, :edit
-
-    live "/gen/details_links/:id", GenDetailsLinkLive.Show, :show
-    live "/gen/details_links/:id/show/edit", GenDetailsLinkLive.Show, :edit
 
     live "/gen/reviewed_guides", GenReviewedGuideLive.Index, :index
     live "/gen/reviewed_guides/new", GenReviewedGuideLive.Index, :new

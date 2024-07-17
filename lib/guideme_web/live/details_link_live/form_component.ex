@@ -1,7 +1,17 @@
-defmodule GuidemeWeb.GenDetailsLinkLive.FormComponent do
+defmodule GuidemeWeb.DetailsLinkLive.FormComponent do
   use GuidemeWeb, :live_component
 
-  alias Guideme.Steps
+  alias Guideme.{Steps, Guides}
+
+  defp list_step_ids do
+    Steps.list_steps()
+    |> Enum.map(&{&1.full_text, &1.id})
+  end
+
+  defp list_guide_ids do
+    Guides.list_guides()
+    |> Enum.map(&{&1.name, &1.id})
+  end
 
   @impl true
   def render(assigns) do
@@ -19,6 +29,8 @@ defmodule GuidemeWeb.GenDetailsLinkLive.FormComponent do
         phx-change="validate"
         phx-submit="save"
       >
+        <.input field={@form[:step_id]} type="select" options={list_step_ids()} label="Step ID" />
+        <.input field={@form[:guide_id]} type="select" options={list_guide_ids()} label="Guide ID" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Details link</.button>
         </:actions>
@@ -67,7 +79,10 @@ defmodule GuidemeWeb.GenDetailsLinkLive.FormComponent do
   end
 
   defp save_details_link(socket, :new, details_link_params) do
-    case Steps.create_details_link(details_link_params) do
+    case Steps.create_details_link(
+           Steps.get_step!(details_link_params["step_id"]),
+           details_link_params
+         ) do
       {:ok, details_link} ->
         notify_parent({:saved, details_link})
 
