@@ -8,12 +8,16 @@
   </:actions>
 </.header>
 
-<.list>
-</.list>
+<.list></.list>
 
 <.back navigate={~p"/details_links"}>Back to details_links</.back>
 
-<.modal :if={@live_action == :edit} id="details_link-modal" show on_cancel={JS.patch(~p"/details_links/#{@details_link}")}>
+<.modal
+  :if={@live_action == :edit}
+  id="details_link-modal"
+  show
+  on_cancel={JS.patch(~p"/details_links/#{@details_link}")}
+>
   <.live_component
     module={GuidemeWeb.DetailsLinkLive.FormComponent}
     id={@details_link.id}

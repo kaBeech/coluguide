@@ -14,7 +14,12 @@
 
 <.back navigate={~p"/reviewed_guides"}>Back to reviewed_guides</.back>
 
-<.modal :if={@live_action == :edit} id="reviewed_guide-modal" show on_cancel={JS.patch(~p"/reviewed_guides/#{@reviewed_guide}")}>
+<.modal
+  :if={@live_action == :edit}
+  id="reviewed_guide-modal"
+  show
+  on_cancel={JS.patch(~p"/reviewed_guides/#{@reviewed_guide}")}
+>
   <.live_component
     module={GuidemeWeb.ReviewedGuideLive.FormComponent}
     id={@reviewed_guide.id}

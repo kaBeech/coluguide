@@ -34,7 +34,10 @@ defmodule GuidemeWeb.ReviewedGuideLive.Index do
   end
 
   @impl true
-  def handle_info({GuidemeWeb.ReviewedGuideLive.FormComponent, {:saved, reviewed_guide}}, socket) do
+  def handle_info(
+        {GuidemeWeb.ReviewedGuideLive.FormComponent, {:saved, reviewed_guide}},
+        socket
+      ) do
     {:noreply, stream_insert(socket, :reviewed_guides, reviewed_guide)}
   end
 

@@ -5,7 +5,7 @@ defmodule Guideme.ReviewRecords.ReviewedGuide do
   schema "reviewed_guides" do
     field :reviewed_at, :date
     belongs_to :user, Guideme.Users.User
-    has_one :guide, Guideme.Guides.Guide
+    belongs_to :guide, Guideme.Guides.Guide
 
     timestamps(type: :utc_datetime)
   end
@@ -15,6 +15,5 @@ defmodule Guideme.ReviewRecords.ReviewedGuide do
     reviewed_guide
     |> cast(attrs, [:reviewed_at, :user_id, :guide_id])
     |> validate_required([:reviewed_at, :user_id, :guide_id])
-    |> unique_constraint([:guide_id, :user_id])
   end
 end

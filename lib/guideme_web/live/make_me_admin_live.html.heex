@@ -1,9 +1,0 @@
-<.form for={@form} phx-submit="make-me-admin">
-  <div class="flex column gap1">
-    <.input field={@form[:password]} type="text" placeholder="..." autocomplete="off" />
-    <.input field={@form[:user]} value={Pow.Plug.current_user(@conn)} />
-    <.button>
-      Make me admin please!
-    </.button>
-  </div>
-</.form>

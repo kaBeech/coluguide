@@ -14,7 +14,12 @@
 
 <.back navigate={~p"/chapters"}>Back to chapters</.back>
 
-<.modal :if={@live_action == :edit} id="chapter-modal" show on_cancel={JS.patch(~p"/chapters/#{@chapter}")}>
+<.modal
+  :if={@live_action == :edit}
+  id="chapter-modal"
+  show
+  on_cancel={JS.patch(~p"/chapters/#{@chapter}")}
+>
   <.live_component
     module={GuidemeWeb.ChapterLive.FormComponent}
     id={@chapter.id}

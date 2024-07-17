@@ -9,6 +9,7 @@ defmodule Guideme.Guides.Guide do
     field :name, :string
     field :icon, :string
     field :introduction, :string
+    has_many :steps, Guideme.Steps.Step
     has_many :linked_to_by, Guideme.Steps.Step
     has_many :users_have_reviewed, Guideme.ReviewRecords.ReviewedGuide
 

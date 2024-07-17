@@ -2,6 +2,17 @@ defmodule GuidemeWeb.GuideLive.FormComponent do
   use GuidemeWeb, :live_component
 
   alias Guideme.Guides
+  alias Guideme.Chapters
+
+  defp list_chapter_ids do
+    Chapters.list_chapters()
+    |> Enum.map(&{&1.title, &1.id})
+  end
+
+  defp list_template_ids do
+    Guides.list_templates()
+    |> Enum.map(&{&1.name, &1.id})
+  end
 
   @impl true
   def render(assigns) do
@@ -20,7 +31,18 @@ defmodule GuidemeWeb.GuideLive.FormComponent do
         phx-submit="save"
       >
         <.input field={@form[:title]} type="text" label="Title" />
-        <.input field={@form[:template]} type="text" label="Template" />
+        <.input
+          field={@form[:template_id]}
+          type="select"
+          options={list_template_ids()}
+          label="Template ID"
+        />
+        <.input
+          field={@form[:chapter_id]}
+          type="select"
+          options={list_chapter_ids()}
+          label="Chapter ID"
+        />
         <.input field={@form[:name]} type="text" label="Short title" />
         <.input field={@form[:icon]} type="text" label="Icon" />
         <:actions>
@@ -71,7 +93,10 @@ defmodule GuidemeWeb.GuideLive.FormComponent do
   end
 
   defp save_guide(socket, :new, guide_params) do
-    case Guides.create_guide(guide_params) do
+    case Guides.create_guide(
+           Chapters.get_chapter!(guide_params["chapter_id"]),
+           guide_params
+         ) do
       {:ok, guide} ->
         notify_parent({:saved, guide})
 

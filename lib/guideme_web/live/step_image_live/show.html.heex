@@ -8,12 +8,16 @@
   </:actions>
 </.header>
 
-<.list>
-</.list>
+<.list></.list>
 
 <.back navigate={~p"/step_images"}>Back to step_images</.back>
 
-<.modal :if={@live_action == :edit} id="step_image-modal" show on_cancel={JS.patch(~p"/step_images/#{@step_image}")}>
+<.modal
+  :if={@live_action == :edit}
+  id="step_image-modal"
+  show
+  on_cancel={JS.patch(~p"/step_images/#{@step_image}")}
+>
   <.live_component
     module={GuidemeWeb.StepImageLive.FormComponent}
     id={@step_image.id}

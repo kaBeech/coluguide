@@ -1,7 +1,17 @@
 defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
   use GuidemeWeb, :live_component
 
-  alias Guideme.ReviewRecords
+  alias Guideme.{ReviewRecords, Users, Guides}
+
+  defp list_guide_ids do
+    Guides.list_guides()
+    |> Enum.map(&{&1.name, &1.id})
+  end
+
+  defp list_user_ids do
+    Users.list_users()
+    |> Enum.map(&{&1.email, &1.id})
+  end
 
   @impl true
   def render(assigns) do
@@ -19,6 +29,8 @@ defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
         phx-change="validate"
         phx-submit="save"
       >
+        <.input field={@form[:user_id]} type="select" options={list_user_ids()} label="User ID" />
+        <.input field={@form[:guide_id]} type="select" options={list_guide_ids()} label="Guide ID" />
         <.input field={@form[:reviewed_at]} type="date" label="Reviewed at" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Reviewed guide</.button>
@@ -68,7 +80,10 @@ defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
   end
 
   defp save_reviewed_guide(socket, :new, reviewed_guide_params) do
-    case ReviewRecords.create_reviewed_guide(reviewed_guide_params) do
+    case ReviewRecords.create_reviewed_guide(
+           Users.get_user!(reviewed_guide_params["user_id"]),
+           reviewed_guide_params
+         ) do
       {:ok, reviewed_guide} ->
         notify_parent({:saved, reviewed_guide})
 

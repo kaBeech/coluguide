@@ -1,7 +1,17 @@
 defmodule GuidemeWeb.StepImageLive.FormComponent do
   use GuidemeWeb, :live_component
 
-  alias Guideme.Steps
+  alias Guideme.{Steps, Images}
+
+  defp list_step_ids do
+    Steps.list_steps()
+    |> Enum.map(&{&1.full_text, &1.id})
+  end
+
+  defp list_image_ids do
+    Images.list_images()
+    |> Enum.map(&{&1.src, &1.id})
+  end
 
   @impl true
   def render(assigns) do
@@ -19,7 +29,9 @@ defmodule GuidemeWeb.StepImageLive.FormComponent do
         phx-change="validate"
         phx-submit="save"
       >
-
+        <.input field={@form[:step_id]} type="select" options={list_step_ids()} label="Step ID" />
+        <.input field={@form[:image_id]} type="select" options={list_image_ids()} label="Image ID" />
+        <.input field={@form[:alt]} type="text" label="Alt Text" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Step image</.button>
         </:actions>
@@ -68,7 +80,10 @@ defmodule GuidemeWeb.StepImageLive.FormComponent do
   end
 
   defp save_step_image(socket, :new, step_image_params) do
-    case Steps.create_step_image(step_image_params) do
+    case Steps.create_step_image(
+           Steps.get_step!(step_image_params["step_id"]),
+           step_image_params
+         ) do
       {:ok, step_image} ->
         notify_parent({:saved, step_image})
 

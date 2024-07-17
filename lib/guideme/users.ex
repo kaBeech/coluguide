@@ -1,4 +1,5 @@
 defmodule Guideme.Users do
+  import Ecto.Query, warn: false
   alias Guideme.{Repo, Users.User}
 
   @type t :: %User{}
@@ -38,5 +39,13 @@ defmodule Guideme.Users do
     user
     |> User.changeset_role(%{role: "user"})
     |> Repo.update()
+  end
+
+  @spec get_user!(t()) :: {:ok, t()} | {:error, Ecto.Changeset.t()}
+  def get_user!(id), do: Repo.get!(User, id)
+
+  @spec list_users() :: [t()]
+  def list_users do
+    Repo.all(User)
   end
 end
