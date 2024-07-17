@@ -15,13 +15,6 @@ defmodule GuidemeWeb.GuideLive.Index do
     {:noreply, apply_action(socket, socket.assigns.live_action, params)}
   end
 
-  @impl true
-  def handle_params(%{"chapter_id" => chapter_id}, _, socket) do
-    {:noreply,
-     socket
-     |> assign(:chapter_id, chapter_id)}
-  end
-
   defp apply_action(socket, :edit, %{"id" => id}) do
     socket
     |> assign(:page_title, "Edit Guide")
