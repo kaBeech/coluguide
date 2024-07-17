@@ -409,7 +409,7 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
 Guideme.Repo.insert!(%Guideme.Steps.Step{
   full_text: "Capturing a piece means removing it from play",
   guide_id: 7,
-  number: 1
+  number: 3
 })
 
 Guideme.Repo.insert!(%Guideme.Steps.Step{
@@ -496,3 +496,37 @@ Guideme.Repo.insert!(%Guideme.Steps.Step{
 # Win a game of Chess - Step Images
 
 # Win a game of Chess - Details Links
+Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+  step_id: 15,
+  guide_id: 5
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+  step_id: 16,
+  guide_id: 6
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+  step_id: 24,
+  guide_id: 7
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+  step_id: 25,
+  guide_id: 8
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+  step_id: 26,
+  guide_id: 9
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+  step_id: 28,
+  guide_id: 10
+})
+
+Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+  step_id: 31,
+  guide_id: 10
+})
