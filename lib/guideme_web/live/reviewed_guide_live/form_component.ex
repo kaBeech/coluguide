@@ -80,7 +80,10 @@ defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
   end
 
   defp save_reviewed_guide(socket, :new, reviewed_guide_params) do
-    case ReviewRecords.create_reviewed_guide(reviewed_guide_params) do
+    case ReviewRecords.create_reviewed_guide(
+           Users.get_user!(reviewed_guide_params["user_id"]),
+           reviewed_guide_params
+         ) do
       {:ok, reviewed_guide} ->
         notify_parent({:saved, reviewed_guide})
 

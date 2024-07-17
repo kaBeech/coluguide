@@ -41,6 +41,9 @@ defmodule Guideme.Users do
     |> Repo.update()
   end
 
+  @spec get_user!(t()) :: {:ok, t()} | {:error, Ecto.Changeset.t()}
+  def get_user!(id), do: Repo.get!(User, id)
+
   @spec list_users() :: [t()]
   def list_users do
     Repo.all(User)
