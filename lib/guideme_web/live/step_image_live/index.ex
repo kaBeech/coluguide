@@ -34,7 +34,7 @@ defmodule GuidemeWeb.StepImageLive.Index do
   end
 
   @impl true
-  def handle_info({GuidemeWeb.GenStepImageLive.FormComponent, {:saved, step_image}}, socket) do
+  def handle_info({GuidemeWeb.StepImageLive.FormComponent, {:saved, step_image}}, socket) do
     {:noreply, stream_insert(socket, :step_images, step_image)}
   end
 

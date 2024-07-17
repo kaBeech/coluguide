@@ -101,15 +101,15 @@ defmodule GuidemeWeb.Router do
     live "/details_links/:id", DetailsLinkLive.Show, :show
     live "/details_links/:id/show/edit", DetailsLinkLive.Show, :edit
 
-    ### Generated views temporarily here for modeling - will delete later ###
+    # Step Image CRUD
+    live "/step_images", StepImageLive.Index, :index
+    live "/step_images/new", StepImageLive.Index, :new
+    live "/step_images/:id/edit", StepImageLive.Index, :edit
 
-    live "/gen/step_images", GenStepImageLive.Index, :index
-    live "/gen/step_images/new", GenStepImageLive.Index, :new
-    live "/gen/step_images/:id/edit", GenStepImageLive.Index, :edit
+    live "/step_images/:id", StepImageLive.Show, :show
+    live "/step_images/:id/show/edit", StepImageLive.Show, :edit
 
-    live "/gen/step_images/:id", GenStepImageLive.Show, :show
-    live "/gen/step_images/:id/show/edit", GenStepImageLive.Show, :edit
-
+    # Reviewed Guide CRUD
     live "/reviewed_guides", ReviewedGuideLive.Index, :index
     live "/reviewed_guides/new", ReviewedGuideLive.Index, :new
     live "/reviewed_guides/:id/edit", ReviewedGuideLive.Index, :edit

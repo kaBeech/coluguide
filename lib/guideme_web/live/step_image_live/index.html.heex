@@ -12,6 +12,9 @@
   rows={@streams.step_images}
   row_click={fn {_id, step_image} -> JS.navigate(~p"/step_images/#{step_image}") end}
 >
+  <:col :let={{_id, step_image}} label="Step ID"><%= step_image.step_id %></:col>
+  <:col :let={{_id, step_image}} label="Image ID"><%= step_image.image_id %></:col>
+  <:col :let={{_id, step_image}} label="Alt Text"><%= step_image.alt %></:col>
   <:action :let={{_id, step_image}}>
     <div class="sr-only">
       <.link navigate={~p"/step_images/#{step_image}"}>Show</.link>
@@ -35,7 +38,7 @@
   on_cancel={JS.patch(~p"/step_images")}
 >
   <.live_component
-    module={GuidemeWeb.GenStepImageLive.FormComponent}
+    module={GuidemeWeb.StepImageLive.FormComponent}
     id={@step_image.id || :new}
     title={@page_title}
     action={@live_action}
