@@ -28,6 +28,10 @@ defmodule GuidemeWeb.Router do
     plug GuidemeWeb.EnsureRolePlug, :editor
   end
 
+  pipeline :editor_or_admin do
+    plug GuidemeWeb.EnsureRolePlug, [:editor, :admin]
+  end
+
   pipeline :api do
     plug(:accepts, ["json"])
   end
@@ -66,6 +70,11 @@ defmodule GuidemeWeb.Router do
     # Chapters
     live "/chapters/select", ChapterLive.Select
 
+    # Guides
+    live "/guide/:id", GuideLive.Guide
+
+    # pipe_through(:editor_or_admin)
+
     # Chapter CRUD
     live "/chapters", ChapterLive.Index, :index
     live "/chapters/new", ChapterLive.List, :new
@@ -73,9 +82,6 @@ defmodule GuidemeWeb.Router do
 
     live "/chapters/:id", ChapterLive.Show, :show
     live "/chapters/:id/show/edit", ChapterLive.Show, :edit
-
-    # Guides
-    live "/guide/:id", GuideLive.Guide
 
     # Guide CRUD
     live "/guides", GuideLive.Index, :index
