@@ -8,7 +8,10 @@ GuideMe is a knowledge enhancement tool I originally built using
 
 Currently the functionality is specific to how we're using it at work, but I
 figure I'll make the code available in case it's useful for someone out there.
-Eventually I plan to make a demo site and actual documentation but for now I'm
+
+There is a small demo site available [here](https://guideme.gigalixirapp.com/).
+
+Eventually I plan to make actual documentation as well but for now I'm
 focused on building out the functionality we need and our specific
 implementation (i.e. our data, custom pages, deployment, etc.)
 
