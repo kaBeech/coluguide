@@ -11,9 +11,9 @@ figure I'll make the code available in case it's useful for someone out there.
 
 There is a small demo site available [here](https://guideme.gigalixirapp.com/).
 
-Eventually I plan to make actual documentation as well but for now I'm
-focused on building out the functionality we need and our specific
-implementation (i.e. our data, custom pages, deployment, etc.)
+Eventually I plan to make a fully functional demo and actual documentation as 
+well but for now I'm focused on building out the functionality we need and our
+specific implementation (i.e. our data, custom pages, deployment, etc.)
 
 May require access to/knowledge of: 
 
