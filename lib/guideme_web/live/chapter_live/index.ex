@@ -1,6 +1,5 @@
 defmodule GuidemeWeb.ChapterLive.Index do
   use GuidemeWeb, :live_view
-  use Phoenix.LiveView
 
   alias Guideme.Chapters
   alias Guideme.Chapters.Chapter

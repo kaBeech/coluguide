@@ -1,6 +1,5 @@
 defmodule GuidemeWeb.GuideLive.Guide do
   use GuidemeWeb, :live_view
-  use Phoenix.LiveView
 
   import ConvertSQL
   import HeaderTutorial

@@ -1,6 +1,5 @@
 defmodule GuidemeWeb.StepLive.Show do
   use GuidemeWeb, :live_view
-  use Phoenix.LiveView
 
   alias Guideme.Steps
 

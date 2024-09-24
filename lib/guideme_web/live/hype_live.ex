@@ -1,6 +1,5 @@
 defmodule GuidemeWeb.HypeLive do
   use GuidemeWeb, :live_view
-  use Phoenix.LiveView
 
   def mount(_params, _session, socket) do
     {:ok, assign(socket, hype: 10, guide: nil)}

@@ -1,6 +1,5 @@
 defmodule GuidemeWeb.ChapterLive.Select do
   use GuidemeWeb, :live_view
-  use Phoenix.LiveView
 
   import NavBar
 

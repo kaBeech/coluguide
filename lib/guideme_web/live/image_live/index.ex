@@ -1,6 +1,5 @@
 defmodule GuidemeWeb.ImageLive.Index do
   use GuidemeWeb, :live_view
-  use Phoenix.LiveView
 
   alias Guideme.Images
   alias Guideme.Images.Image
