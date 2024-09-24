@@ -10,7 +10,7 @@ defmodule HeaderTutorial do
           <span class="link">
             
           </span>
-          <span class="hidden marginTop1">
+          <span class="hidden marginTop3">
             View a relevent external website by clicking an <span class="link">orange link </span>
           </span>
         </p>
@@ -18,7 +18,7 @@ defmodule HeaderTutorial do
           <span class="link">
             
           </span>
-          <span class="hidden marginTop1">
+          <span class="hidden marginTop3">
             View an explanatory image by clicking an <span class="link">orange picture </span>
           </span>
         </p>
@@ -26,7 +26,7 @@ defmodule HeaderTutorial do
           <span class="link">
             
           </span>
-          <span class="hidden marginTop1">
+          <span class="hidden marginTop3">
             Get more details by clicking an <span class="link">orange file </span>
           </span>
         </p>
@@ -34,7 +34,7 @@ defmodule HeaderTutorial do
           <span>
             <input type="checkbox" />
           </span>
-          <span class="hidden marginTop1">
+          <span class="hidden marginTop3">
             Click a <input type="checkbox" /> checkbox to track your progress
           </span>
         </p>

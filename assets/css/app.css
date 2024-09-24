@@ -232,6 +232,10 @@ a:hover,
   color: var(--guideme-link-hover);
 }
 
+div {
+  width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -267,7 +271,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 100%;
+  /* width: 100%; */
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
