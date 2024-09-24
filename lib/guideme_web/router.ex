@@ -20,18 +20,6 @@ defmodule GuidemeWeb.Router do
       error_handler: Pow.Phoenix.PlugErrorHandler
   end
 
-  pipeline :admin do
-    plug GuidemeWeb.EnsureRolePlug, :admin
-  end
-
-  pipeline :editor do
-    plug GuidemeWeb.EnsureRolePlug, :editor
-  end
-
-  pipeline :editor_or_admin do
-    plug GuidemeWeb.EnsureRolePlug, [:editor, :admin]
-  end
-
   pipeline :api do
     plug(:accepts, ["json"])
   end
@@ -57,82 +45,86 @@ defmodule GuidemeWeb.Router do
     pow_assent_routes()
   end
 
-  scope "/", GuidemeWeb do
-    pipe_through(:browser)
+  live_session :default, on_mount: GuidemeWeb.InitAssigns do
+    scope "/", GuidemeWeb do
+      pipe_through :browser
 
-    get("/", PageController, :home)
+      get("/", PageController, :home)
+    end
+  end
 
-    pipe_through(:auth)
+  live_session :authenticated, on_mount: {GuidemeWeb.InitAssigns, :user} do
+    scope "/", GuidemeWeb do
+      pipe_through [:browser, :auth]
 
-    # Scratch
-    live "/hype", HypeLive
+      # Scratch
+      live "/hype", HypeLive
 
-    # Chapters
-    live "/chapters/select", ChapterLive.Select
+      # Chapters
+      live "/chapters/select", ChapterLive.Select
 
-    # Guides
-    live "/guide/:id", GuideLive.Guide
+      # Guides
+      live "/guide/:id", GuideLive.Guide
 
-    # pipe_through(:editor_or_admin)
+      # CRUD Directory
+      live "/crud", CRUDLive
 
-    # CRUD Directory
-    live "/crud", CRUDLive
+      # Chapter CRUD
+      live "/chapters", ChapterLive.Index, :index
+      live "/chapters/new", ChapterLive.List, :new
+      live "/chapters/:id/edit", ChapterLive.Index, :edit
 
-    # Chapter CRUD
-    live "/chapters", ChapterLive.Index, :index
-    live "/chapters/new", ChapterLive.List, :new
-    live "/chapters/:id/edit", ChapterLive.Index, :edit
+      live "/chapters/:id", ChapterLive.Show, :show
+      live "/chapters/:id/show/edit", ChapterLive.Show, :edit
 
-    live "/chapters/:id", ChapterLive.Show, :show
-    live "/chapters/:id/show/edit", ChapterLive.Show, :edit
+      # Guide CRUD
+      live "/guides", GuideLive.Index, :index
+      live "/guides/new", GuideLive.Index, :new
+      live "/guides/:id/edit", GuideLive.Index, :edit
 
-    # Guide CRUD
-    live "/guides", GuideLive.Index, :index
-    live "/guides/new", GuideLive.Index, :new
-    live "/guides/:id/edit", GuideLive.Index, :edit
+      live "/guides/:id", GuideLive.Show, :show
+      live "/guides/:id/show/edit", GuideLive.Show, :edit
 
-    live "/guides/:id", GuideLive.Show, :show
-    live "/guides/:id/show/edit", GuideLive.Show, :edit
+      # Step CRUD
+      live "/steps", StepLive.Index, :index
+      live "/steps/new", StepLive.Index, :new
+      live "/steps/:id/edit", StepLive.Index, :edit
 
-    # Step CRUD
-    live "/steps", StepLive.Index, :index
-    live "/steps/new", StepLive.Index, :new
-    live "/steps/:id/edit", StepLive.Index, :edit
+      live "/steps/:id", StepLive.Show, :show
+      live "/steps/:id/show/edit", StepLive.Show, :edit
 
-    live "/steps/:id", StepLive.Show, :show
-    live "/steps/:id/show/edit", StepLive.Show, :edit
+      # Details Link CRUD
+      live "/details_links", DetailsLinkLive.Index, :index
+      live "/details_links/new", DetailsLinkLive.Index, :new
+      live "/details_links/:id/edit", DetailsLinkLive.Index, :edit
 
-    # Details Link CRUD
-    live "/details_links", DetailsLinkLive.Index, :index
-    live "/details_links/new", DetailsLinkLive.Index, :new
-    live "/details_links/:id/edit", DetailsLinkLive.Index, :edit
+      live "/details_links/:id", DetailsLinkLive.Show, :show
+      live "/details_links/:id/show/edit", DetailsLinkLive.Show, :edit
 
-    live "/details_links/:id", DetailsLinkLive.Show, :show
-    live "/details_links/:id/show/edit", DetailsLinkLive.Show, :edit
+      # Step Image CRUD
+      live "/step_images", StepImageLive.Index, :index
+      live "/step_images/new", StepImageLive.Index, :new
+      live "/step_images/:id/edit", StepImageLive.Index, :edit
 
-    # Step Image CRUD
-    live "/step_images", StepImageLive.Index, :index
-    live "/step_images/new", StepImageLive.Index, :new
-    live "/step_images/:id/edit", StepImageLive.Index, :edit
+      live "/step_images/:id", StepImageLive.Show, :show
+      live "/step_images/:id/show/edit", StepImageLive.Show, :edit
 
-    live "/step_images/:id", StepImageLive.Show, :show
-    live "/step_images/:id/show/edit", StepImageLive.Show, :edit
+      # Reviewed Guide CRUD
+      live "/reviewed_guides", ReviewedGuideLive.Index, :index
+      live "/reviewed_guides/new", ReviewedGuideLive.Index, :new
+      live "/reviewed_guides/:id/edit", ReviewedGuideLive.Index, :edit
 
-    # Reviewed Guide CRUD
-    live "/reviewed_guides", ReviewedGuideLive.Index, :index
-    live "/reviewed_guides/new", ReviewedGuideLive.Index, :new
-    live "/reviewed_guides/:id/edit", ReviewedGuideLive.Index, :edit
+      live "/reviewed_guides/:id", ReviewedGuideLive.Show, :show
+      live "/reviewed_guides/:id/show/edit", ReviewedGuideLive.Show, :edit
 
-    live "/reviewed_guides/:id", ReviewedGuideLive.Show, :show
-    live "/reviewed_guides/:id/show/edit", ReviewedGuideLive.Show, :edit
+      # Image CRUD
+      live "/images", ImageLive.Index, :index
+      live "/images/new", ImageLive.Index, :new
+      live "/images/:id/edit", ImageLive.Index, :edit
 
-    # Image CRUD
-    live "/images", ImageLive.Index, :index
-    live "/images/new", ImageLive.Index, :new
-    live "/images/:id/edit", ImageLive.Index, :edit
-
-    live "/images/:d", ImageLive.Show, :show
-    live "/images/:id/show/edit", ImageLive.Show, :edit
+      live "/images/:d", ImageLive.Show, :show
+      live "/images/:id/show/edit", ImageLive.Show, :edit
+    end
   end
 
   # Other scopes may use custom stacks.
@@ -140,12 +132,16 @@ defmodule GuidemeWeb.Router do
   #   pipe_through :api
   # end
 
-  scope "/admin" do
-    pipe_through([:browser, :auth, :admin])
+  live_session :editors, on_mount: {GuidemeWeb.InitAssigns, :editor} do
+    scope "/editor" do
+      pipe_through([:browser, :auth, :editor])
+    end
   end
 
-  scope "/editor" do
-    pipe_through([:browser, :auth, :editor])
+  live_session :admins, on_mount: {GuidemeWeb.InitAssigns, :admin} do
+    scope "/admin" do
+      pipe_through([:browser, :auth, :admin])
+    end
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
