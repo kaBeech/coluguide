@@ -1,6 +1,8 @@
 defmodule GuidemeWeb.InitAssigns do
   @moduledoc """
   Ensures common `assigns` are applied to all LiveViews attaching this hook.
+  Replace EtsCache with something like Mnesia or Redis for production:
+  https://github.com/pow-auth/pow?tab=readme-ov-file#cache-store
   """
   import Phoenix.LiveView
   import Phoenix.Component
@@ -21,7 +23,7 @@ defmodule GuidemeWeb.InitAssigns do
     if socket.assigns.current_user do
       {:cont, socket}
     else
-      {:halt, redirect(socket, to: "/login")}
+      {:halt, redirect(socket, to: "/session/new")}
     end
   end
 
@@ -47,7 +49,7 @@ defmodule GuidemeWeb.InitAssigns do
     if socket.assigns.current_user.has_role(:admin) do
       {:cont, socket}
     else
-      {:halt, redirect(socket, to: "/login")}
+      {:halt, redirect(socket, to: "/session/new")}
     end
   end
 
