@@ -2,40 +2,44 @@
 <div class="container flex column alignCenter">
   <h1 class="marginBottom1">Welcome to GuideMe!</h1>
   <div :if={is_nil(Pow.Plug.current_user(@conn))} class="flex justifyCenter marginBottom2">
-    <a href="registration/new">
-      <div class="logo glow">
-        <div class="logoFont"></div>
+    <ul class="flex row wrap">
+      <li class="flex column alignCenter">
+        <a class="logo glow" href="registration/new">
+          <span class="logoFont"></span>
+        </a>
         <p class="lineHeightBigger textBright">
           Register
         </p>
-      </div>
-    </a>
-    <a href="session/new">
-      <div class="logo glow">
-        <div class="logoFont">󱃔</div>
+      </li>
+      <li class="flex column alignCenter">
+        <a class="logo glow" href="session/new">
+          <span class="logoFont">󱃔</span>
+        </a>
         <p class="lineHeightBigger textBright">
           Sign In
         </p>
-      </div>
-    </a>
+      </li>
+    </ul>
   </div>
   <div :if={Pow.Plug.current_user(@conn)} class="flex justifyCenter marginBottom2">
-    <a href="chapters/select">
-      <div class="logo glow">
-        <div class="logoFont"></div>
+    <ul class="flex row wrap">
+      <li class="flex column alignCenter">
+        <a class="logo glow" href="chapters/select">
+          <span class="logoFont"></span>
+        </a>
         <p class="lineHeightBigger textBright">
           Chapters
         </p>
-      </div>
-    </a>
-    <a href="guide/1">
-      <div class="logo glow">
-        <div class="logoFont">󱃔</div>
+      </li>
+      <li class="flex column alignCenter">
+        <a class="logo glow" href="guide/1">
+          <span class="logoFont">󱃔</span>
+        </a>
         <p class="lineHeightBigger textBright">
           Using GuideMe
         </p>
-      </div>
-    </a>
+      </li>
+    </ul>
   </div>
   <PowAssent.Phoenix.HTML.CoreComponents.provider_links conn={@conn} />
   <button
