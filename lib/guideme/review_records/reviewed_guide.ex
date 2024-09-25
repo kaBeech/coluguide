@@ -3,7 +3,7 @@ defmodule Guideme.ReviewRecords.ReviewedGuide do
   import Ecto.Changeset
 
   schema "reviewed_guides" do
-    field :reviewed_at, :date
+    field :reviewed_at, :utc_datetime
     belongs_to :user, Guideme.Users.User
     belongs_to :guide, Guideme.Guides.Guide
 

@@ -31,7 +31,7 @@ defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
       >
         <.input field={@form[:user_id]} type="select" options={list_user_ids()} label="User ID" />
         <.input field={@form[:guide_id]} type="select" options={list_guide_ids()} label="Guide ID" />
-        <.input field={@form[:reviewed_at]} type="date" label="Reviewed at" />
+        <.input field={@form[:reviewed_at]} type="datetime-local" label="Reviewed at" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Reviewed guide</.button>
         </:actions>
