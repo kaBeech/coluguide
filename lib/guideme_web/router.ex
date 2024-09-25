@@ -20,6 +20,18 @@ defmodule GuidemeWeb.Router do
       error_handler: Pow.Phoenix.PlugErrorHandler
   end
 
+  pipeline :admin do
+    plug GuidemeWeb.EnsureRolePlug, :admin
+  end
+
+  pipeline :editor do
+    plug GuidemeWeb.EnsureRolePlug, :editor
+  end
+
+  pipeline :editor_or_admin do
+    plug GuidemeWeb.EnsureRolePlug, [:editor, :admin]
+  end
+
   pipeline :api do
     plug(:accepts, ["json"])
   end
@@ -65,6 +77,8 @@ defmodule GuidemeWeb.Router do
 
       # Guides
       live "/guide/:id", GuideLive.Guide
+
+      pipe_through [:editor_or_admin]
 
       # CRUD Directory
       live "/crud", CRUDLive
@@ -131,18 +145,6 @@ defmodule GuidemeWeb.Router do
   # scope "/api", GuidemeWeb do
   #   pipe_through :api
   # end
-
-  live_session :editors, on_mount: {GuidemeWeb.InitAssigns, :editor} do
-    scope "/editor" do
-      pipe_through([:browser, :auth, :editor])
-    end
-  end
-
-  live_session :admins, on_mount: {GuidemeWeb.InitAssigns, :admin} do
-    scope "/admin" do
-      pipe_through([:browser, :auth, :admin])
-    end
-  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:guideme, :dev_routes) do
