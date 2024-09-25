@@ -9,12 +9,15 @@ defmodule Guideme.Repo.Migrations.CreateGuides do
       add :template_id, references(:templates, on_delete: :nothing)
       add :icon, :string
       add :introduction, :text
+      add :updated_for_review_at, :utc_datetime
+      add :last_updated_by_id, references(:users, on_delete: :nothing)
 
       timestamps(type: :utc_datetime)
     end
 
     create index(:guides, [:chapter_id])
     create index(:guides, [:template_id])
+    create index(:guides, [:last_updated_by_id])
     create unique_index(:guides, [:name])
 
     create index(:guides, [:chapter_id],
