@@ -40,7 +40,7 @@ defmodule Guideme.Guides.Guide do
     has_many :steps, Guideme.Steps.Step
     # Steps (in other Guides) which link to this Guide
     has_many :linked_to_by, Guideme.Steps.Step
-    has_many :users_have_reviewed, Guideme.ReviewRecords.ReviewedGuide
+    has_many :user_reviews, Guideme.ReviewRecords.ReviewedGuide
 
     timestamps(type: :utc_datetime)
   end
