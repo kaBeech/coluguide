@@ -38,6 +38,15 @@ defmodule Guideme.ReviewRecords do
   def get_reviewed_guide!(id), do: Repo.get!(ReviewedGuide, id)
 
   @doc """
+  Gets a single reviewed_guide by user and guide.
+
+  Returns `nil` if the Reviewed guide does not exist.
+  """
+  def get_reviewed_guide_by_user_and_guide(user_id, guide_id) do
+    Repo.get_by(ReviewedGuide, user_id: user_id, guide_id: guide_id)
+  end
+
+  @doc """
   Creates a reviewed_guide.
 
   ## Examples

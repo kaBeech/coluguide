@@ -5,9 +5,9 @@ defmodule GuidemeWeb.GuideLive.Guide do
   import HeaderTutorial
   import NavBar
   import Step
-  # import GuidemeWeb.Guide.ReviewStatus
+  import GuidemeWeb.Guide.ReviewStatus
 
-  alias Guideme.{Guides, Steps}
+  alias Guideme.{Guides, Steps, ReviewRecords}
 
   @impl true
   def mount(_params, _session, socket) do
@@ -20,5 +20,12 @@ defmodule GuidemeWeb.GuideLive.Guide do
      socket
      |> assign(:guide, Guides.get_guide!(id))
      |> assign(:steps, map_sql_result(Steps.list_guide_steps!(elem(Integer.parse(id), 0))))}
+    |> assign(
+      :reviewed_guide,
+      ReviewRecords.get_reviewed_guide_by_user_and_guide(
+        socket.assigns.current_user.id,
+        id
+      )
+    )
   end
 end
