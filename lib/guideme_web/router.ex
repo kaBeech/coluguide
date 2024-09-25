@@ -138,6 +138,11 @@ defmodule GuidemeWeb.Router do
 
       live "/images/:d", ImageLive.Show, :show
       live "/images/:id/show/edit", ImageLive.Show, :edit
+
+      pipe_through [:admin]
+
+      # Hacky Mix-free database seeding
+      live "/seed", SeedLive
     end
   end
 
