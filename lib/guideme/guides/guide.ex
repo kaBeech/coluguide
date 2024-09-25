@@ -20,13 +20,13 @@ defmodule Guideme.Guides.Guide do
     field :title, :string
     # Template to be used when displaying the Guide. Examples are "chapter" for
     # the index page of a chapter, which adds the tutorial at the top of the
-    # page, or "standard" for most Guides, which omits the tutorial
+    # page, or "standard" for most Guides, which omits the tutorial.
     belongs_to :template, Guideme.Guides.Template
     belongs_to :chapter, Guideme.Chapters.Chapter
     # Name of the Guide useful for disambiguating Guides between different
     # Chapters. For example, a Guide within a Chapter about playing chess's
     # Title may be "Move a Piece to an Empty Space" while its Name is "Move a
-    # Piece to an Empty Space in Chess"
+    # Piece to an Empty Space in Chess".
     field :name, :string
     field :icon, :string
     # Optional introductory text
@@ -38,9 +38,15 @@ defmodule Guideme.Guides.Guide do
     # the current time.
     field :updated_for_review_at, :utc_datetime
     has_many :steps, Guideme.Steps.Step
-    # Steps (in other Guides) which link to this Guide
+    # Steps (in other Guides) which link to this Guide.
     has_many :linked_to_by, Guideme.Steps.Step
     has_many :user_reviews, Guideme.ReviewRecords.ReviewedGuide
+    # The User who most recently updated this Guide. In the future, when a User
+    # creates, updates, or deletes a Guide (or subsidiary data like Steps), an
+    # entry in the (currently non-existent) ChangeHistory table will be created
+    # with this User, a timestamp, and an EctoDiff with the details of the
+    # changes.
+    has_one :last_updated_by, Guideme.Users.User
 
     timestamps(type: :utc_datetime)
   end
@@ -55,7 +61,8 @@ defmodule Guideme.Guides.Guide do
       :template_id,
       :icon,
       :introduction,
-      :updated_for_review_at
+      :updated_for_review_at,
+      :last_updated_by_id
     ])
     |> validate_required([:chapter_id, :title, :name, :template_id])
     |> unique_constraint(:name)
