@@ -15,7 +15,9 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
   def render_status(assigns) do
     ~H"""
     <div class="flex column gap1">
-      <p>Last updated: <%= @guide.updated_for_review_at %></p>
+      <p>
+        Last updated: <%= @guide.updated_for_review_at || @guide.inserted_at %>
+      </p>
       <%= if @reviewed_guide do %>
         <p>Last reviewed: <%= @reviewed_guide.reviewed_at %></p>
         <%= if needs_review(@reviewed_guide, @guide) do %>
