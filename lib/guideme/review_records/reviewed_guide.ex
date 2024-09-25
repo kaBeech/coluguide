@@ -6,6 +6,7 @@ defmodule Guideme.ReviewRecords.ReviewedGuide do
     field :reviewed_at, :utc_datetime
     belongs_to :user, Guideme.Users.User
     belongs_to :guide, Guideme.Guides.Guide
+    has_one :review_assigned_by, Guideme.Users.User
 
     timestamps(type: :utc_datetime)
   end
@@ -13,7 +14,7 @@ defmodule Guideme.ReviewRecords.ReviewedGuide do
   @doc false
   def changeset(reviewed_guide, attrs) do
     reviewed_guide
-    |> cast(attrs, [:reviewed_at, :user_id, :guide_id])
+    |> cast(attrs, [:reviewed_at, :user_id, :guide_id, :review_assigned_by_id])
     |> validate_required([:reviewed_at, :user_id, :guide_id])
   end
 end
