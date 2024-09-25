@@ -9,6 +9,7 @@ defmodule Guideme.Guides.Guide do
     field :name, :string
     field :icon, :string
     field :introduction, :string
+    field :updated_for_review_at, :utc_datetime
     has_many :steps, Guideme.Steps.Step
     has_many :linked_to_by, Guideme.Steps.Step
     has_many :users_have_reviewed, Guideme.ReviewRecords.ReviewedGuide
@@ -19,7 +20,15 @@ defmodule Guideme.Guides.Guide do
   @doc false
   def changeset(guide, attrs) do
     guide
-    |> cast(attrs, [:chapter_id, :title, :name, :template_id, :icon, :introduction])
+    |> cast(attrs, [
+      :chapter_id,
+      :title,
+      :name,
+      :template_id,
+      :icon,
+      :introduction,
+      :updated_for_review_at
+    ])
     |> validate_required([:chapter_id, :title, :name, :template_id])
     |> unique_constraint(:name)
   end
