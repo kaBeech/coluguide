@@ -38,6 +38,27 @@ defmodule Guideme.Images do
   def get_image!(id), do: Repo.get!(Image, id)
 
   @doc """
+  Gets an image's id by its src.
+
+  Raises `Ecto.NoResultsError` if the Image does not exist.
+
+  ## Examples
+
+      iex> get_image_id_by_src!("src")
+      1
+
+      iex> get_image_id_by_src!("nonexistent")
+      ** (Ecto.NoResultsError)
+  """
+  def get_image_id_by_src!(src) do
+    Repo.one!(
+      from i in Image,
+        where: [src: ^src],
+        select: i.id
+    )
+  end
+
+  @doc """
   Creates a image.
 
   ## Examples
