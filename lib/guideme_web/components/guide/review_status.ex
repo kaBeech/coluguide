@@ -30,7 +30,14 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
 
   def render_status(assigns) do
     ~H"""
-    <p class="marginTop2 marginRight1Point5">
+    <p class={
+      "marginTop2" <>
+      if get_review_status(@reviewed_guide, @guide) == "Needs review!" do
+        " borderAlert"
+      else
+        ""
+      end
+    }>
       <span class="textDull">
         <%= case get_review_status(@reviewed_guide, @guide) do
           "Unreviewed" -> "•"
@@ -42,16 +49,12 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
       <span class="link pointer" phx-click={JS.toggle(to: "#guide_review_details")}>
         󰷊
       </span>
-      <span class={
-        if get_review_status(@reviewed_guide, @guide) == "Needs review!" do
-          "borderAlert"
-        end
-      }>
-        <%= get_review_status(@reviewed_guide, @guide) %>
-      </span>
     </p>
     <div id="guide_review_details" class="hidden widthFit paddingTop1">
       <div class="flex column gap1 alignCenter">
+        <p>
+          <%= get_review_status(@reviewed_guide, @guide) %>
+        </p>
         <p>
           Last reviewed: <%= get_last_review_date(@reviewed_guide) %>
         </p>
