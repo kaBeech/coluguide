@@ -71,7 +71,7 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
         <p class="textSmaller">
           Last updated: <%= get_last_updated_date(@guide) %>
         </p>
-        <button phx-click={JS.push("review_guide")} data-confirm="Confirm review of this Guide?">
+        <button class="textSmaller" phx-click={JS.push("review_guide")} data-confirm="Confirm review of this Guide?">
           Review Guide
         </button>
       </div>
