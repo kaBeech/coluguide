@@ -111,63 +111,63 @@ defmodule GuidemeWeb.SeedLive do
     # Use GuideMe - Steps
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Use a Guide",
-      guide_id: 1,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Review Guides that have been assigned to you",
-      guide_id: 1,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "See which updated Guides need to be reviewed again",
-      guide_id: 1,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Assign Guides to Users for review",
-      guide_id: 1,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Create, update, and delete Guides",
-      guide_id: 1,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Each Guide's title is shown near the top of the page",
-      guide_id: 2,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Some Guides have introductory information before the Steps 
         begin",
-      guide_id: 2,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Follow the steps underneath the title",
-      guide_id: 2,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Use the Step Icons to interact with the Guide",
-      guide_id: 2,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Step icons are clickable if they're bright orange - dull teal 
         icons are non-clickable placeholders",
-      guide_id: 3,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use Step Icons"),
       number: 1
     })
 
@@ -175,28 +175,28 @@ defmodule GuidemeWeb.SeedLive do
       external_link: "https://www.wikipedia.org/",
       full_text: "Clicking an orange   icon will open a relevant external link in 
         a new browser tab",
-      guide_id: 3,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use Step Icons"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Clicking an orange   icon will pop up a helpful image related to
         the step",
-      guide_id: 3,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use Step Icons"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Clicking an orange   icon will open another guide which covers 
         the step in more detail",
-      guide_id: 3,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use Step Icons"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Checkboxes are just there for a bit of pseudo-tactile 
         satisfaction",
-      guide_id: 3,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use Step Icons"),
       number: 5
     })
 
@@ -269,12 +269,12 @@ defmodule GuidemeWeb.SeedLive do
     # Use GuideMe - Details Links
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use GuideMe"),
-      guide_id: 2
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Use a Guide"),
-      guide_id: 3
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use Step Icons")
     })
 
     # Play a game of Chess - Images
@@ -344,172 +344,172 @@ defmodule GuidemeWeb.SeedLive do
     # Play a game of Chess - Steps
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Set up the game",
-      guide_id: 4,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Play a game of Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Each player takes turns moving their pieces",
-      guide_id: 4,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Play a game of Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Avoid letting your King be checkmated (otherwise you lose)",
-      guide_id: 4,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Play a game of Chess"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Checkmate your opponent's King to win",
-      guide_id: 4,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Play a game of Chess"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Thank your opponent and clean up the game",
-      guide_id: 4,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Play a game of Chess"),
       number: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Find an opponent to play with",
-      guide_id: 5,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Set up a game of Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Set up the board",
-      guide_id: 5,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Set up a game of Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Choose who will play as which color",
-      guide_id: 5,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Set up a game of Chess"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "The player playing White goes first",
-      guide_id: 5,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Set up a game of Chess"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Move to an empty space",
-      guide_id: 6,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Take turns in Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Capture an opponent's piece",
-      guide_id: 6,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Take turns in Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Make a special move",
-      guide_id: 6,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Take turns in Chess"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Don't make a move if it would checkmate your King!",
-      guide_id: 7,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Move a piece to an empty space in Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Move one of your pieces in the regular way",
-      guide_id: 7,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Move a piece to an empty space in Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Capturing a piece means removing it from play",
-      guide_id: 8,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Capture an opponent's piece in Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Don't make a move if it would checkmate your King!",
-      guide_id: 8,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Capture an opponent's piece in Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Move one of your pieces in its regular way onto a space 
         occupied by an opponent's piece to capture it",
-      guide_id: 8,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Capture an opponent's piece in Chess"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Check",
-      guide_id: 9,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Checkmate",
-      guide_id: 9,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "En passant",
-      guide_id: 9,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Castling",
-      guide_id: 9,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Pawn Promotion",
-      guide_id: 9,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess"),
       number: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Pawns move forward one (or sometimes two) spaces to an empty 
         space, or capture diagonally forward",
-      guide_id: 10,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Rooks move horizontally or vertically any number of spaces",
-      guide_id: 10,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Knights move in an L-shape",
-      guide_id: 10,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Bishops move diagonally any number of spaces",
-      guide_id: 10,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Queens move horizontally, vertically, or diagonally any number 
         of spaces",
-      guide_id: 10,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Kings move one space in any direction",
-      guide_id: 10,
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 6
     })
 
@@ -518,37 +518,37 @@ defmodule GuidemeWeb.SeedLive do
     # Play a game of Chess - Details Links
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Play a game of Chess"),
-      guide_id: 5
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Set up a game of Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Play a game of Chess"),
-      guide_id: 6
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Take turns in Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Take turns in Chess"),
-      guide_id: 7
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Move a piece to an empty space in Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Take turns in Chess"),
-      guide_id: 8
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Capture an opponent's piece in Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Take turns in Chess"),
-      guide_id: 9
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Move a piece to an empty space in Chess"),
-      guide_id: 10
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Capture an opponent's piece in Chess"),
-      guide_id: 10
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess")
     })
   end
 end
