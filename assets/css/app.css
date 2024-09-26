@@ -171,9 +171,10 @@ table {
   --guideme-text-dull: var(--guideme-palette-cyan-medium);
   --guideme-text-accent: var(--guideme-palette-cyan-bright);
   --guideme-text-alert: magenta;
-  --guideme-background-dark: var(--guideme-palette-black-orange);
+  --guideme-border-alert: var(--guideme-palette-orange-medium);
   --guideme-link-standard: var(--guideme-palette-orange-medium);
   --guideme-link-hover: var(--guideme-palette-orange-bright);
+  --guideme-background-dark: var(--guideme-palette-black-orange);
   --guideme-background-overlay-shadow: var(
     --guideme-palette-black-semitransparent1
   );
@@ -451,6 +452,10 @@ button {
   margin-right: auto;
 }
 
+.marginRight1Point5 {
+  margin-right: 1.5rem;
+}
+
 .marginLeft2 {
   margin-left: 2rem;
 }
@@ -489,8 +494,22 @@ button {
   margin-bottom: 2rem;
 }
 
+.paddingTop1 {
+  padding-top: 1rem;
+}
+
+.borderAlert {
+  border: 0.15rem solid var(--guideme-border-alert);
+  border-radius: 0.2rem;
+  padding: 0.2rem
+}
+
 .textBigger {
-  font-size: 1.2rem;
+  font-size: 1.2em;
+}
+
+.textSmaller {
+  font-size: 0.8em;
 }
 
 .lineHeightBigger {

@@ -18,7 +18,7 @@ defmodule Guideme.ReviewRecords.ReviewedGuide do
     # The Guide being reviewed
     belongs_to :guide, Guideme.Guides.Guide
     # The admin User who assigned the review
-    has_one :review_assigned_by, Guideme.Users.User
+    belongs_to :review_assigned_by, Guideme.Users.User
 
     timestamps(type: :utc_datetime)
   end
