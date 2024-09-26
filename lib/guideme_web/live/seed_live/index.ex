@@ -202,66 +202,66 @@ defmodule GuidemeWeb.SeedLive do
 
     # Use GuideMe - Step Images
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
-      image_id: 1,
+      image_id: Guideme.Images.get_image_id_by_src!("guide_template_standard.png"),
       alt: "An example Guide page showing the title, steps, and icons for each 
         step's external link, image, and details link.",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use GuideMe")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
-      image_id: 2,
+      image_id: Guideme.Images.get_image_id_by_src!("guide_title.png"),
       alt: "A Guide's title is shown above its steps",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
-      image_id: 3,
+      image_id: Guideme.Images.get_image_id_by_src!("guide_introduction.png"),
       alt: "If a Guide has introductory information, it's shown below the title 
         and above the steps",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
-      image_id: 4,
+      image_id: Guideme.Images.get_image_id_by_src!("guide_steps.png"),
       alt: "A Guide's steps are shown below its title (and introduction if any)",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Use a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
-      image_id: 5,
+      image_id: Guideme.Images.get_image_id_by_src!("guide_icons.png"),
       alt: "The  ,  , and  icons and checkbox are shown before each step's 
         number and full text",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Use a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
-      image_id: 6,
+      image_id: Guideme.Images.get_image_id_by_src!("guide_icons_active_nonactive.png"),
       alt: "Bright orange icons are clickable, dull teal icons are non-clickable 
         placeholders.",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use Step Icons")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
-      image_id: 7,
+      image_id: Guideme.Images.get_image_id_by_src!("guide_external_link.png"),
       alt: "Orange   icons open a relevant external links in a new browser tab",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use Step Icons")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
-      image_id: 8,
+      image_id: Guideme.Images.get_image_id_by_src!("guide_image.png"),
       alt: "Image pop-ups show in the center of the screen and darken the rest of 
         the page",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Use Step Icons")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
-      image_id: 9,
+      image_id: Guideme.Images.get_image_id_by_src!("guide_details_link.png"),
       alt: "Orange   icons are just links to other guides in GuideMe",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Use Step Icons")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
-      image_id: 10,
+      image_id: Guideme.Images.get_image_id_by_src!("guide_checkbox.png"),
       alt: "Marking checkboxes feels good and can help keep us organized",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Use Step Icons")
     })
