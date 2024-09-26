@@ -205,75 +205,75 @@ defmodule GuidemeWeb.SeedLive do
       image_id: 1,
       alt: "An example Guide page showing the title, steps, and icons for each 
         step's external link, image, and details link.",
-      step_id: 1
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use GuideMe")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: 2,
       alt: "A Guide's title is shown above its steps",
-      step_id: 6
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: 3,
       alt: "If a Guide has introductory information, it's shown below the title 
         and above the steps",
-      step_id: 7
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: 4,
       alt: "A Guide's steps are shown below its title (and introduction if any)",
-      step_id: 8
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Use a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: 5,
       alt: "The  ,  , and  icons and checkbox are shown before each step's 
         number and full text",
-      step_id: 9
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Use a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: 6,
       alt: "Bright orange icons are clickable, dull teal icons are non-clickable 
         placeholders.",
-      step_id: 10
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use Step Icons")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: 7,
       alt: "Orange   icons open a relevant external links in a new browser tab",
-      step_id: 11
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use Step Icons")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: 8,
       alt: "Image pop-ups show in the center of the screen and darken the rest of 
         the page",
-      step_id: 12
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Use Step Icons")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: 9,
       alt: "Orange   icons are just links to other guides in GuideMe",
-      step_id: 13
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Use Step Icons")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: 10,
       alt: "Marking checkboxes feels good and can help keep us organized",
-      step_id: 14
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Use Step Icons")
     })
 
     # Use GuideMe - Details Links
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: 1,
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use GuideMe"),
       guide_id: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: 9,
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Use a Guide"),
       guide_id: 3
     })
 
@@ -517,37 +517,37 @@ defmodule GuidemeWeb.SeedLive do
 
     # Play a game of Chess - Details Links
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: 15,
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Play a game of Chess"),
       guide_id: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: 16,
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Play a game of Chess"),
       guide_id: 6
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: 24,
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Take turns in Chess"),
       guide_id: 7
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: 25,
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Take turns in Chess"),
       guide_id: 8
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: 26,
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Take turns in Chess"),
       guide_id: 9
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: 28,
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Move a piece to an empty space in Chess"),
       guide_id: 10
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: 31,
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Capture an opponent's piece in Chess"),
       guide_id: 10
     })
   end
