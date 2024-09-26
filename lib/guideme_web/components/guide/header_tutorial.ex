@@ -31,6 +31,14 @@ defmodule HeaderTutorial do
           </span>
         </p>
         <p class="navTut textAccent">
+          <span class="link">
+            󰷊
+          </span>
+          <span class="hidden marginTop3">
+            See a Guide's review status by clicking an <span class="link">orange review icon 󰷊</span>
+          </span>
+        </p>
+        <p class="navTut textAccent">
           <span>
             <input type="checkbox" />
           </span>
