@@ -91,21 +91,21 @@ defmodule GuidemeWeb.SeedLive do
       name: "Use GuideMe",
       icon: "󱃔 ",
       template_id: Guideme.Guides.get_template_id_by_name!("chapter"),
-      chapter_id: 1
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use a Guide",
       name: "Use a Guide",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
-      chapter_id: 1
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use Step Icons",
       name: "Use Step Icons",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
-      chapter_id: 1
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
 
     # Use GuideMe - Steps
@@ -222,21 +222,21 @@ defmodule GuidemeWeb.SeedLive do
       name: "Use GuideMe",
       icon: "󱃔 ",
       template_id: Guideme.Guides.get_template_id_by_name!("chapter"),
-      chapter_id: 1
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use a Guide",
       name: "Use a Guide",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
-      chapter_id: 1
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use Step Icons",
       name: "Use Step Icons",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
-      chapter_id: 1
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
 
     # Use GuideMe - Steps
@@ -399,14 +399,14 @@ defmodule GuidemeWeb.SeedLive do
       name: "Play a game of Chess",
       icon: " ",
       template_id: Guideme.Guides.get_template_id_by_name!("chapter"),
-      chapter_id: 2
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Play a game of Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Set up the game",
       name: "Set up a game of Chess",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
-      chapter_id: 2
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Play a game of Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
@@ -415,21 +415,21 @@ defmodule GuidemeWeb.SeedLive do
       introduction: "Each player takes turns moving their pieces in one of the 
         following ways:",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
-      chapter_id: 2
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Play a game of Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Move a piece to an empty space",
       name: "Move a piece to an empty space in Chess",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
-      chapter_id: 2
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Play a game of Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Capture an opponent's piece",
       name: "Capture an opponent's piece in Chess",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
-      chapter_id: 2
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Play a game of Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
@@ -438,7 +438,7 @@ defmodule GuidemeWeb.SeedLive do
       introduction: "Choose from one of the following special moves (if their 
         conditions are met):",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
-      chapter_id: 2
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Play a game of Chess")
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
@@ -447,7 +447,7 @@ defmodule GuidemeWeb.SeedLive do
       introduction: "Each piece has regular moves it can make. Choose from the 
         following pieces to see its regular moves:",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
-      chapter_id: 2
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Play a game of Chess")
     })
 
     # Play a game of Chess - Steps
