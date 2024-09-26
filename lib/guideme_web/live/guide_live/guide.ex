@@ -28,4 +28,29 @@ defmodule GuidemeWeb.GuideLive.Guide do
        )
      )}
   end
+
+  @impl true
+  def handle_event("review_guide", _params, socket) do
+    {:ok, _} =
+      review_guide(
+        socket.assigns.reviewed_guide,
+        socket.assigns.guide.id,
+        socket.assigns.current_user
+      )
+
+    {:noreply, socket}
+  end
+
+  defp review_guide(reviewed_guide, guide_id, user) do
+    if reviewed_guide do
+      ReviewRecords.update_reviewed_guide(reviewed_guide, %{
+        reviewed_at: DateTime.utc_now()
+      })
+    else
+      ReviewRecords.create_reviewed_guide(user, %{
+        guide_id: guide_id,
+        reviewed_at: DateTime.utc_now()
+      })
+    end
+  end
 end

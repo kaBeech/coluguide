@@ -58,8 +58,8 @@ defmodule Guideme.ReviewRecords do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_reviewed_guide(user, attrs \\ %{}) do
-    user
+  def create_reviewed_guide(guide, attrs \\ %{}) do
+    guide
     |> Ecto.build_assoc(:reviewed_guides)
     |> ReviewedGuide.changeset(attrs)
     |> Repo.insert()

@@ -4,8 +4,8 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
   alias Phoenix.LiveView.JS
 
   defp needs_review(reviewed_guide, guide) do
-    if reviewed_guide["review_assigned_by_id"] and
-         reviewed_guide["reviewed_at"] < guide["updated_for_review_at"] do
+    if reviewed_guide.review_assigned_by && guide.updated_for_review_at &&
+         reviewed_guide.reviewed_at < guide.updated_for_review_at do
       true
     else
       false
@@ -35,13 +35,5 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
       </p>
     </div>
     """
-  end
-
-  def handle_event("review_guide", _params, _socket) do
-    {:ok, _} = review_guide()
-  end
-
-  defp review_guide do
-    # Review guide TBA
   end
 end
