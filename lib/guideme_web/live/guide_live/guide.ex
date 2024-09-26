@@ -38,7 +38,15 @@ defmodule GuidemeWeb.GuideLive.Guide do
         socket.assigns.current_user
       )
 
-    {:noreply, socket}
+    {:noreply,
+     socket
+     |> assign(
+       :reviewed_guide,
+       ReviewRecords.get_reviewed_guide_by_user_and_guide(
+         socket.assigns.current_user.id,
+         socket.assigns.guide.id
+       )
+     )}
   end
 
   defp review_guide(reviewed_guide, guide_id, user) do
