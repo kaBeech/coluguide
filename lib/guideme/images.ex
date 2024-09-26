@@ -44,7 +44,7 @@ defmodule Guideme.Images do
 
   ## Examples
 
-      iex> get_image_id_by_src!("src")
+      iex> get_image_id_by_src!("guide_template_standard.png")
       1
 
       iex> get_image_id_by_src!("nonexistent")
