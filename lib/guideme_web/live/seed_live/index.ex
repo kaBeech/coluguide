@@ -97,14 +97,14 @@ defmodule GuidemeWeb.SeedLive do
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use a Guide",
       name: "Use a Guide",
-      template_id: 2,
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use Step Icons",
       name: "Use Step Icons",
-      template_id: 2,
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: 1
     })
 
@@ -228,14 +228,14 @@ defmodule GuidemeWeb.SeedLive do
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use a Guide",
       name: "Use a Guide",
-      template_id: 2,
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use Step Icons",
       name: "Use Step Icons",
-      template_id: 2,
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: 1
     })
 
@@ -405,7 +405,7 @@ defmodule GuidemeWeb.SeedLive do
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Set up the game",
       name: "Set up a game of Chess",
-      template_id: 2,
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: 2
     })
 
@@ -414,21 +414,21 @@ defmodule GuidemeWeb.SeedLive do
       name: "Take turns in Chess",
       introduction: "Each player takes turns moving their pieces in one of the 
         following ways:",
-      template_id: 2,
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Move a piece to an empty space",
       name: "Move a piece to an empty space in Chess",
-      template_id: 2,
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Capture an opponent's piece",
       name: "Capture an opponent's piece in Chess",
-      template_id: 2,
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: 2
     })
 
@@ -437,7 +437,7 @@ defmodule GuidemeWeb.SeedLive do
       name: "Make a special move in Chess",
       introduction: "Choose from one of the following special moves (if their 
         conditions are met):",
-      template_id: 2,
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: 2
     })
 
@@ -446,7 +446,7 @@ defmodule GuidemeWeb.SeedLive do
       name: "Make a regular move in Chess",
       introduction: "Each piece has regular moves it can make. Choose from the 
         following pieces to see its regular moves:",
-      template_id: 2,
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: 2
     })
 
