@@ -9,7 +9,7 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
     else
       if guide.updated_for_review_at &&
            reviewed_guide.reviewed_at < guide.updated_for_review_at do
-        if reviewed_guide.review_assigned_by do
+        if reviewed_guide.review_assigned_by_id do
           "Needs review!"
         else
           "Review Stale"
@@ -35,7 +35,7 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
         <%= case get_review_status(@reviewed_guide, @guide) do
           "Unreviewed" -> "•"
           "Needs review!" -> ""
-          "Review Stale" -> "Review Stale"
+          "Review Stale" -> ""
           "Reviewed" -> ""
         end %>
       </span>
