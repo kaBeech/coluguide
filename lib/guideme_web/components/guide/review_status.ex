@@ -22,10 +22,20 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
 
   defp get_last_review_date(reviewed_guide) do
     if reviewed_guide do
-      reviewed_guide.reviewed_at
+      DateTime.to_date(reviewed_guide.reviewed_at)
     else
       "Never"
     end
+  end
+
+  defp get_last_updated_date(guide) do
+    DateTime.to_date(
+      if guide.updated_for_review_at do
+        guide.updated_for_review_at
+      else
+        guide.inserted_at
+      end
+    )
   end
 
   def render_status(assigns) do
@@ -55,19 +65,15 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
         <p>
           <%= get_review_status(@reviewed_guide, @guide) %>
         </p>
-        <p>
+        <p class="textSmaller">
           Last reviewed: <%= get_last_review_date(@reviewed_guide) %>
         </p>
-        <p>
-          Last updated: <%= @guide.updated_for_review_at || @guide.inserted_at %>
+        <p class="textSmaller">
+          Last updated: <%= get_last_updated_date(@guide) %>
         </p>
-        <p
-          class="link pointer"
-          phx-click={JS.push("review_guide")}
-          data-confirm="Confirm review of this Guide?"
-        >
+        <button phx-click={JS.push("review_guide")} data-confirm="Confirm review of this Guide?">
           Review Guide
-        </p>
+        </button>
       </div>
     </div>
     """
