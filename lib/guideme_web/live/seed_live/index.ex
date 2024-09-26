@@ -90,7 +90,7 @@ Guideme.Repo.insert!(%Guideme.Guides.Guide{
   title: "Use GuideMe",
   name: "Use GuideMe",
   icon: "󱃔 ",
-  template_id: 1,
+  template_id: Guideme.Guides.get_template_id_by_name!("chapter"),
   chapter_id: 1
 })
 

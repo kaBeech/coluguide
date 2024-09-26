@@ -135,6 +135,27 @@ defmodule Guideme.Guides do
   def get_template!(id), do: Repo.get!(Template, id)
 
   @doc """
+  Gets a template's id by its name.
+
+  Raises `Ecto.NoResultsError` if the Template does not exist.
+
+  ## Examples
+
+      iex> get_template_id_by_name!("chapter")
+      1
+
+      iex> get_template_id_by_name!("nonexistent")
+      ** (Ecto.NoResultsError)
+  """
+  def get_template_id_by_name!(name) do
+    Repo.one!(
+      from t in Template,
+        where: [name: ^name],
+        select: t.id
+    )
+  end
+
+  @doc """
   Creates a template.
 
   ## Examples
