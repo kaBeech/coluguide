@@ -69,6 +69,28 @@ defmodule Guideme.Steps do
   def get_step!(id), do: Repo.get!(Step, id)
 
   @doc """
+  Gets a step's id by its number and its guide's name.
+
+  Raises `Ecto.NoResultsError` if the Step does not exist.
+
+  ## Examples
+
+      iex> get_step_id_by_number_and_guide_name!(1, "Use GuideMe")
+      1
+
+      iex> get_step_id_by_number_and_guide_name!(1, "nonexistent")
+      ** (Ecto.NoResultsError)
+  """
+  def get_step_id_by_number_and_guide_name!(number, guide_name) do
+    Repo.one!(
+      from s in Step,
+        join: g in assoc(s, :guide),
+        where: s.number == ^number and g.name == ^guide_name,
+        select: s.id
+    )
+  end
+
+  @doc """
   Creates a step.
 
   ## Examples
