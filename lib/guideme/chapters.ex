@@ -38,6 +38,27 @@ defmodule Guideme.Chapters do
   def get_chapter!(id), do: Repo.get!(Chapter, id)
 
   @doc """
+  Gets a chapter's id by its name
+
+  Raises `Ecto.NoResultsError` if the Chapter does not exist.
+
+  ## Examples
+
+      iex> get_chapter_id_by_title!("Use GuideMe")
+      1
+
+      iex> get_chapter_id_by_title!("nonexistent")
+      ** (Ecto.NoResultsError)
+  """
+  def get_chapter_id_by_title!(title) do
+    Repo.one!(
+      from c in Chapter,
+        where: [title: ^title],
+        select: c.id
+    )
+  end
+
+  @doc """
   Creates a chapter.
 
   ## Examples
