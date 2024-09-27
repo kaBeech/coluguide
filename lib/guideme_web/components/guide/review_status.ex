@@ -10,7 +10,7 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
       if guide.updated_for_review_at &&
            reviewed_guide.reviewed_at < guide.updated_for_review_at do
         if reviewed_guide.review_assigned_by_id do
-          "Needs review!"
+          "Needs Review!"
         else
           "Review Stale"
         end
@@ -42,7 +42,7 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
     ~H"""
     <p class={
       "marginTop2" <>
-      if get_review_status(@reviewed_guide, @guide) == "Needs review!" do
+      if get_review_status(@reviewed_guide, @guide) == "Needs Review!" do
         " borderAlert"
       else
         ""
@@ -51,7 +51,7 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
       <span class="textDull">
         <%= case get_review_status(@reviewed_guide, @guide) do
           "Unreviewed" -> "•"
-          "Needs review!" -> ""
+          "Needs Review!" -> ""
           "Review Stale" -> ""
           "Reviewed" -> ""
         end %>
