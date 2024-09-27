@@ -342,32 +342,38 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     # Play a game of Chess - Steps
+
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Set up the game",
+      external_link: "https://en.wikipedia.org/wiki/Chess#Setup",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Play a game of Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Each player takes turns moving their pieces",
+      external_link: "https://en.wikipedia.org/wiki/Chess#Movement",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Play a game of Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Avoid letting your King be checkmated (otherwise you lose)",
+      external_link: "https://en.wikipedia.org/wiki/Checkmate",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Play a game of Chess"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Checkmate your opponent's King to win",
+      external_link: "https://en.wikipedia.org/wiki/Checkmate",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Play a game of Chess"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Thank your opponent and clean up the game",
+      external_link: "https://www.il-chess.org/sportsmanship-and-etiquette",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Play a game of Chess"),
       number: 5
     })
@@ -380,6 +386,7 @@ defmodule GuidemeWeb.SeedLive do
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Set up the board",
+      external_link: "https://en.wikipedia.org/wiki/Rules_of_chess#Initial_setup",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Set up a game of Chess"),
       number: 2
     })
@@ -398,12 +405,14 @@ defmodule GuidemeWeb.SeedLive do
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Move to an empty space",
+      external_link: "https://en.wikipedia.org/wiki/Rules_of_chess#Basic_moves",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Take turns in Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Capture an opponent's piece",
+      external_link: "https://en.wikipedia.org/wiki/Glossary_of_chess#capturing",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Take turns in Chess"),
       number: 2
     })
@@ -415,62 +424,72 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Don't make a move if it would checkmate your King!",
+      full_text: "Don't make a move if it would put your King in check!",
+      external_link: "https://en.wikipedia.org/wiki/Check_(chess)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Move a piece to an empty space in Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Move one of your pieces in the regular way",
+      external_link: "https://en.wikipedia.org/wiki/Rules_of_chess#Basic_moves",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Move a piece to an empty space in Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Capturing a piece means removing it from play",
+      external_link: "https://en.wikipedia.org/wiki/Glossary_of_chess#capturing",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Capture an opponent's piece in Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Don't make a move if it would checkmate your King!",
+      full_text: "Don't make a move if it would put your King in check!",
+      external_link: "https://en.wikipedia.org/wiki/Check_(chess)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Capture an opponent's piece in Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Move one of your pieces in its regular way onto a space 
-        occupied by an opponent's piece to capture it",
+      full_text: "Move one of your pieces onto a space occupied by an opponent's
+        piece to capture it",
+      external_link: "https://en.wikipedia.org/wiki/Glossary_of_chess#capturing",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Capture an opponent's piece in Chess"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Check",
+      external_link: "https://en.wikipedia.org/wiki/Check_(chess)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Checkmate",
+      external_link: "https://en.wikipedia.org/wiki/Checkmate",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "En passant",
+      external_link: "https://en.wikipedia.org/wiki/En_passant",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Castling",
+      external_link: "https://en.wikipedia.org/wiki/Castling",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Pawn Promotion",
+      external_link: "https://en.wikipedia.org/wiki/Promotion_(chess)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a special move in Chess"),
       number: 5
     })
@@ -478,24 +497,28 @@ defmodule GuidemeWeb.SeedLive do
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Pawns move forward one (or sometimes two) spaces to an empty 
         space, or capture diagonally forward",
+      external_link: "https://en.wikipedia.org/wiki/Pawn_(chess)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Rooks move horizontally or vertically any number of spaces",
+      external_link: "https://en.wikipedia.org/wiki/Rook_(chess)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Knights move in an L-shape",
+      external_link: "https://en.wikipedia.org/wiki/Knight_(chess)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Bishops move diagonally any number of spaces",
+      external_link: "https://en.wikipedia.org/wiki/Bishop_(chess)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 4
     })
