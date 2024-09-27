@@ -2,16 +2,14 @@
   <h1>Chapters</h1>
   <ul class="flex row wrap">
     <%= for guide <- @guides do %>
-      <%= if guide.template_id == 1 do %>
-        <li class="flex column alignCenter">
-          <a class="logo glow" href={"/guide/" <> to_string(guide.id)}>
-            <span class="logoFont"><%= guide.icon %></span>
-          </a>
-          <p class="lineHeightBigger textBright">
-            <%= guide.name %>
-          </p>
-        </li>
-      <% end %>
+      <li class="flex column alignCenter">
+        <a class="logo glow" href={"/guide/" <> to_string(guide.id)}>
+          <span class="logoFont"><%= guide.icon %></span>
+        </a>
+        <p class="lineHeightBigger textBright">
+          <%= guide.name %>
+        </p>
+      </li>
     <% end %>
   </ul>
   <div class="flex justifyCenter marginTop2">
