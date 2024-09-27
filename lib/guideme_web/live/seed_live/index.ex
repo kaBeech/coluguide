@@ -229,7 +229,151 @@ defmodule GuidemeWeb.SeedLive do
       number: 5
     })
 
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Each Guide has a Review section near the bottom of the page",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Review a Guide"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "The dull teal review indicator gives quick information on a
+        Guide's review status",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Review a Guide"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "If the Guide needs review, the Review section will be
+        outlined in orange",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Review a Guide"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the orange 󰷊 icon to open the full Review
+        section",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Review a Guide"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the Review button and confirm that you've reviewed the
+        Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Review a Guide"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "The Review Status Indicator changes shape based on the 
+        Guide's Review Status state",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "• means Unreviewed",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "✓ means Reviewed",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: " means Review Stale",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "An  with the Review Status Indicator section outlined in
+        orange means Needs Review!",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Unreviewed means you have never reviewed the Guide and it is
+        not assigned to you for review",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Reviewed means you have reviewed a Guide and it has not been
+        updated you last reviewed it",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Review Stale means the Guide has been updated since your last
+        review you, but you are not assigned to review it",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Needs Review! means you are assigned to review the Guide, but
+        have not reviewed it since its last update",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Clicking the orange 󰷊 icon will show or hide the full Review
+        section",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide's Full Review Section"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "The Review Status Indicator changes shape based on the
+        Guide's Review Status state",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide's Full Review Section"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "The Review Status is shown at the top of the Review section",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide's Full Review Section"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "The date you last reviewed the Guide is shown below the
+        Review Status",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide's Full Review Section"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "The date the Guide was last updated is shown below the
+        last reviewed date",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide's Full Review Section"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the Review button and confirm that you've reviewed the
+        Guide to record your review",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide's Full Review Section"),
+      number: 6
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "The Review Status Indicator is outlined in orange if the
+        Review Status is Needs Review!",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide's Full Review Section"),
+      number: 7
+    })
+
+
     # Use GuideMe - Step Images
+
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: Guideme.Images.get_image_id_by_src!("guide_template_standard.png"),
       alt: "An example Guide page showing the title, steps, and icons for each 
