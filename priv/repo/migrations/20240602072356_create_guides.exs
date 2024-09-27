@@ -24,5 +24,10 @@ defmodule Guideme.Repo.Migrations.CreateGuides do
              include: [:name, :template_id],
              name: :guide_directory_covering_index
            )
+
+    create index(:guides, [:id],
+             include: [:name, :updated_for_review_at, :inserted_at],
+             name: :my_reviews_covering_index
+           )
   end
 end

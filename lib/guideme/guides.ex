@@ -21,6 +21,18 @@ defmodule Guideme.Guides do
     Repo.all(Guide)
   end
 
+  def list_guides_for_my_reviews do
+    Repo.all(
+      from g in Guide,
+        select: %{
+          id: g.id,
+          name: g.name,
+          inserted_at: g.inserted_at,
+          updated_for_review_at: g.updated_for_review_at
+        }
+    )
+  end
+
   @doc """
   Gets a single guide.
 
