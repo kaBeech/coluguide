@@ -108,7 +108,36 @@ defmodule GuidemeWeb.SeedLive do
       chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
 
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Review a Guide",
+      name: "Review a Guide",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Read a Review Status Indicator",
+      name: "Read a Guide's Review Status Indicator",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Understand the Review Status State",
+      name: "Understand a Guide's Review Status State",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Use the Full Review Section",
+      name: "Use a Guide's Full Review Section",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
     # Use GuideMe - Steps
+
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Use a Guide",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
