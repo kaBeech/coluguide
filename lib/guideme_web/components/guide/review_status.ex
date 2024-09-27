@@ -71,9 +71,12 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
         guide =
           Enum.find(
             guides,
-            raise("Guide not found for reviewed guide: #{inspect(reviewed_guide)}"),
             &(&1.id == reviewed_guide.guide_id)
           )
+
+        if is_nil(guide) do
+          raise("Guide not found for reviewed guide: #{inspect(reviewed_guide.guide_id)}")
+        end
 
         remaining_guides = Enum.reject(guides, &(&1.id == guide.id))
         review_status = get_reviewed_status(reviewed_guide, guide)
