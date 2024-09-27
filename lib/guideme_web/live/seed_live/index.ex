@@ -145,13 +145,13 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Review Guides that have been assigned to you",
+      full_text: "Review a Guide",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "See which updated Guides need to be reviewed again",
+      full_text: "See which Guides have been updated since last review",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 3
     })
