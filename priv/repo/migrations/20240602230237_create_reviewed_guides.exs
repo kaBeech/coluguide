@@ -19,7 +19,7 @@ defmodule Guideme.Repo.Migrations.CreateReviewedGuides do
              :reviewed_guides,
              [:user_id, :guide_id],
              include: [:review_assigned_by_id, :reviewed_at],
-             name: :my_reviews_covering_index
+             name: :list_my_reviewed_guides_covering_index
            )
   end
 end
