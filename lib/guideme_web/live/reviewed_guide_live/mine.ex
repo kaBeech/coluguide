@@ -20,7 +20,7 @@ defmodule GuidemeWeb.ReviewedGuideLive.Mine do
          guides: needs_review,
          action: "select_needs_review"
        },
-       stale: %{name: "Stale Reviews", guides: stale, action: "select_stale"},
+       stale: %{name: "Stale", guides: stale, action: "select_stale"},
        reviewed: %{name: "Reviewed", guides: reviewed, action: "select_reviewed"},
        unreviewed: %{name: "Unreviewed", guides: unreviewed, action: "select_unreviewed"},
        current_selection: nil
@@ -37,18 +37,18 @@ defmodule GuidemeWeb.ReviewedGuideLive.Mine do
 
   @impl true
   def handle_event("select_needs_review", _, socket) do
-    {:noreply, assign(socket, current_selection: "needs_review")}
+    {:noreply, assign(socket, current_selection: "Needs Review!")}
   end
 
   def handle_event("select_stale", _, socket) do
-    {:noreply, assign(socket, current_selection: "stale")}
+    {:noreply, assign(socket, current_selection: "Stale")}
   end
 
   def handle_event("select_reviewed", _, socket) do
-    {:noreply, assign(socket, current_selection: "reviewed")}
+    {:noreply, assign(socket, current_selection: "Reviewed")}
   end
 
   def handle_event("select_unreviewed", _, socket) do
-    {:noreply, assign(socket, current_selection: "unreviewed")}
+    {:noreply, assign(socket, current_selection: "Unreviewed")}
   end
 end

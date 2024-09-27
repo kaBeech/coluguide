@@ -3,7 +3,7 @@
 </.header>
 
 <ul class="flex row wrap justifyCenter">
-  <%= for status_counter <- [@needs_review, @stale, @reviewed, @unreviewed] do %>
+  <%= for status_counter <- [@needs_review, @stale, @unreviewed, @reviewed] do %>
     <li class="flex column alignCenter">
       <div class="logo glow link pointer flex justifyCenter" phx-click={status_counter.action}>
         <span class="logoFont textcenter"><%= Enum.count(status_counter.guides) %></span>
@@ -14,3 +14,23 @@
     </li>
   <% end %>
 </ul>
+
+<%= if @current_selection do %>
+  <section class="flex column alignCenter">
+    <h2>
+      <%= @current_selection %>
+    </h2>
+    <ol class="flex column alignStart">
+      <%= for guide <-  Enum.find([@needs_review, @stale, @reviewed, @unreviewed], fn x -> x.name == @current_selection end).guides do %>
+        <li class="flex column ">
+          <span>
+            <a href={"/guide/#{guide.id}"} class="link pointer">
+              
+            </a>
+            <%= " " <> guide.name %>
+          </span>
+        </li>
+      <% end %>
+    </ol>
+  </section>
+<% end %>
