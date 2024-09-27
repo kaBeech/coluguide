@@ -240,6 +240,12 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Manage Teams (coming soon!)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
+      number: 6
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Each Guide's title is shown near the top of the page",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide"),
       number: 1
