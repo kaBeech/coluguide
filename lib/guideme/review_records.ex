@@ -29,6 +29,7 @@ defmodule Guideme.ReviewRecords do
 
       iex> list_my_reviewed_guides(123)
       [%{
+        id: 123,
         reviewed_at: ~U[2021-08-01 00:00:00Z],
         review_assigned_by_id: 456,
         guide_id: 789
@@ -39,6 +40,7 @@ defmodule Guideme.ReviewRecords do
       from r in ReviewedGuide,
         where: r.user_id == ^user_id,
         select: %{
+          id: r.id,
           reviewed_at: r.reviewed_at,
           review_assigned_by_id: r.review_assigned_by_id,
           guide_id: r.guide_id
