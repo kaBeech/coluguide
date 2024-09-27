@@ -40,6 +40,7 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     # Use GuideMe - Images
+
     Guideme.Repo.insert!(%Guideme.Images.Image{
       src: "guide_template_standard.png"
     })
@@ -80,12 +81,82 @@ defmodule GuidemeWeb.SeedLive do
       src: "guide_checkbox.png"
     })
 
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_review.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_review_section.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_rsi.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_needs_review.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_full_review_section.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_review_button.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_rsi_unreviewed.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_rsi_reviewed.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_rsi_review_stale.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_rsi_needs_review.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_review_status_unreviewed.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_review_status_reviewed.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_review_status_review_stale.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_review_status_needs_review.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_review_section_status.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_review_section_last_reviewed.png"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "guide_review_section_last_updated.png"
+    })
+
     # Use GuideMe - Chapters
+
     Guideme.Repo.insert!(%Guideme.Chapters.Chapter{
       title: "Use GuideMe"
     })
 
     # Use GuideMe - Guides
+
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use GuideMe",
       name: "Use GuideMe",
@@ -382,6 +453,12 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review.png"),
+      alt: "A Guide's Review section is shown near the bottom of the page",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: Guideme.Images.get_image_id_by_src!("guide_title.png"),
       alt: "A Guide's title is shown above its steps",
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use a Guide")
@@ -439,10 +516,153 @@ defmodule GuidemeWeb.SeedLive do
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Use Step Icons")
     })
 
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review_section.png"),
+      alt: "A Guide's Review section, shown near the bottom of the page shows
+        only the Review Status Indicator and the orange 󰷊 icon when a page is
+        first loaded",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Review a Guide")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_rsi.png"),
+      alt: "The Review Status Indicator next to the orange 󰷊 icon shows the
+        Guide's Review Status",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Review a Guide")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_needs_review.png"),
+      alt: "The small Review Section outlined in orange, indicating that the
+        Guide needs review",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Review a Guide")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_full_review_section.png"),
+      alt: "The orange 󰷊 icon next to the Review Status Indicator can be
+        clicked to open the full Review section",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Review a Guide")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review_button.png"),
+      alt: "Clicking the Review button brings up an alert notification at the
+        top of the screen. Clicking OK on this notification to confirm that
+        you've reviewed the Guide will record your review",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Review a Guide")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_rsi_unreviewed.png"),
+      alt: "The Review Status Indicator shows a • when you have not reviewed
+        the Guide and it is not assigned to you for review",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Read a Guide's Review Status Indicator")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_rsi_reviewed.png"),
+      alt: "The Review Status Indicator shows a ✓ when your review of the
+        Guide is up-to-date",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Read a Guide's Review Status Indicator")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_rsi_review_stale.png"),
+      alt: "The Review Status Indicator shows an  when the Guide has been
+        updated since your last review",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Read a Guide's Review Status Indicator")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_rsi_needs_review.png"),
+      alt: "The Review Status Indicator shows an  and the Review Status
+        Indicator is outlined in orange when the Guide needs your review",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Read a Guide's Review Status Indicator")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review_status_unreviewed.png"),
+      alt: "The Review Status is Unreviewed when you have not reviewed the
+        Guide and it is not assigned to you for review",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Understand a Guide's Review Status State")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review_status_reviewed.png"),
+      alt: "The Review Status is Reviewed when you have reviewed the Guide
+        and it has not been updated since then",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Understand a Guide's Review Status State")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review_status_review_stale.png"),
+      alt: "The Review Status is Review Stale when you are not assigned to
+        review the Guide, but have reviewed it, and it has been updated since
+        your last review",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Understand a Guide's Review Status State")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review_status_needs_review.png"),
+      alt: "The Review Status is Needs Review! when you are assigned to review
+        the Guide, but have not reviewed it since its last update",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Understand a Guide's Review Status State")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_full_review_section.png"),
+      alt: "The orange 󰷊 icon next to the Review Status Indicator can be
+        clicked to show or hide the full Review section",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use a Guide's Full Review Section")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review_section_status.png"),
+      alt: "The Review Status state is displayed underneath the Review Status
+        Indicator and the orange 󰷊 icon",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use a Guide's Full Review Section")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review_section_last_reviewed.png"),
+      alt: "The date you last reviewed the Guide is shown below the Review
+        Status state",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Use a Guide's Full Review Section")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review_section_last_updated.png"),
+      alt: "The date the Guide was last updated is shown below the date you
+        last reviewed the Guide",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Use a Guide's Full Review Section")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_review_button.png"),
+      alt: "Clicking the Review button brings up an alert notification at the
+        top of the screen. Clicking OK on this notification to confirm that
+        you've reviewed the Guide will record your review",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(6, "Use a Guide's Full Review Section")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("guide_needs_review.png"),
+      alt: "The Review Status Indicator at the top of the Review section
+        is outlined in orange when the Review Status is Needs Review!",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(7, "Use a Guide's Full Review Section")
+    })
+
     # Use GuideMe - Details Links
+
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use GuideMe"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use GuideMe"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Review a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
@@ -450,14 +670,109 @@ defmodule GuidemeWeb.SeedLive do
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use Step Icons")
     })
 
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Review a Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Review a Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide's Full Review Section")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Read a Guide's Review Status Indicator"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State")
+    })
+    
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use a Guide's Full Review Section"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Use a Guide's Full Review Section"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State")
+    })
+
     # Play a game of Chess - Images
 
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_setup.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_checkmated.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_checkmate.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_pawn_move.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_pawn_capture.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_en_passant.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_move_no_check.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_capture_no_check.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_pawn_moves.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_rook_moves.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_knight_moves.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_bishop_moves.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_queen_moves.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_king_moves.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_check.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_castling.webp"
+    })
+
+    Guideme.Repo.insert!(%Guideme.Images.Image{
+      src: "chess_pawn_promotion.webp"
+    })
+
     # Play a game of Chess - Chapters
+
     Guideme.Repo.insert!(%Guideme.Chapters.Chapter{
       title: "Play a game of Chess"
     })
 
     # Play a game of Chess - Guides
+
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Play a game of Chess",
       name: "Play a game of Chess",
@@ -699,19 +1014,165 @@ defmodule GuidemeWeb.SeedLive do
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Queens move horizontally, vertically, or diagonally any number 
         of spaces",
+      external_link: "https://en.wikipedia.org/wiki/Queen_(chess)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Kings move one space in any direction",
+      external_link: "https://en.wikipedia.org/wiki/King_(chess)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Make a regular move in Chess"),
       number: 6
     })
 
     # Play a game of Chess - Step Images
 
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_setup.webp"),
+      alt: "A game of chess begins with each players' pieces set up on the two 
+        rows rows of the board closest to them.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Play a game of Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_setup.webp"),
+      alt: "A game of chess begins with each players' pieces set up on the two 
+        rows rows of the board closest to them.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Set up a game of Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_checkmated.webp"),
+      alt: "The White Queen checkmates the Black King.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Play a game of Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_checkmate.webp"),
+      alt: "The Black Rook checkmates the White King.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Play a game of Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_pawn_move.webp"),
+      alt: "Move one of your pieces to an empty space according to its movement
+        rules.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Take turns in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_pawn_capture.webp"),
+      alt: "Capture one of your opponent's pieces by moving one of your pieces onto
+        the space it occupies.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Take turns in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_en_passant.webp"),
+      alt: "Make a special move if the conditions are met (en passant shown).",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Take turns in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_move_no_check.webp"),
+      alt: "Moving this Pawn lets the White Queen check the Black King.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Move a piece to an empty space in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_pawn_move.webp"),
+      alt: "Move one of your pieces to an empty space according to its movement
+        rules.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Move a piece to an empty space in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_capture_no_check.webp"),
+      alt: "Capture one of your opponent's pieces by moving one of your pieces onto
+        the space it occupies.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Capture an opponent's piece in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_pawn_capture.webp"),
+      alt: "Capture one of your opponent's pieces by moving one of your pieces onto
+        the space it occupies.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Capture an opponent's piece in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_pawn_moves.webp"),
+      alt: "Pawns move forward one (or sometimes two) spaces to an empty space, or 
+        capture diagonally forward.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Make a regular move in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_rook_moves.webp"),
+      alt: "Rooks move horizontally or vertically any number of spaces.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Make a regular move in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_knight_moves.webp"),
+      alt: "Knights move in an L-shape in any direction.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Make a regular move in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_bishop_moves.webp"),
+      alt: "Bishops move diagonally any number of spaces.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Make a regular move in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_queen_moves.webp"),
+      alt: "Queens move horizontally, vertically, or diagonally any number of 
+        spaces.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Make a regular move in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_king_moves.webp"),
+      alt: "Kings move one space in any direction.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(6, "Make a regular move in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_check.webp"),
+      alt: "The Black Knight checks the White King.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Make a special move in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_checkmate.webp"),
+      alt: "The Black Rook checks the White King.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Make a special move in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_en_passant.webp"),
+      alt: "Black castles, moving their King two spaces towards the Rook and their 
+        Rook to the other side of their King.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Make a special move in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_castling.webp"),
+      alt: "As its first move, a Pawn may capture en passant by moving forward two 
+        spaces while capturing a piece diagonally adjacent that it moves past.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Make a special move in Chess")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.StepImage{
+      image_id: Guideme.Images.get_image_id_by_src!("chess_pawn_promotion.webp"),
+      alt: "Moving this Pawn to the end of the board lets it become another piece.",
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Make a special move in Chess")
+    })
+
     # Play a game of Chess - Details Links
+
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Play a game of Chess"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Set up a game of Chess")
