@@ -21,15 +21,29 @@ defmodule Guideme.Guides do
     Repo.all(Guide)
   end
 
+  @doc """
+  Returns the list of guides with information necessary for the MyReviews view.
+
+  ## Examples
+
+      iex> list_guides_for_my_reviews()
+      [%{
+        id: 1,
+        name: "Use GuideMe",
+        inserted_at: ~U[2021-08-01 00:00:00Z],
+        updated_for_review_at: ~U[2021-08-01 00:00:00Z]
+      }, ...]
+  """
   def list_guides_for_my_reviews do
     Repo.all(
-      from g in Guide,
+      from(g in Guide,
         select: %{
           id: g.id,
           name: g.name,
           inserted_at: g.inserted_at,
           updated_for_review_at: g.updated_for_review_at
         }
+      )
     )
   end
 
@@ -64,9 +78,10 @@ defmodule Guideme.Guides do
   """
   def get_guide_id_by_name!(name) do
     Repo.one!(
-      from g in Guide,
+      from(g in Guide,
         where: [name: ^name],
         select: g.id
+      )
     )
   end
 
@@ -182,9 +197,10 @@ defmodule Guideme.Guides do
   """
   def get_template_id_by_name!(name) do
     Repo.one!(
-      from t in Template,
+      from(t in Template,
         where: [name: ^name],
         select: t.id
+      )
     )
   end
 
