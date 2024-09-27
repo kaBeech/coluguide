@@ -1,4 +1,5 @@
 <.flash_group flash={@flash} />
+<PowAssent.Phoenix.HTML.CoreComponents.provider_links conn={@conn} />
 <div class="container flex column alignCenter">
   <h1 class="marginBottom1">Welcome to GuideMe!</h1>
   <div :if={is_nil(Pow.Plug.current_user(@conn))} class="flex justifyCenter marginBottom2">
@@ -39,34 +40,31 @@
           Using GuideMe
         </p>
       </li>
+      <li class="flex column alignCenter">
+        <a class="logo glow" href="reviews/mine">
+          <span class="logoFont">󰷊</span>
+        </a>
+        <p class="lineHeightBigger textBright">
+          My Reviews
+        </p>
+      </li>
+      <!-- <li :if={Pow.Plug.current_user(@conn).role in ["admin", "editor"]} class="flex column alignCenter"> -->
+      <!--   <a class="logo glow" href="reviews/assign"> -->
+      <!--     <span class="logoFont"></span> -->
+      <!--   </a> -->
+      <!--   <p class="lineHeightBigger textBright"> -->
+      <!--     Assign Reviews -->
+      <!--   </p> -->
+      <!-- </li> -->
+      <!-- <li :if={Pow.Plug.current_user(@conn).role in ["admin", "editor"]} class="flex column alignCenter"> -->
+      <!--   <a class="logo glow" href="teams"> -->
+      <!--     <span class="logoFont"></span> -->
+      <!--   </a> -->
+      <!--   <p class="lineHeightBigger textBright"> -->
+      <!--     Manage Teams -->
+      <!--   </p> -->
+      <!-- </li> -->
     </ul>
   </div>
-  <PowAssent.Phoenix.HTML.CoreComponents.provider_links conn={@conn} />
-  <button
-    class="marginBottom2 width8"
-    type="button"
-    phx-click={GuidemeWeb.Layouts.App.toggle_greeting()}
-  >
-    Greet
-  </button>
-  <div id="greeting" class="hidden">
-    <p :if={Pow.Plug.current_user(@conn)}>
-      Welcome, <%= Pow.Plug.current_user(@conn).email %>!
-    </p>
-    <p :if={is_nil(Pow.Plug.current_user(@conn))}>
-      Welcome, stranger! Please sign in or register!
-    </p>
-    <br />
-    <br />
-  </div>
-  <.link :if={is_nil(Pow.Plug.current_user(@conn))} navigate={~p"/registration/new"}>
-    Registration
-  </.link>
-  <br />
-  <.link :if={is_nil(Pow.Plug.current_user(@conn))} navigate={~p"/session/new"}>Sign In</.link>
   <.link :if={Pow.Plug.current_user(@conn)} href={~p"/session"} method="delete">Sign out</.link>
-  <!-- <form class="row marginBottom2"> -->
-  <!--   <input id="greet-input" placeholder="Enter your name..." /> -->
-  <!--   <button type="submit">Greet</button> -->
-  <!-- </form> -->
 </div>
