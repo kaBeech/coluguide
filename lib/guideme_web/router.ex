@@ -78,6 +78,8 @@ defmodule GuidemeWeb.Router do
       # Guides
       live "/guide/:id", GuideLive.Guide
 
+      live "/reviews/mine", ReviewedGuideLive.Mine
+
       pipe_through [:editor_or_admin]
 
       # CRUD Directory
