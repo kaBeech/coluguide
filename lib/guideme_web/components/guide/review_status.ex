@@ -98,7 +98,7 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
     )
   end
 
-  defp get_review_status(reviewed_guide, guide) do
+  def get_review_status(reviewed_guide, guide) do
     if is_nil(reviewed_guide) do
       "Unreviewed"
     else

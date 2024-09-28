@@ -1,6 +1,7 @@
 defmodule GuidemeWeb.ReviewedGuideLive.Index do
   use GuidemeWeb, :live_view
   import NavBar
+  import GuidemeWeb.Guide.ReviewStatus
 
   alias Guideme.{ReviewRecords, Users, Guides}
   alias Guideme.ReviewRecords.ReviewedGuide
