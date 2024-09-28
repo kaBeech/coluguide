@@ -250,6 +250,13 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "View your Review Statistics",
+      name: "View your Review Statistics",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Create, Update, and Delete Guides",
       name: "Create, Update, and Delete Guides",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
@@ -788,6 +795,33 @@ defmodule GuidemeWeb.SeedLive do
         Review Status is Needs Review!",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide's Full Review Section"),
       number: 7
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click My Reviews in the User Menu",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("View your Review Statistics"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Total number of Guides in each Review Status state is shown
+        at the top of the page",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("View your Review Statistics"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click an orange number to see the Guides in that Review Status
+        state",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("View your Review Statistics"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the orange  icon next to a Guide's name to go to that
+      Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("View your Review Statistics"),
+      number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
@@ -1679,6 +1713,11 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Use GuideMe"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("View your Review Statistics")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(6, "Use GuideMe"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Create, Update, and Delete Guides")
     })
@@ -1736,6 +1775,11 @@ defmodule GuidemeWeb.SeedLive do
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Use a Guide's Full Review Section"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "View your Review Statistics"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand the Review Status State")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
