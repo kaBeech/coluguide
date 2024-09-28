@@ -48,15 +48,15 @@
           My Reviews
         </p>
       </li>
-      <!-- <li :if={Pow.Plug.current_user(@conn).role in ["admin", "editor"]} class="flex column alignCenter"> -->
-      <!--   <a class="logo glow" href="reviews/assign"> -->
-      <!--     <span class="logoFont"></span> -->
-      <!--   </a> -->
-      <!--   <p class="lineHeightBigger textBright"> -->
-      <!--     Assign Reviews -->
-      <!--   </p> -->
-      <!-- </li> -->
-      <!-- <li :if={Pow.Plug.current_user(@conn).role in ["admin", "editor"]} class="flex column alignCenter"> -->
+      <li :if={Pow.Plug.current_user(@conn).role in ["admin"]} class="flex column alignCenter">
+        <a class="logo glow" href="reviewed_guides">
+          <span class="logoFont"></span>
+        </a>
+        <p class="lineHeightBigger textBright">
+          Assign Reviews
+        </p>
+      </li>
+      <!-- <li :if={Pow.Plug.current_user(@conn).role in ["admin"]} class="flex column alignCenter"> -->
       <!--   <a class="logo glow" href="teams"> -->
       <!--     <span class="logoFont"></span> -->
       <!--   </a> -->

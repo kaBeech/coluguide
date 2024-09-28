@@ -2,7 +2,7 @@
   My Reviews
 </.header>
 
-<ul class="flex row wrap justifyCenter">
+<ul class="flex row wrap justifyCenter marginBottom5">
   <%= for status_counter <- [@needs_review, @stale, @unreviewed, @reviewed] do %>
     <li class="flex column alignCenter">
       <div class="logo glow link pointer flex justifyCenter" phx-click={status_counter.action}>
@@ -34,3 +34,4 @@
     </ol>
   </section>
 <% end %>
+<%= render_navbar(assigns) %>

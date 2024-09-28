@@ -22,6 +22,28 @@ defmodule Guideme.Guides do
   end
 
   @doc """
+  Returns the list of guides with their names and ids.
+
+  ## Examples
+
+      iex> list_guide_names_and_ids()
+      [%{
+        id: 1,
+        name: "Use GuideMe"
+      }, ...]
+  """
+  def list_guide_names_and_ids do
+    Repo.all(
+      from(g in Guide,
+        select: %{
+          id: g.id,
+          name: g.name
+        }
+      )
+    )
+  end
+
+  @doc """
   Returns all guides that are the Chapter Title for their respective chapters,
   with information necessary for the Chapter Selection view.
 

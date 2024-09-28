@@ -1,5 +1,6 @@
 defmodule GuidemeWeb.ReviewedGuideLive.Mine do
   use GuidemeWeb, :live_view
+  import NavBar
 
   alias Guideme.ReviewRecords
   alias Guideme.Guides

@@ -68,14 +68,14 @@ defmodule GuidemeWeb.CoreComponents do
               phx-click-away={JS.exec("data-cancel", to: "##{@id}")}
               class="shadow-zinc-700/10 ring-zinc-700/10 relative hidden rounded-2xl bg-white p-14 shadow-lg ring-1 transition"
             >
-              <div class="absolute top-6 right-5">
+              <div class="absolute textCenter textSmaller marginTop1 top-6 right-5">
                 <button
                   phx-click={JS.exec("data-cancel", to: "##{@id}")}
                   type="button"
                   class="-m-3 flex-none p-3 opacity-20 hover:opacity-40"
                   aria-label={gettext("close")}
                 >
-                  <.icon name="hero-x-mark-solid" class="h-5 w-5" />
+                  Cancel
                 </button>
               </div>
               <div id={"#{@id}-content"}>
@@ -201,10 +201,13 @@ defmodule GuidemeWeb.CoreComponents do
 
   def simple_form(assigns) do
     ~H"""
-    <.form :let={f} for={@for} as={@as} {@rest}>
-      <div class="mt-10 space-y-8 bg-white">
+    <.form :let={f} class="widthFit flex column alignCenter" for={@for} as={@as} {@rest}>
+      <div class="flex column gap1 textCenter alignCenter mt-10 space-y-8 bg-white">
         <%= render_slot(@inner_block, f) %>
-        <div :for={action <- @actions} class="mt-2 flex items-center justify-between gap-6">
+        <div
+          :for={action <- @actions}
+          class="mt-2 flex justifyCenter items-center justify-between gap-6"
+        >
           <%= render_slot(action, f) %>
         </div>
       </div>
@@ -429,7 +432,7 @@ defmodule GuidemeWeb.CoreComponents do
 
   def header(assigns) do
     ~H"""
-    <header class={[@actions != [] && "flex items-center justify-between gap-6", @class]}>
+    <header class={[@actions != [] && "flex column items-center justify-between gap-6", @class]}>
       <div>
         <h1 class="text-lg font-semibold leading-8 text-zinc-800">
           <%= render_slot(@inner_block) %>
@@ -438,7 +441,7 @@ defmodule GuidemeWeb.CoreComponents do
           <%= render_slot(@subtitle) %>
         </p>
       </div>
-      <div class="flex-none"><%= render_slot(@actions) %></div>
+      <div class="flex justifyCenter"><%= render_slot(@actions) %></div>
     </header>
     """
   end
@@ -475,13 +478,13 @@ defmodule GuidemeWeb.CoreComponents do
       end
 
     ~H"""
-    <div class="overflow-y-auto px-4 sm:overflow-visible sm:px-0">
-      <table class="w-[40rem] mt-11 sm:w-full">
+    <div class="flex column alignCenter overflow-y-auto px-4 sm:overflow-visible sm:px-0">
+      <table class="margin1 w-[40rem] mt-11 sm:w-full">
         <thead class="text-sm text-left leading-6 text-zinc-500">
           <tr>
             <th :for={col <- @col} class="p-0 pb-4 pr-6 font-normal"><%= col[:label] %></th>
             <th :if={@action != []} class="relative p-0 pb-4">
-              <span class="sr-only"><%= gettext("Actions") %></span>
+              <span class="sr-only"><%= gettext("") %></span>
             </th>
           </tr>
         </thead>

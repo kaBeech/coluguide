@@ -281,6 +281,10 @@ ul {
   color: var(--guideme-text-accent);
 } */
 
+td, th {
+    padding: 0.5rem 1rem;
+}
+
 input,
 button {
   border-radius: 8px;

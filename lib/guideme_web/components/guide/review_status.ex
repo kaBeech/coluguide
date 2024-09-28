@@ -98,7 +98,7 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
     )
   end
 
-  defp get_review_status(reviewed_guide, guide) do
+  def get_review_status(reviewed_guide, guide) do
     if is_nil(reviewed_guide) do
       "Unreviewed"
     else
@@ -130,7 +130,7 @@ defmodule GuidemeWeb.Guide.ReviewStatus do
   end
 
   defp get_last_review_date(reviewed_guide) do
-    if reviewed_guide do
+    if reviewed_guide && reviewed_guide.reviewed_at do
       DateTime.to_date(reviewed_guide.reviewed_at)
     else
       "Never"
