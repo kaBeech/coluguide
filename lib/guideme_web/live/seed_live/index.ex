@@ -207,6 +207,69 @@ defmodule GuidemeWeb.SeedLive do
       chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
 
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Create, Update, and Delete Guides",
+      name: "Create, Update, and Delete Guides",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Use the CRUD section",
+      name: "Use the CRUD section",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Use Editor Mode",
+      name: "Use Editor Mode",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Enter Editor Mode",
+      name: "Enter Editor Mode",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Edit Chapters",
+      name: "Edit Chapters",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Edit Guides",
+      name: "Edit Guides",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Add a Chapter",
+      name: "Add a Chapter",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+    
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Update a Chapter",
+      name: "Update a Chapter",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Delete a Chapter",
+      name: "Delete a Chapter",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
     # Use GuideMe - Steps
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
@@ -448,6 +511,487 @@ defmodule GuidemeWeb.SeedLive do
       number: 7
     })
 
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Use the CRUD section",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Create, Update, and Delete Guides"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Use Editor Mode (coming soon!)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Create, Update, and Delete Guides"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Go to the main CRUD page (only accessible if you are an
+        Editor)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use the CRUD section"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Select the type of item you want to create, update, or delete",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use the CRUD section"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Create a new item",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use the CRUD section"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Update an existing item",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use the CRUD section"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Delete an item",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use the CRUD section"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use Editor Mode"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Edit Chapters",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use Editor Mode"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Edit Guides",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use Editor Mode"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Open the User Menu",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Enter Editor Mode"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Select 'Enter Editor Mode' (only appears if you are an Editor)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Enter Editor Mode"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Navigate to the Chapter Selection page",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Chapters"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode (if you haven't already)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Chapters"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon to add a new Chapter",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Chapters"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon near a Chapter to update it",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Chapters"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the  icon near a Chapter and confirm to delete it",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Chapters"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode (if you haven't already)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Guides"),
+      number: 1
+    })
+    
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the    icon on the Chapter Selection page",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Add a unique title for your Chapter",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Add a Nerd Font-compatible icon to represent your Chapter",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Add a title for your Chapter's first Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Add a unique name for your Chapter's first Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
+      number: 6
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the 'Save Chapter' button and confirm to create your Chapter",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
+      number: 7
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode (if you haven't already)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update a Chapter"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon next to the Chapter you want to update on 
+      the Chapter Selection page",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update a Chapter"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click into the Chapter's title to update it",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update a Chapter"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click into the Chapter's icon to update it",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update a Chapter"),
+      number: 4
+    })
+    
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the 'Save Chapter' button and confirm to update your Chapter",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update a Chapter"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode (if you haven't already)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Guides"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Add a new Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Guides"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Update an existing Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Guides"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Delete a Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Guides"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Open the New Guide screen",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Add a title for your Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Add a unique name for your Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Choose a Template for your Guide (not that currently this
+      cannot be changed after creating the Guide)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Add an Introduction for your Guide (optional)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the 'Save Guide' button and confirm to create your Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      number: 6
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Update your newly-created Guide to add Steps",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      number: 7
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "If you want to add a new Guide for a Chapter that doesn't
+      exist yet, add a new Chapter",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Open the New Guide screen"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Navigate to an existing Guide that has a Step you want to
+      link to the new Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Open the New Guide screen"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Make sure that this Step is in the Chapter you want the new
+      Guide to be in. Note that currently this cannot be changed after creating
+      the Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Open the New Guide screen"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "If the Step you want to link from doesn't exist yet, create
+      it",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Open the New Guide screen"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode (if you haven't already)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Open the New Guide screen"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon near the Guide you want to link from",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Open the New Guide screen"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the  icon for the selected Step",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Open the New Guide screen"),
+      number: 6
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click 'Create New Guide'.",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Open the New Guide screen"),
+      number: 7
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Navigate to the Guide you want to update",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Guide"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode (if you haven't already)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Guide"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click into the text of the title, unique name, and introduction to
+      update them",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Guide"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon to add a new Step",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Guide"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon near a Step to update or delete it",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Guide"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the  and  icons to rearrange Steps",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Guide"),
+      number: 6
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Check the 'Update for Review' checkbox if you want Users who
+      have reviewed the Guide to review it again",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Guide"),
+      number: 7
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the 'Save Guide' button and confirm to save your changes",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Guide"),
+      number: 8
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Navigate to the Guide you want to delete",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Delete a Guide"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode (if you haven't already)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Delete a Guide"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Delete all Steps in the Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Delete a Guide"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the  icon near the Guide's title and confirm to delete
+      the Guide",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Delete a Guide"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Navigate to the Guide you want the new Step to be in",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Create a new Step"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode (if you haven't already)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Create a new Step"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon in the Steps section",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Create a new Step"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Add the Step's text",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Create a new Step"),
+      number: 4
+    })
+    
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the 'Save Step' button and confirm to create your
+      new Step",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Create a new Step"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Edit the Step to an External Link, Image, or Details Link
+      (optional)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Create a new Step"),
+      number: 6
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Navigate to the Guide the Step you want to update is in",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Step"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode (if you haven't already)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Step"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon near the Step you want to update",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Step"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click into the Step's text to update it",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Step"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon to edit the External Link",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Step"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon to edit the Image",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Step"),
+      number: 6
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon to edit the Details Link",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Step"),
+      number: 7
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the 'Save Step' button and confirm to save your changes",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Update an existing Step"),
+      number: 8
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Navigate to the Guide the Step you want to delete is in",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Delete an existing Step"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Enter Editor Mode (if you haven't already)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Delete an existing Step"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the   icon near the Step you want to delete and
+      confirm to delete it
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Delete an existing Step"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Confirm to delete the Step",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Delete an existing Step"),
+      number: 1
+    })
 
     # Use GuideMe - Step Images
 
