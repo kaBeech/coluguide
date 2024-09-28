@@ -429,7 +429,7 @@ defmodule GuidemeWeb.CoreComponents do
 
   def header(assigns) do
     ~H"""
-    <header class={[@actions != [] && "flex items-center justify-between gap-6", @class]}>
+    <header class={[@actions != [] && "flex column items-center justify-between gap-6", @class]}>
       <div>
         <h1 class="text-lg font-semibold leading-8 text-zinc-800">
           <%= render_slot(@inner_block) %>
@@ -438,7 +438,7 @@ defmodule GuidemeWeb.CoreComponents do
           <%= render_slot(@subtitle) %>
         </p>
       </div>
-      <div class="flex-none"><%= render_slot(@actions) %></div>
+      <div class="flex justifyCenter"><%= render_slot(@actions) %></div>
     </header>
     """
   end
