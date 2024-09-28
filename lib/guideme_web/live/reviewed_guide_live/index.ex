@@ -24,19 +24,19 @@ defmodule GuidemeWeb.ReviewedGuideLive.Index do
 
   defp apply_action(socket, :edit, %{"id" => id}) do
     socket
-    |> assign(:page_title, "Edit Reviewed guide")
+    |> assign(:page_title, "Edit Review assignment")
     |> assign(:reviewed_guide, ReviewRecords.get_reviewed_guide!(id))
   end
 
   defp apply_action(socket, :new, _params) do
     socket
-    |> assign(:page_title, "New Reviewed guide")
+    |> assign(:page_title, "New Review assignment")
     |> assign(:reviewed_guide, %ReviewedGuide{})
   end
 
   defp apply_action(socket, :index, _params) do
     socket
-    |> assign(:page_title, "Listing Reviewed guides")
+    |> assign(:page_title, "Assign Guides for Review")
     |> assign(:reviewed_guide, nil)
   end
 
