@@ -13,6 +13,16 @@
   row_click={fn {_id, reviewed_guide} -> JS.navigate(~p"/reviewed_guides/#{reviewed_guide}") end}
 >
   <:col :let={{_id, reviewed_guide}} label="Status">
+    <span class="textDull">
+      <%= if get_review_status(
+               reviewed_guide,
+               Guides.get_guide!(reviewed_guide.guide_id)
+             ) == "Reviewed" do
+        " "
+      else
+        " "
+      end %>
+    </span>
     <%= get_review_status(
       reviewed_guide,
       Guides.get_guide!(reviewed_guide.guide_id)
