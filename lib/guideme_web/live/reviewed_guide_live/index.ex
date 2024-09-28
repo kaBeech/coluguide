@@ -1,8 +1,16 @@
 defmodule GuidemeWeb.ReviewedGuideLive.Index do
   use GuidemeWeb, :live_view
 
-  alias Guideme.ReviewRecords
+  alias Guideme.{ReviewRecords, Users, Guides}
   alias Guideme.ReviewRecords.ReviewedGuide
+
+  def list_guides do
+    Guides.list_guide_names_and_ids()
+  end
+
+  def list_users do
+    Users.list_users()
+  end
 
   @impl true
   def mount(_params, _session, socket) do
