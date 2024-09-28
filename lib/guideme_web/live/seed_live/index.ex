@@ -982,7 +982,7 @@ defmodule GuidemeWeb.SeedLive do
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Click the   icon near the Step you want to delete and
-      confirm to delete it
+      confirm to delete it",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Delete an existing Step"),
       number: 3
     })
