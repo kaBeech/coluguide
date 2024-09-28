@@ -173,6 +173,41 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Everything is simple",
+      name: "Everything is simple",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Access necessary information quickly",
+      name: "Access necessary information quickly",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Avoid distractions",
+      name: "Avoid distractions",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Don't think too hard",
+      name: "Don't think too hard",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Good information changes",
+      name: "Good information changes",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use a Guide",
       name: "Use a Guide",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
@@ -257,8 +292,15 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
-      title: "Add a new Chapter",
-      name: "Add a new Chapter",
+      title: "Add a Chapter",
+      name: "Add a Chapter",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Make titles and names",
+      name: "Make titles and names in GuideMe",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
@@ -278,8 +320,8 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
-      title: "Add a new Guide",
-      name: "Add a new Guide",
+      title: "Add a Guide",
+      name: "Add a Guide",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
@@ -306,8 +348,8 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
-      title: "Add a new Step",
-      name: "Add a new Step",
+      title: "Add a Step",
+      name: "Add a Step",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
       chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
@@ -396,6 +438,153 @@ defmodule GuidemeWeb.SeedLive do
       full_text: "Manage Teams (coming soon!)",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 7
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Everything is simple",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand the GuideMe Philosophy"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Access necessary information quickly",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand the GuideMe Philosophy"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Avoid distractions",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand the GuideMe Philosophy"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Don't think too hard",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand the GuideMe Philosophy"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Good information changes",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand the GuideMe Philosophy"),
+      number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "A complex system can be understood as a structure of simple
+        abstractions",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Everything is simple"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Each Guide is short enough to understand",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Everything is simple"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Each Step is short enough to understand",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Everything is simple"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "If a Guide or Step gets too complicated, break it down into
+        simpler parts",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Everything is simple"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Our jobs require us to have vast amounts of knowledge
+      available at a moment's notice",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Access necessary information quickly"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Make finding the correct information quick",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Access necessary information quickly"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Each Guide gives a complete high-level overview of the
+        necessary information",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Access necessary information quickly"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "When more detail on a Step is needed, a Details Link is
+        provided",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Access necessary information quickly"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Our jobs require intense focus. Distractions can put
+      Patients' lives at risk",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Avoid distractions"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Keep extraneous information to a minimum",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Avoid distractions"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Build applications that operate in a predictable manner",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Avoid distractions"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Comfort and style matter",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Avoid distractions"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Our jobs require high levels of critical thinking",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Don't think too hard"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Brainpower spent on searching for information could be better
+      spent solving problems",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Don't think too hard"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Build applications that can be used with low expense to
+      braipower",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Don't think too hard"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "We work in an environment that is constantly evolving",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Good information changes"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Living information changes. When important changes occur,
+      Users need to be informed",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Good information changes"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Some small changes may not need to be communicated",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Good information changes"),
+      number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
@@ -706,44 +895,69 @@ defmodule GuidemeWeb.SeedLive do
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Enter Editor Mode (if you haven't already)",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
       number: 1
     })
     
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Click the    icon on the Chapter Selection page",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Add a unique title for your Chapter",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Add a Nerd Font-compatible icon to represent your Chapter",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Add a title for your Chapter's first Guide",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
       number: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Add a unique name for your Chapter's first Guide",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
       number: 6
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Click the 'Save Chapter' button and confirm to create your Chapter",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
       number: 7
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      external_link: "https://en.wikipedia.org/wiki/Imperative_mood",
+      full_text: "Titles and names use imperative mood",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make titles and names in GuideMe"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Chapter titles and Guide names must be unique",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make titles and names in GuideMe"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Guide titles do not need to be unique",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make titles and names in GuideMe"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Titles and names should be short and descriptive",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make titles and names in GuideMe"),
+      number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
@@ -803,7 +1017,7 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Add a new Guide",
+      full_text: "Add a Guide",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Edit Guides"),
       number: 2
     })
@@ -822,44 +1036,44 @@ defmodule GuidemeWeb.SeedLive do
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Open the New Guide screen",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Guide"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Add a title for your Guide",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Guide"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Add a unique name for your Guide",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Guide"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Choose a Template for your Guide (not that currently this
       cannot be changed after creating the Guide)",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Guide"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Add an Introduction for your Guide (optional)",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Guide"),
       number: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Click the 'Save Guide' button and confirm to create your Guide",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Guide"),
       number: 6
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Update your newly-created Guide to add Steps",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Guide"),
       number: 7
     })
 
@@ -993,39 +1207,39 @@ defmodule GuidemeWeb.SeedLive do
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Navigate to the Guide you want the new Step to be in",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Step"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Step"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Enter Editor Mode (if you haven't already)",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Step"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Step"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Click the   icon in the Steps section",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Step"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Step"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Add the Step's text",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Step"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Step"),
       number: 4
     })
     
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Click the 'Save Step' button and confirm to create your
       new Step",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Step"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Step"),
       number: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "Edit the Step to add an External Link, Image, or Details Link
       (optional)",
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Step"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Step"),
       number: 6
     })
 
@@ -1149,22 +1363,29 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "To remove the Image from this Step, click the  icon",
+      full_text: "All Step Images must include alt text describing the
+      image to someone who can't see it",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Edit a Step's Image"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Click the 'Save' button and confirm to save your changes",
+      full_text: "To remove the Image from this Step, click the  icon",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Edit a Step's Image"),
       number: 5
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the 'Save' button and confirm to save your changes",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Edit a Step's Image"),
+      number: 6
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "To change what Images are available in the dropdown, see the
       Manage Images section",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Edit a Step's Image"),
-      number: 6
+      number: 7
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
@@ -1443,6 +1664,11 @@ defmodule GuidemeWeb.SeedLive do
     # Use GuideMe - Details Links
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use GuideMe"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand the GuideMe Philosophy")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use GuideMe"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide")
     })
@@ -1455,6 +1681,31 @@ defmodule GuidemeWeb.SeedLive do
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(6, "Use GuideMe"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Create, Update, and Delete Guides")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Understand the GuideMe Philosophy"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Everything is simple")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Understand the GuideMe Philosophy"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Access necessary information quickly")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Understand the GuideMe Philosophy"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Avoid distractions")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Understand the GuideMe Philosophy"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Don't think too hard")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Understand the GuideMe Philosophy"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Good information changes"),
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
@@ -1519,7 +1770,7 @@ defmodule GuidemeWeb.SeedLive do
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Edit Chapters"),
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
@@ -1539,7 +1790,7 @@ defmodule GuidemeWeb.SeedLive do
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Edit Guides"),
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Guide"),
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
@@ -1553,8 +1804,23 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Add a new Chapter"),
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Add a Chapter"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Enter Editor Mode"),
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Add a Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make titles and names in GuideMe"),
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Add a Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make titles and names in GuideMe"),
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(6, "Add a Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make titles and names in GuideMe"),
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
@@ -1583,23 +1849,33 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Add a new Guide"),
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Add a Guide"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Open the New Guide screen"),
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(7, "Add a new Guide"),
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Add a Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make titles and names in GuideMe"),
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Add a Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make titles and names in GuideMe"),
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(7, "Add a Guide"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Update a Guide"),
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Open the New Guide screen"),
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Chapter"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Chapter"),
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Open the New Guide screen"),
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Step"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Step"),
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
@@ -1618,8 +1894,13 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Update a Guide"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Make titles and names in GuideMe"),
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(4, "Update a Guide"),
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a new Step"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Add a Step"),
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
@@ -1638,12 +1919,12 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Add a new Step"),
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Add a Step"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Enter Editor Mode"),
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(6, "Add a new Step"),
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(6, "Add a Step"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Update a Step"),
     })
 
@@ -1683,7 +1964,7 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(6, "Edit a Step's Image"),
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(7, "Edit a Step's Image"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Manage Images in GuideMe"),
     })
 
