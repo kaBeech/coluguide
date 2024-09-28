@@ -18,7 +18,9 @@
   <:col :let={{_id, reviewed_guide}} label="User">
     <%= Enum.find(list_users(), &(&1.id == reviewed_guide.user_id)).email %>
   </:col>
-  <:col :let={{_id, reviewed_guide}} label="Reviewed at"><%= reviewed_guide.reviewed_at %></:col>
+  <:col :let={{_id, reviewed_guide}} label="Reviewed at">
+    <%= reviewed_guide.reviewed_at || "Never" %>
+  </:col>
   <:action :let={{id, reviewed_guide}}>
     <.link
       phx-click={JS.push("delete", value: %{id: reviewed_guide.id}) |> hide("##{id}")}
