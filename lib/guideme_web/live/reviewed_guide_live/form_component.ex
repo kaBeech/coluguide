@@ -19,10 +19,9 @@ defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
     guides = list_guide_ids()
 
     ~H"""
-    <div>
+    <div class="flex column alignCenter">
       <.header>
         <%= @title %>
-        <:subtitle>Use this form to manage reviewed_guide records in your database.</:subtitle>
       </.header>
 
       <.simple_form
@@ -35,7 +34,7 @@ defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
         <.input field={@form[:user_id]} type="select" options={users} label="User ID" />
         <.input field={@form[:guide_id]} type="select" options={guides} label="Guide ID" />
         <:actions>
-          <.button phx-disable-with="Saving...">Save Reviewed guide</.button>
+          <.button class="textSmaller" phx-disable-with="Saving...">Assign review</.button>
         </:actions>
       </.simple_form>
     </div>
