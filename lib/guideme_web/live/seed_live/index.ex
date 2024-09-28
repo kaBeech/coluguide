@@ -166,6 +166,13 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Understand the GuideMe Philosophy",
+      name: "Understand the GuideMe Philosophy",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Use a Guide",
       name: "Use a Guide",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
@@ -350,39 +357,45 @@ defmodule GuidemeWeb.SeedLive do
     # Use GuideMe - Steps
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Use a Guide",
+      full_text: "Understand the GuideMe Philosophy",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Review a Guide",
+      full_text: "Use a Guide",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "See which Guides have been updated since last review",
+      full_text: "Review a Guide",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Assign Guides to Users for review",
+      full_text: "See which Guides have been updated since last review",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Create, update, and delete Guides",
+      full_text: "Assign Guides to Users for review",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Manage Teams (coming soon!)",
+      full_text: "Create, update, and delete Guides",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
       number: 6
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Manage Teams (coming soon!)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Use GuideMe"),
+      number: 7
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
@@ -1223,13 +1236,13 @@ defmodule GuidemeWeb.SeedLive do
       image_id: Guideme.Images.get_image_id_by_src!("guide_template_standard.png"),
       alt: "An example Guide page showing the title, steps, and icons for each 
         step's external link, image, and details link.",
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use GuideMe")
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use GuideMe")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
       image_id: Guideme.Images.get_image_id_by_src!("guide_review.png"),
       alt: "A Guide's Review section is shown near the bottom of the page",
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use GuideMe")
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Use GuideMe")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.StepImage{
@@ -1430,17 +1443,17 @@ defmodule GuidemeWeb.SeedLive do
     # Use GuideMe - Details Links
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(1, "Use GuideMe"),
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use GuideMe"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Use a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Use GuideMe"),
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(3, "Use GuideMe"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Review a Guide")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
-      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Use GuideMe"),
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(6, "Use GuideMe"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Create, Update, and Delete Guides")
     })
 
