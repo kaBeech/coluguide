@@ -125,14 +125,6 @@ defmodule GuidemeWeb.Router do
       live "/step_images/:id", StepImageLive.Show, :show
       live "/step_images/:id/show/edit", StepImageLive.Show, :edit
 
-      # Reviewed Guide CRUD
-      live "/reviewed_guides", ReviewedGuideLive.Index, :index
-      live "/reviewed_guides/new", ReviewedGuideLive.Index, :new
-      live "/reviewed_guides/:id/edit", ReviewedGuideLive.Index, :edit
-
-      live "/reviewed_guides/:id", ReviewedGuideLive.Show, :show
-      live "/reviewed_guides/:id/show/edit", ReviewedGuideLive.Show, :edit
-
       # Image CRUD
       live "/images", ImageLive.Index, :index
       live "/images/new", ImageLive.Index, :new
@@ -142,6 +134,14 @@ defmodule GuidemeWeb.Router do
       live "/images/:id/show/edit", ImageLive.Show, :edit
 
       pipe_through [:admin]
+
+      # Assign Reviews View
+      live "/reviewed_guides", ReviewedGuideLive.Index, :index
+      live "/reviewed_guides/new", ReviewedGuideLive.Index, :new
+      live "/reviewed_guides/:id/edit", ReviewedGuideLive.Index, :edit
+
+      live "/reviewed_guides/:id", ReviewedGuideLive.Show, :show
+      live "/reviewed_guides/:id/show/edit", ReviewedGuideLive.Show, :edit
 
       # Hacky Mix-free database seeding
       live "/seed", SeedLive
