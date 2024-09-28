@@ -4,7 +4,7 @@ defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
   alias Guideme.{ReviewRecords, Users, Guides}
 
   defp list_guide_ids do
-    Guides.list_guides()
+    Guides.list_guide_names_and_ids()
     |> Enum.map(&{&1.name, &1.id})
   end
 
@@ -15,6 +15,9 @@ defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
 
   @impl true
   def render(assigns) do
+    users = list_user_ids()
+    guides = list_guide_ids()
+
     ~H"""
     <div>
       <.header>
@@ -29,8 +32,8 @@ defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
         phx-change="validate"
         phx-submit="save"
       >
-        <.input field={@form[:user_id]} type="select" options={list_user_ids()} label="User ID" />
-        <.input field={@form[:guide_id]} type="select" options={list_guide_ids()} label="Guide ID" />
+        <.input field={@form[:user_id]} type="select" options={users} label="User ID" />
+        <.input field={@form[:guide_id]} type="select" options={guides} label="Guide ID" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Reviewed guide</.button>
         </:actions>
