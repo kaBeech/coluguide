@@ -27,6 +27,6 @@ defmodule Guideme.ReviewRecords.ReviewedGuide do
   def changeset(reviewed_guide, attrs) do
     reviewed_guide
     |> cast(attrs, [:reviewed_at, :user_id, :guide_id, :review_assigned_by_id])
-    |> validate_required([:reviewed_at, :user_id, :guide_id])
+    |> validate_required([:user_id, :guide_id])
   end
 end
