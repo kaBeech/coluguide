@@ -518,7 +518,7 @@ defmodule GuideMeWeb.SeedLive do
     })
 
     GuideMe.Repo.insert!(%GuideMe.Steps.Step{
-      full_text: "Make finding the correct information quick",
+      full_text: "Make necessary information quick to find",
       guide_id: GuideMe.Guides.get_guide_id_by_name!("Access necessary information quickly"),
       number: 2
     })
