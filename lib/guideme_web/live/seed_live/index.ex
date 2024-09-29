@@ -531,8 +531,8 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "When more detail on a Step is needed, a Details Link is
-        provided",
+      full_text: "When more detail on a Step is needed, a link to a Guide with
+        more detail is provided",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Access necessary information quickly"),
       number: 4
     })
@@ -569,7 +569,7 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Brainpower spent on searching for information could be better
+      full_text: "Brainpower spent searching for information could be better
       spent solving problems",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Don't think too hard"),
       number: 2
