@@ -860,15 +860,21 @@ defmodule GuideMeWeb.SeedLive do
     })
 
     GuideMe.Repo.insert!(%GuideMe.Steps.Step{
-      full_text: "Use the CRUD section",
+      full_text: "Understand GuideMe's Style Guidelines",
       guide_id: GuideMe.Guides.get_guide_id_by_name!("Create, Update, and Delete Guides"),
       number: 1
     })
 
     GuideMe.Repo.insert!(%GuideMe.Steps.Step{
-      full_text: "Use Editor Mode (coming soon!)",
+      full_text: "Use the CRUD section",
       guide_id: GuideMe.Guides.get_guide_id_by_name!("Create, Update, and Delete Guides"),
       number: 2
+    })
+
+    GuideMe.Repo.insert!(%GuideMe.Steps.Step{
+      full_text: "Use Editor Mode (coming soon!)",
+      guide_id: GuideMe.Guides.get_guide_id_by_name!("Create, Update, and Delete Guides"),
+      number: 3
     })
 
     GuideMe.Repo.insert!(%GuideMe.Steps.Step{
@@ -1828,12 +1834,12 @@ defmodule GuideMeWeb.SeedLive do
     })
 
     GuideMe.Repo.insert!(%GuideMe.Steps.DetailsLink{
-      step_id: GuideMe.Steps.get_step_id_by_number_and_guide_name!(1, "Create, Update, and Delete Guides"),
+      step_id: GuideMe.Steps.get_step_id_by_number_and_guide_name!(2, "Create, Update, and Delete Guides"),
       guide_id: GuideMe.Guides.get_guide_id_by_name!("Use the CRUD section")
     })
 
     GuideMe.Repo.insert!(%GuideMe.Steps.DetailsLink{
-      step_id: GuideMe.Steps.get_step_id_by_number_and_guide_name!(2, "Create, Update, and Delete Guides"),
+      step_id: GuideMe.Steps.get_step_id_by_number_and_guide_name!(3, "Create, Update, and Delete Guides"),
       guide_id: GuideMe.Guides.get_guide_id_by_name!("Use Editor Mode")
     })
 
