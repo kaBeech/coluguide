@@ -9,6 +9,7 @@ defmodule GuideMeWeb.Layouts do
   `use GuideMeWeb, :live_view`.
   """
   use GuideMeWeb, :html
+  import GuideMeWeb.UserMenu
 
   embed_templates "layouts/*"
 end

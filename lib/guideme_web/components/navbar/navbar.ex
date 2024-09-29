@@ -4,7 +4,7 @@ defmodule NavBar do
 
   def render_navbar(assigns) do
     ~H"""
-    <nav class="flex justifyCenter gap1 widthMax marginTop2 marginRight1Point5">
+    <nav class="flex justifyCenter gap1 widthFull marginTop2 marginRight1Point5">
       <a href="javascript:window.history.back();"><%= "<-- Back" %></a>
       <span class="textDull">|</span>
       <a href="/">Home</a>
