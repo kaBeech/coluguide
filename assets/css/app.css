@@ -364,8 +364,28 @@ button {
   align-items: center;
 }
 
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.moveLeft {
+  transform: translateX(-75%);
+}
+
 .textCenter {
   text-align: center;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.textRight {
+  text-align: right;
 }
 
 .gapPoint5 {
@@ -380,7 +400,7 @@ button {
   gap: 2rem;
 }
 
-.widthMax {
+.widthFull {
   width: 100%;
 }
 
@@ -390,6 +410,10 @@ button {
 
 .widthFit {
   width: fit-content;
+}
+
+.widthMax {
+  width: max-content;
 }
 
 .margin0 {
@@ -502,6 +526,10 @@ button {
   padding-top: 1rem;
 }
 
+.paddingTopPoint5 {
+  padding-top: 0.5rem;
+}
+
 .borderAlert {
   border: 0.15rem solid var(--guideme-border-alert);
   border-radius: 0.2rem;
@@ -510,6 +538,10 @@ button {
 
 .textBigger {
   font-size: 1.2em;
+}
+
+.textMuchBigger {
+  font-size: 1.5em;
 }
 
 .textSmaller {
@@ -555,6 +587,18 @@ button {
 
 .hidden {
   display: none;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
 }
 
 .navTut:hover .hidden {

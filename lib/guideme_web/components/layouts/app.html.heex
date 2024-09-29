@@ -1,15 +1,9 @@
-<header class="px-4 sm:px-6 lg:px-8 widthMax flex">
-  <a href={~p"/"} class="marginLeft2 marginRightAuto">
-     <span class="textBright"> GuideMe</span>
+<header class="px-4 sm:px-6 lg:px-8 widthFull flex">
+  <a href={~p"/"} class="marginLeft2 marginRightAuto textMuchBigger">
+     
   </a>
-  <span :if={@current_user} class="marginLeftAuto marginRight2">
-    <.link href={~p"/session"} method="delete">Sign out</.link>
-  </span>
-  <span :if={is_nil(@current_user)} class="marginLeftAuto marginRight2">
-    <.link navigate={~p"/registration/new"}>
-      Registration
-    </.link>
-    | <.link navigate={~p"/session/new"}>Sign In</.link>
+  <span class="flex column alignRight marginLeftAuto marginRight2">
+    <%= render_user_menu(assigns) %>
   </span>
 </header>
 <main class="px-4 py-20 sm:px-6 lg:px-8">
