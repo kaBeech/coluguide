@@ -257,6 +257,13 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Guides.Guide{
+      title: "Manage Guide Reviews ",
+      name: "Manage Guide Reviews in GuideMe",
+      template_id: Guideme.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Guideme.Chapters.get_chapter_id_by_title!("Use GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Guides.Guide{
       title: "Create, Update, and Delete Guides",
       name: "Create, Update, and Delete Guides",
       template_id: Guideme.Guides.get_template_id_by_name!("standard"),
@@ -697,53 +704,53 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "• means Unreviewed",
+      full_text: "• means 'Unreviewed'",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "✓ means Reviewed",
+      full_text: "✓ means 'Reviewed'",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: " means Review Stale",
+      full_text: " means 'Review Stale'",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator"),
       number: 4
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
       full_text: "An  with the Review Status Indicator section outlined in
-        orange means Needs Review!",
+        orange means 'Needs Review'!",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator"),
       number: 5
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Unreviewed means you have never reviewed the Guide and it is
+      full_text: "'Unreviewed' means you have never reviewed the Guide and it is
         not assigned to you for review",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State"),
       number: 1
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Reviewed means you have reviewed a Guide and it has not been
+      full_text: "'Reviewed' means you have reviewed a Guide and it has not been
         updated you last reviewed it",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State"),
       number: 2
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Review Stale means the Guide has been updated since your last
+      full_text: "'Review Stale' means the Guide has been updated since your last
         review you, but you are not assigned to review it",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State"),
       number: 3
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.Step{
-      full_text: "Needs Review! means you are assigned to review the Guide, but
+      full_text: "'Needs Review!' means you are assigned to review the Guide, but
         have not reviewed it since its last update",
       guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State"),
       number: 4
@@ -821,6 +828,34 @@ defmodule GuidemeWeb.SeedLive do
       full_text: "Click the orange  icon next to a Guide's name to go to that
       Guide",
       guide_id: Guideme.Guides.get_guide_id_by_name!("View your Review Statistics"),
+      number: 4
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click Assign Reviews in the User Menu (only accessible if you
+      are an Admin)",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Manage Guide Reviews in GuideMe"),
+      number: 1
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Current Reviews for all Users are shown with their current
+      Review Status",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Manage Guide Reviews in GuideMe"),
+      number: 2
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the orange 'Delete' option next to a Guide's name to
+      delete that Guide Review",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Manage Guide Reviews in GuideMe"),
+      number: 3
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.Step{
+      full_text: "Click the orange 'Assign New Review' button at the top of the
+      page to assign Guides to Users for review",
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Manage Guide Reviews in GuideMe"),
       number: 4
     })
 
@@ -1718,6 +1753,11 @@ defmodule GuidemeWeb.SeedLive do
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(5, "Use GuideMe"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Manage Guide Reviews in GuideMe")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(6, "Use GuideMe"),
       guide_id: Guideme.Guides.get_guide_id_by_name!("Create, Update, and Delete Guides")
     })
@@ -1779,7 +1819,12 @@ defmodule GuidemeWeb.SeedLive do
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
       step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "View your Review Statistics"),
-      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand the Review Status State")
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State")
+    })
+
+    Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
+      step_id: Guideme.Steps.get_step_id_by_number_and_guide_name!(2, "Manage Guide Reviews in GuideMe"),
+      guide_id: Guideme.Guides.get_guide_id_by_name!("Understand a Guide's Review Status State")
     })
 
     Guideme.Repo.insert!(%Guideme.Steps.DetailsLink{
