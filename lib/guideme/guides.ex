@@ -1,12 +1,12 @@
-defmodule Guideme.Guides do
+defmodule GuideMe.Guides do
   @moduledoc """
   The Guides context.
   """
 
   import Ecto.Query, warn: false
-  alias Guideme.Repo
+  alias GuideMe.Repo
 
-  alias Guideme.Guides.Guide
+  alias GuideMe.Guides.Guide
 
   @doc """
   Returns the list of guides.
@@ -199,7 +199,7 @@ defmodule Guideme.Guides do
     Guide.changeset(guide, attrs)
   end
 
-  alias Guideme.Guides.Template
+  alias GuideMe.Guides.Template
 
   @doc """
   Returns the list of templates.

@@ -1,4 +1,4 @@
-defmodule Guideme.ReviewRecords.ReviewedGuide do
+defmodule GuideMe.ReviewRecords.ReviewedGuide do
   @moduledoc """
   Each row represents a review of a Guide by a specific User.
 
@@ -14,11 +14,11 @@ defmodule Guideme.ReviewRecords.ReviewedGuide do
     # The date and time the Guide was last reviewed
     field :reviewed_at, :utc_datetime
     # The User reviewing the guide
-    belongs_to :user, Guideme.Users.User
+    belongs_to :user, GuideMe.Users.User
     # The Guide being reviewed
-    belongs_to :guide, Guideme.Guides.Guide
+    belongs_to :guide, GuideMe.Guides.Guide
     # The admin User who assigned the review
-    belongs_to :review_assigned_by, Guideme.Users.User
+    belongs_to :review_assigned_by, GuideMe.Users.User
 
     timestamps(type: :utc_datetime)
   end

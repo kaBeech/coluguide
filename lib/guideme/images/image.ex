@@ -1,4 +1,4 @@
-defmodule Guideme.Images.Image do
+defmodule GuideMe.Images.Image do
   use Ecto.Schema
   import Ecto.Changeset
 

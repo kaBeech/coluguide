@@ -1,4 +1,4 @@
-defmodule GuidemeWeb.Pow.Mailer do
+defmodule GuideMeWeb.Pow.Mailer do
   use Pow.Phoenix.Mailer
   require Logger
 

@@ -1,13 +1,13 @@
-defmodule GuidemeWeb.GuideLive.Guide do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.GuideLive.Guide do
+  use GuideMeWeb, :live_view
 
   import ConvertSQL
   import HeaderTutorial
   import NavBar
   import Step
-  import GuidemeWeb.Guide.ReviewStatus
+  import GuideMeWeb.Guide.ReviewStatus
 
-  alias Guideme.{Guides, Steps, ReviewRecords}
+  alias GuideMe.{Guides, Steps, ReviewRecords}
 
   @impl true
   def mount(_params, _session, socket) do

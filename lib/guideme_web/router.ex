@@ -1,5 +1,5 @@
-defmodule GuidemeWeb.Router do
-  use GuidemeWeb, :router
+defmodule GuideMeWeb.Router do
+  use GuideMeWeb, :router
   use Pow.Phoenix.Router
   use PowAssent.Phoenix.Router
 
@@ -10,7 +10,7 @@ defmodule GuidemeWeb.Router do
     plug(:accepts, ["html"])
     plug(:fetch_session)
     plug(:fetch_live_flash)
-    plug(:put_root_layout, html: {GuidemeWeb.Layouts, :root})
+    plug(:put_root_layout, html: {GuideMeWeb.Layouts, :root})
     plug(:protect_from_forgery)
     plug(:put_secure_browser_headers)
   end
@@ -21,15 +21,15 @@ defmodule GuidemeWeb.Router do
   end
 
   pipeline :admin do
-    plug GuidemeWeb.EnsureRolePlug, :admin
+    plug GuideMeWeb.EnsureRolePlug, :admin
   end
 
   pipeline :editor do
-    plug GuidemeWeb.EnsureRolePlug, :editor
+    plug GuideMeWeb.EnsureRolePlug, :editor
   end
 
   pipeline :editor_or_admin do
-    plug GuidemeWeb.EnsureRolePlug, [:editor, :admin]
+    plug GuideMeWeb.EnsureRolePlug, [:editor, :admin]
   end
 
   pipeline :api do
@@ -57,16 +57,16 @@ defmodule GuidemeWeb.Router do
     pow_assent_routes()
   end
 
-  live_session :default, on_mount: GuidemeWeb.InitAssigns do
-    scope "/", GuidemeWeb do
+  live_session :default, on_mount: GuideMeWeb.InitAssigns do
+    scope "/", GuideMeWeb do
       pipe_through :browser
 
       get("/", PageController, :home)
     end
   end
 
-  live_session :authenticated, on_mount: {GuidemeWeb.InitAssigns, :user} do
-    scope "/", GuidemeWeb do
+  live_session :authenticated, on_mount: {GuideMeWeb.InitAssigns, :user} do
+    scope "/", GuideMeWeb do
       pipe_through [:browser, :auth]
 
       # Scratch
@@ -149,7 +149,7 @@ defmodule GuidemeWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", GuidemeWeb do
+  # scope "/api", GuideMeWeb do
   #   pipe_through :api
   # end
 
@@ -165,7 +165,7 @@ defmodule GuidemeWeb.Router do
     scope "/dev" do
       pipe_through(:browser)
 
-      live_dashboard("/dashboard", metrics: GuidemeWeb.Telemetry)
+      live_dashboard("/dashboard", metrics: GuideMeWeb.Telemetry)
       forward("/mailbox", Plug.Swoosh.MailboxPreview)
     end
   end

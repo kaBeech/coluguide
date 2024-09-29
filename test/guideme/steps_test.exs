@@ -1,12 +1,12 @@
-defmodule Guideme.StepsTest do
-  use Guideme.DataCase
+defmodule GuideMe.StepsTest do
+  use GuideMe.DataCase
 
-  alias Guideme.Steps
+  alias GuideMe.Steps
 
   describe "steps" do
-    alias Guideme.Steps.Step
+    alias GuideMe.Steps.Step
 
-    import Guideme.StepsFixtures
+    import GuideMe.StepsFixtures
 
     @invalid_attrs %{full_text: nil, external_link: nil}
 
@@ -60,9 +60,9 @@ defmodule Guideme.StepsTest do
   end
 
   describe "step_images" do
-    alias Guideme.Steps.StepImage
+    alias GuideMe.Steps.StepImage
 
-    import Guideme.StepsFixtures
+    import GuideMe.StepsFixtures
 
     @invalid_attrs %{src: nil, alt: nil}
 
@@ -116,9 +116,9 @@ defmodule Guideme.StepsTest do
   end
 
   describe "details_links" do
-    alias Guideme.Steps.DetailsLink
+    alias GuideMe.Steps.DetailsLink
 
-    import Guideme.StepsFixtures
+    import GuideMe.StepsFixtures
 
     @invalid_attrs %{}
 

@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.ChapterLive.Index do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.ChapterLive.Index do
+  use GuideMeWeb, :live_view
 
-  alias Guideme.Chapters
-  alias Guideme.Chapters.Chapter
+  alias GuideMe.Chapters
+  alias GuideMe.Chapters.Chapter
 
   @impl true
   def mount(_params, _session, socket) do
@@ -33,7 +33,7 @@ defmodule GuidemeWeb.ChapterLive.Index do
   end
 
   @impl true
-  def handle_info({GuidemeWeb.ChapterLive.FormComponent, {:saved, chapter}}, socket) do
+  def handle_info({GuideMeWeb.ChapterLive.FormComponent, {:saved, chapter}}, socket) do
     {:noreply, stream_insert(socket, :chapters, chapter)}
   end
 

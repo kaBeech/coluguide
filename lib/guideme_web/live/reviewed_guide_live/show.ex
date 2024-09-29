@@ -1,7 +1,7 @@
-defmodule GuidemeWeb.ReviewedGuideLive.Show do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.ReviewedGuideLive.Show do
+  use GuideMeWeb, :live_view
 
-  alias Guideme.ReviewRecords
+  alias GuideMe.ReviewRecords
 
   @impl true
   def mount(_params, _session, socket) do

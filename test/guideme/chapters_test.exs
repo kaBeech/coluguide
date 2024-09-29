@@ -1,12 +1,12 @@
-defmodule Guideme.ChaptersTest do
-  use Guideme.DataCase
+defmodule GuideMe.ChaptersTest do
+  use GuideMe.DataCase
 
-  alias Guideme.Chapters
+  alias GuideMe.Chapters
 
   describe "chapters" do
-    alias Guideme.Chapters.Chapter
+    alias GuideMe.Chapters.Chapter
 
-    import Guideme.ChaptersFixtures
+    import GuideMe.ChaptersFixtures
 
     @invalid_attrs %{title: nil}
 

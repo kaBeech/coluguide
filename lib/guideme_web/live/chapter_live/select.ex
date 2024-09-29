@@ -1,9 +1,9 @@
-defmodule GuidemeWeb.ChapterLive.Select do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.ChapterLive.Select do
+  use GuideMeWeb, :live_view
 
   import NavBar
 
-  alias Guideme.{Guides}
+  alias GuideMe.{Guides}
 
   def mount(_params, _session, socket) do
     {:ok, assign(socket, guides: Guides.list_chapter_titles_for_selection())}

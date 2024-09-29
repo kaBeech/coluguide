@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.GuideLive.FormComponent do
-  use GuidemeWeb, :live_component
+defmodule GuideMeWeb.GuideLive.FormComponent do
+  use GuideMeWeb, :live_component
 
-  alias Guideme.Guides
-  alias Guideme.Chapters
+  alias GuideMe.Guides
+  alias GuideMe.Chapters
 
   defp list_chapter_ids do
     Chapters.list_chapters()

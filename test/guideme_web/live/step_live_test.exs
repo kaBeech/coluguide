@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.StepLiveTest do
-  use GuidemeWeb.ConnCase
+defmodule GuideMeWeb.StepLiveTest do
+  use GuideMeWeb.ConnCase
 
   import Phoenix.LiveViewTest
-  import Guideme.StepsFixtures
+  import GuideMe.StepsFixtures
 
   @create_attrs %{external_link: "some external_link", full_text: "some full_text"}
   @update_attrs %{external_link: "some updated external_link", full_text: "some updated full_text"}

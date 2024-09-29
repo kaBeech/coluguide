@@ -1,12 +1,12 @@
-defmodule Guideme.ImagesTest do
-  use Guideme.DataCase
+defmodule GuideMe.ImagesTest do
+  use GuideMe.DataCase
 
-  alias Guideme.Images
+  alias GuideMe.Images
 
   describe "images" do
-    alias Guideme.Images.Image
+    alias GuideMe.Images.Image
 
-    import Guideme.ImagesFixtures
+    import GuideMe.ImagesFixtures
 
     @invalid_attrs %{src: nil}
 

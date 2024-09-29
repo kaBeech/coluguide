@@ -1,12 +1,12 @@
-defmodule Guideme.Chapters do
+defmodule GuideMe.Chapters do
   @moduledoc """
   The Chapters context.
   """
 
   import Ecto.Query, warn: false
-  alias Guideme.Repo
+  alias GuideMe.Repo
 
-  alias Guideme.Chapters.Chapter
+  alias GuideMe.Chapters.Chapter
 
   @doc """
   Returns the list of chapters.

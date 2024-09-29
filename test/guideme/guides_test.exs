@@ -1,12 +1,12 @@
-defmodule Guideme.GuidesTest do
-  use Guideme.DataCase
+defmodule GuideMe.GuidesTest do
+  use GuideMe.DataCase
 
-  alias Guideme.Guides
+  alias GuideMe.Guides
 
   describe "guides" do
-    alias Guideme.Guides.Guide
+    alias GuideMe.Guides.Guide
 
-    import Guideme.GuidesFixtures
+    import GuideMe.GuidesFixtures
 
     @invalid_attrs %{title: nil, template: nil, chapter: nil, name: nil, icon: nil}
 
@@ -66,9 +66,9 @@ defmodule Guideme.GuidesTest do
   end
 
   describe "templates" do
-    alias Guideme.Guides.Template
+    alias GuideMe.Guides.Template
 
-    import Guideme.GuidesFixtures
+    import GuideMe.GuidesFixtures
 
     @invalid_attrs %{name: nil}
 

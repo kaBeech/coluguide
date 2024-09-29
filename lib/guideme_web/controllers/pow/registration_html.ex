@@ -1,5 +1,5 @@
-defmodule GuidemeWeb.Pow.RegistrationHTML do
-  use GuidemeWeb, :html
+defmodule GuideMeWeb.Pow.RegistrationHTML do
+  use GuideMeWeb, :html
 
   embed_templates "registration_html/*"
 end

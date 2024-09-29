@@ -1,4 +1,4 @@
-defmodule GuidemeWeb.InitAssigns do
+defmodule GuideMeWeb.InitAssigns do
   @moduledoc """
   Ensures common `assigns` are applied to all LiveViews attaching this hook.
   Replace EtsCache with something like Mnesia or Redis for production:

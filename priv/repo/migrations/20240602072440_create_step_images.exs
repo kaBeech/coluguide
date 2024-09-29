@@ -1,4 +1,4 @@
-defmodule Guideme.Repo.Migrations.CreateStepImages do
+defmodule GuideMe.Repo.Migrations.CreateStepImages do
   use Ecto.Migration
 
   def change do

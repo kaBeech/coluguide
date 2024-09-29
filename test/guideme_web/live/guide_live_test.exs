@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.GuideLiveTest do
-  use GuidemeWeb.ConnCase
+defmodule GuideMeWeb.GuideLiveTest do
+  use GuideMeWeb.ConnCase
 
   import Phoenix.LiveViewTest
-  import Guideme.GuidesFixtures
+  import GuideMe.GuidesFixtures
 
   @create_attrs %{template: "some template", icon: "some icon", name: "some name", title: "some title"}
   @update_attrs %{template: "some updated template", icon: "some updated icon", name: "some updated name", title: "some updated title"}

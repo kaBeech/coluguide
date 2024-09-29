@@ -1,5 +1,5 @@
-defmodule GuidemeWeb.CRUDLive do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.CRUDLive do
+  use GuideMeWeb, :live_view
 
   def mount(_params, _session, socket) do
     {:ok, socket}

@@ -1,5 +1,5 @@
 defmodule ConvertSQL do
-  use GuidemeWeb, :html
+  use GuideMeWeb, :html
   use Phoenix.Component
 
   def map_sql_result(%{rows: rows, columns: columns}) do

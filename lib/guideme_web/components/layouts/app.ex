@@ -1,5 +1,5 @@
-defmodule GuidemeWeb.Layouts.App do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.Layouts.App do
+  use GuideMeWeb, :live_view
 
   def toggle_greeting do
     JS.toggle(to: "#greeting")

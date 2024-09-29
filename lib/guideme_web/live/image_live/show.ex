@@ -1,7 +1,7 @@
-defmodule GuidemeWeb.ImageLive.Show do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.ImageLive.Show do
+  use GuideMeWeb, :live_view
 
-  alias Guideme.Images
+  alias GuideMe.Images
 
   @impl true
   def mount(_params, _session, socket) do

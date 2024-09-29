@@ -1,5 +1,5 @@
-defmodule GuidemeWeb.PageControllerTest do
-  use GuidemeWeb.ConnCase
+defmodule GuideMeWeb.PageControllerTest do
+  use GuideMeWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

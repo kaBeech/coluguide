@@ -1,6 +1,6 @@
-defmodule Guideme.Users do
+defmodule GuideMe.Users do
   import Ecto.Query, warn: false
-  alias Guideme.{Repo, Users.User}
+  alias GuideMe.{Repo, Users.User}
 
   @type t :: %User{}
 

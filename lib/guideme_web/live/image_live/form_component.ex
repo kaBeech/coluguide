@@ -1,7 +1,7 @@
-defmodule GuidemeWeb.ImageLive.FormComponent do
-  use GuidemeWeb, :live_component
+defmodule GuideMeWeb.ImageLive.FormComponent do
+  use GuideMeWeb, :live_component
 
-  alias Guideme.Images
+  alias GuideMe.Images
 
   @impl true
   def render(assigns) do

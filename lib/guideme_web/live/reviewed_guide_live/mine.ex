@@ -1,10 +1,10 @@
-defmodule GuidemeWeb.ReviewedGuideLive.Mine do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.ReviewedGuideLive.Mine do
+  use GuideMeWeb, :live_view
   import NavBar
 
-  alias Guideme.ReviewRecords
-  alias Guideme.Guides
-  alias GuidemeWeb.Guide.ReviewStatus
+  alias GuideMe.ReviewRecords
+  alias GuideMe.Guides
+  alias GuideMeWeb.Guide.ReviewStatus
 
   @impl true
   def mount(_params, _session, socket) do
@@ -30,7 +30,7 @@ defmodule GuidemeWeb.ReviewedGuideLive.Mine do
 
   @impl true
   def handle_info(
-        {GuidemeWeb.ReviewedGuideLive.FormComponent, {:saved, reviewed_guide}},
+        {GuideMeWeb.ReviewedGuideLive.FormComponent, {:saved, reviewed_guide}},
         socket
       ) do
     {:noreply, stream_insert(socket, :reviewed_guides, reviewed_guide)}
