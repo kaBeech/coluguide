@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.ImageLive.Index do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.ImageLive.Index do
+  use GuideMeWeb, :live_view
 
-  alias Guideme.Images
-  alias Guideme.Images.Image
+  alias GuideMe.Images
+  alias GuideMe.Images.Image
 
   @impl true
   def mount(_params, _session, socket) do
@@ -33,7 +33,7 @@ defmodule GuidemeWeb.ImageLive.Index do
   end
 
   @impl true
-  def handle_info({GuidemeWeb.ImageLive.FormComponent, {:saved, image}}, socket) do
+  def handle_info({GuideMeWeb.ImageLive.FormComponent, {:saved, image}}, socket) do
     {:noreply, stream_insert(socket, :images, image)}
   end
 

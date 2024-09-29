@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.ReviewedGuideLiveTest do
-  use GuidemeWeb.ConnCase
+defmodule GuideMeWeb.ReviewedGuideLiveTest do
+  use GuideMeWeb.ConnCase
 
   import Phoenix.LiveViewTest
-  import Guideme.ReviewRecordsFixtures
+  import GuideMe.ReviewRecordsFixtures
 
   @create_attrs %{reviewed_at: "2024-06-21"}
   @update_attrs %{reviewed_at: "2024-06-22"}

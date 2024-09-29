@@ -1,12 +1,12 @@
-defmodule Guideme.ReviewRecordsTest do
-  use Guideme.DataCase
+defmodule GuideMe.ReviewRecordsTest do
+  use GuideMe.DataCase
 
-  alias Guideme.ReviewRecords
+  alias GuideMe.ReviewRecords
 
   describe "reviewed_guides" do
-    alias Guideme.ReviewRecords.ReviewedGuide
+    alias GuideMe.ReviewRecords.ReviewedGuide
 
-    import Guideme.ReviewRecordsFixtures
+    import GuideMe.ReviewRecordsFixtures
 
     @invalid_attrs %{reviewed_at: nil}
 

@@ -1,7 +1,7 @@
-defmodule GuidemeWeb.ReviewedGuideLive.FormComponent do
-  use GuidemeWeb, :live_component
+defmodule GuideMeWeb.ReviewedGuideLive.FormComponent do
+  use GuideMeWeb, :live_component
 
-  alias Guideme.{ReviewRecords, Users, Guides}
+  alias GuideMe.{ReviewRecords, Users, Guides}
 
   defp list_guide_ids do
     Guides.list_guide_names_and_ids()

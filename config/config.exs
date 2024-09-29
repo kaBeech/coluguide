@@ -8,25 +8,25 @@
 import Config
 
 config :guideme,
-  ecto_repos: [Guideme.Repo],
+  ecto_repos: [GuideMe.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 config :guideme, :pow,
-  user: Guideme.Users.User,
-  repo: Guideme.Repo,
+  user: GuideMe.Users.User,
+  repo: GuideMe.Repo,
   extensions: [PowResetPassword, PowEmailConfirmation],
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
-  mailer_backend: GuidemeWeb.Pow.Mailer
+  mailer_backend: GuideMeWeb.Pow.Mailer
 
 # Configures the endpoint
-config :guideme, GuidemeWeb.Endpoint,
+config :guideme, GuideMeWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: GuidemeWeb.ErrorHTML, json: GuidemeWeb.ErrorJSON],
+    formats: [html: GuideMeWeb.ErrorHTML, json: GuideMeWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: Guideme.PubSub,
+  pubsub_server: GuideMe.PubSub,
   live_view: [signing_salt: "j+qXVUct"]
 
 # Configures the mailer
@@ -36,7 +36,7 @@ config :guideme, GuidemeWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :guideme, Guideme.Mailer, adapter: Swoosh.Adapters.Local
+config :guideme, GuideMe.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
@@ -69,9 +69,9 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 config :guideme, :pow,
-  web_module: GuidemeWeb,
-  user: Guideme.Users.User,
-  repo: Guideme.Repo
+  web_module: GuideMeWeb,
+  user: GuideMe.Users.User,
+  repo: GuideMe.Repo
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

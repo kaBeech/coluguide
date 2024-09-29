@@ -1,4 +1,4 @@
-defmodule Guideme.Application do
+defmodule GuideMe.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,21 +8,21 @@ defmodule Guideme.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      GuidemeWeb.Telemetry,
-      Guideme.Repo,
+      GuideMeWeb.Telemetry,
+      GuideMe.Repo,
       {DNSCluster, query: Application.get_env(:guideme, :dns_cluster_query) || :ignore},
-      {Phoenix.PubSub, name: Guideme.PubSub},
+      {Phoenix.PubSub, name: GuideMe.PubSub},
       # Start the Finch HTTP client for sending emails
-      {Finch, name: Guideme.Finch},
-      # Start a worker by calling: Guideme.Worker.start_link(arg)
-      # {Guideme.Worker, arg},
+      {Finch, name: GuideMe.Finch},
+      # Start a worker by calling: GuideMe.Worker.start_link(arg)
+      # {GuideMe.Worker, arg},
       # Start to serve requests, typically the last entry
-      GuidemeWeb.Endpoint
+      GuideMeWeb.Endpoint
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Guideme.Supervisor]
+    opts = [strategy: :one_for_one, name: GuideMe.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -30,7 +30,7 @@ defmodule Guideme.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    GuidemeWeb.Endpoint.config_change(changed, removed)
+    GuideMeWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

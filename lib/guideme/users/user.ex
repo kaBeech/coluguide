@@ -1,4 +1,4 @@
-defmodule Guideme.Users.User do
+defmodule GuideMe.Users.User do
   use Ecto.Schema
   use Pow.Ecto.Schema
   use PowAssent.Ecto.Schema
@@ -8,7 +8,7 @@ defmodule Guideme.Users.User do
 
   schema "users" do
     field :role, :string, default: "user"
-    has_many :reviewed_guides, Guideme.ReviewRecords.ReviewedGuide
+    has_many :reviewed_guides, GuideMe.ReviewRecords.ReviewedGuide
 
     pow_user_fields()
 

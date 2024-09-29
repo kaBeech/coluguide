@@ -1,4 +1,4 @@
-defmodule GuidemeWeb.Endpoint do
+defmodule GuideMeWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :guideme
 
   # The session will be stored in the cookie and signed,
@@ -23,7 +23,7 @@ defmodule GuidemeWeb.Endpoint do
     at: "/",
     from: :guideme,
     gzip: false,
-    only: GuidemeWeb.static_paths()
+    only: GuideMeWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -50,5 +50,5 @@ defmodule GuidemeWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug Pow.Plug.Session, otp_app: :guideme
-  plug GuidemeWeb.Router
+  plug GuideMeWeb.Router
 end

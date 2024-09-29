@@ -1,4 +1,4 @@
-defmodule Guideme.Guides.Template do
+defmodule GuideMe.Guides.Template do
   @moduledoc """
   Names of Templates used to display Guides.
 

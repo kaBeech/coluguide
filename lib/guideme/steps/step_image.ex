@@ -1,11 +1,11 @@
-defmodule Guideme.Steps.StepImage do
+defmodule GuideMe.Steps.StepImage do
   use Ecto.Schema
   import Ecto.Changeset
 
   schema "step_images" do
-    belongs_to :image, Guideme.Images.Image
+    belongs_to :image, GuideMe.Images.Image
     field :alt, :string
-    belongs_to :step, Guideme.Steps.Step
+    belongs_to :step, GuideMe.Steps.Step
 
     timestamps(type: :utc_datetime)
   end

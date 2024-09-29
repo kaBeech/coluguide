@@ -1,7 +1,7 @@
-defmodule Guideme.ChaptersFixtures do
+defmodule GuideMe.ChaptersFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Guideme.Chapters` context.
+  entities via the `GuideMe.Chapters` context.
   """
 
   @doc """
@@ -13,7 +13,7 @@ defmodule Guideme.ChaptersFixtures do
       |> Enum.into(%{
         title: "some title"
       })
-      |> Guideme.Chapters.create_chapter()
+      |> GuideMe.Chapters.create_chapter()
 
     chapter
   end

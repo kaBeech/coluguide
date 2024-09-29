@@ -1,4 +1,4 @@
-defmodule Guideme.Repo.Migrations.CreateTemplates do
+defmodule GuideMe.Repo.Migrations.CreateTemplates do
   use Ecto.Migration
 
   def change do

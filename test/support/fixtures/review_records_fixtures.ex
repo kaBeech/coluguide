@@ -1,7 +1,7 @@
-defmodule Guideme.ReviewRecordsFixtures do
+defmodule GuideMe.ReviewRecordsFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Guideme.ReviewRecords` context.
+  entities via the `GuideMe.ReviewRecords` context.
   """
 
   @doc """
@@ -13,7 +13,7 @@ defmodule Guideme.ReviewRecordsFixtures do
       |> Enum.into(%{
         reviewed_at: ~D[2024-06-01]
       })
-      |> Guideme.ReviewRecords.create_reviewed_guide()
+      |> GuideMe.ReviewRecords.create_reviewed_guide()
 
     reviewed_guide
   end

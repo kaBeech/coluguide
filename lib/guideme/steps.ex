@@ -1,12 +1,12 @@
-defmodule Guideme.Steps do
+defmodule GuideMe.Steps do
   @moduledoc """
   The Steps context.
   """
 
   import Ecto.Query, warn: false
-  alias Guideme.Repo
+  alias GuideMe.Repo
 
-  alias Guideme.Steps.Step
+  alias GuideMe.Steps.Step
 
   @doc """
   Returns the list of steps.
@@ -156,7 +156,7 @@ defmodule Guideme.Steps do
     Step.changeset(step, attrs)
   end
 
-  alias Guideme.Steps.StepImage
+  alias GuideMe.Steps.StepImage
 
   @doc """
   Returns the list of step_images.
@@ -253,7 +253,7 @@ defmodule Guideme.Steps do
     StepImage.changeset(step_image, attrs)
   end
 
-  alias Guideme.Steps.DetailsLink
+  alias GuideMe.Steps.DetailsLink
 
   @doc """
   Returns the list of details_links.

@@ -1,1 +1,1 @@
-call "%~dp0\guideme" eval Guideme.Release.migrate
+call "%~dp0\guideme" eval GuideMe.Release.migrate

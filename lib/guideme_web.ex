@@ -1,12 +1,12 @@
-defmodule GuidemeWeb do
+defmodule GuideMeWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use GuidemeWeb, :controller
-      use GuidemeWeb, :html
+      use GuideMeWeb, :controller
+      use GuideMeWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule GuidemeWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: GuidemeWeb.Layouts]
+        layouts: [html: GuideMeWeb.Layouts]
 
       import Plug.Conn
-      import GuidemeWeb.Gettext
+      import GuideMeWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule GuidemeWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {GuidemeWeb.Layouts, :app}
+        layout: {GuideMeWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule GuidemeWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import GuidemeWeb.CoreComponents
-      import GuidemeWeb.Gettext
+      import GuideMeWeb.CoreComponents
+      import GuideMeWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule GuidemeWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: GuidemeWeb.Endpoint,
-        router: GuidemeWeb.Router,
-        statics: GuidemeWeb.static_paths()
+        endpoint: GuideMeWeb.Endpoint,
+        router: GuideMeWeb.Router,
+        statics: GuideMeWeb.static_paths()
     end
   end
 

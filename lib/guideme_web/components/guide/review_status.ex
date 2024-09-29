@@ -1,5 +1,5 @@
-defmodule GuidemeWeb.Guide.ReviewStatus do
-  use GuidemeWeb, :html
+defmodule GuideMeWeb.Guide.ReviewStatus do
+  use GuideMeWeb, :html
   use Phoenix.Component
   alias Phoenix.LiveView.JS
 

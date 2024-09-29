@@ -1,12 +1,12 @@
-defmodule Guideme.ReviewRecords do
+defmodule GuideMe.ReviewRecords do
   @moduledoc """
   The ReviewRecords context.
   """
 
   import Ecto.Query, warn: false
-  alias Guideme.Repo
+  alias GuideMe.Repo
 
-  alias Guideme.ReviewRecords.ReviewedGuide
+  alias GuideMe.ReviewRecords.ReviewedGuide
 
   @doc """
   Returns the list of reviewed_guides.

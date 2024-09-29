@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.ImageLiveTest do
-  use GuidemeWeb.ConnCase
+defmodule GuideMeWeb.ImageLiveTest do
+  use GuideMeWeb.ConnCase
 
   import Phoenix.LiveViewTest
-  import Guideme.ImagesFixtures
+  import GuideMe.ImagesFixtures
 
   @create_attrs %{src: "some src"}
   @update_attrs %{src: "some updated src"}

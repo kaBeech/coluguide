@@ -1,7 +1,7 @@
-defmodule GuidemeWeb.EnsureRolePlugTest do
-  use GuidemeWeb.ConnCase
+defmodule GuideMeWeb.EnsureRolePlugTest do
+  use GuideMeWeb.ConnCase
 
-  alias GuidemeWeb.EnsureRolePlug
+  alias GuideMeWeb.EnsureRolePlug
 
   @opts ~w(admin)a
   @opts ~w(editor)a

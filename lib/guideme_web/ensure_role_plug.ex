@@ -1,18 +1,18 @@
-defmodule GuidemeWeb.EnsureRolePlug do
+defmodule GuideMeWeb.EnsureRolePlug do
   @moduledoc """
   This plug verifies that the user has a specific role.
 
   ## Example
     
-    plug GuidemeWeb.EnsureRolePlug, [:user, :editor, :admin]
+    plug GuideMeWeb.EnsureRolePlug, [:user, :editor, :admin]
 
-    plug GuidemeWeb.EnsureRolePlug, :admin
+    plug GuideMeWeb.EnsureRolePlug, :admin
 
-    plug GuidemeWeb.EnsureRolePlug, ~w(user editor admin)a
+    plug GuideMeWeb.EnsureRolePlug, ~w(user editor admin)a
   """
   import Plug.Conn, only: [halt: 1]
 
-  use GuidemeWeb, :verified_routes
+  use GuideMeWeb, :verified_routes
 
   alias Phoenix.Controller
   alias Plug.Conn

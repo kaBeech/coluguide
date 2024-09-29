@@ -1,4 +1,4 @@
-defmodule Guideme.Repo.Migrations.CreateChapters do
+defmodule GuideMe.Repo.Migrations.CreateChapters do
   use Ecto.Migration
 
   def change do

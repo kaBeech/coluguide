@@ -1,4 +1,4 @@
-defmodule Guideme.MixProject do
+defmodule GuideMe.MixProject do
   use Mix.Project
 
   def project do
@@ -27,7 +27,7 @@ defmodule Guideme.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Guideme.Application, []},
+      mod: {GuideMe.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

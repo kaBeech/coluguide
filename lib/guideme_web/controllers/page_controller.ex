@@ -1,5 +1,5 @@
-defmodule GuidemeWeb.PageController do
-  use GuidemeWeb, :controller
+defmodule GuideMeWeb.PageController do
+  use GuideMeWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

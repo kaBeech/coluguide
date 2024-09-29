@@ -1,5 +1,5 @@
 defmodule Step do
-  use GuidemeWeb, :html
+  use GuideMeWeb, :html
   use Phoenix.Component
   alias Phoenix.LiveView.JS
 

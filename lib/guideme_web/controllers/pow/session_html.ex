@@ -1,5 +1,5 @@
-defmodule GuidemeWeb.Pow.SessionHTML do
-  use GuidemeWeb, :html
+defmodule GuideMeWeb.Pow.SessionHTML do
+  use GuideMeWeb, :html
 
   embed_templates "session_html/*"
 end

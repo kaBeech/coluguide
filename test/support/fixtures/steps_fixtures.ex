@@ -1,7 +1,7 @@
-defmodule Guideme.StepsFixtures do
+defmodule GuideMe.StepsFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Guideme.Steps` context.
+  entities via the `GuideMe.Steps` context.
   """
 
   @doc """
@@ -14,7 +14,7 @@ defmodule Guideme.StepsFixtures do
         external_link: "some external_link",
         full_text: "some full_text"
       })
-      |> Guideme.Steps.create_step()
+      |> GuideMe.Steps.create_step()
 
     step
   end
@@ -29,7 +29,7 @@ defmodule Guideme.StepsFixtures do
         alt: "some alt",
         src: "some src"
       })
-      |> Guideme.Steps.create_step_image()
+      |> GuideMe.Steps.create_step_image()
 
     step_image
   end
@@ -43,7 +43,7 @@ defmodule Guideme.StepsFixtures do
       |> Enum.into(%{
 
       })
-      |> Guideme.Steps.create_details_link()
+      |> GuideMe.Steps.create_details_link()
 
     details_link
   end

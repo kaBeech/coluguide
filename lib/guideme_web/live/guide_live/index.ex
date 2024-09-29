@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.GuideLive.Index do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.GuideLive.Index do
+  use GuideMeWeb, :live_view
 
-  alias Guideme.Guides
-  alias Guideme.Guides.Guide
+  alias GuideMe.Guides
+  alias GuideMe.Guides.Guide
 
   @impl true
   def mount(_params, _session, socket) do
@@ -33,7 +33,7 @@ defmodule GuidemeWeb.GuideLive.Index do
   end
 
   @impl true
-  def handle_info({GuidemeWeb.GuideLive.FormComponent, {:saved, guide}}, socket) do
+  def handle_info({GuideMeWeb.GuideLive.FormComponent, {:saved, guide}}, socket) do
     {:noreply, stream_insert(socket, :guides, guide)}
   end
 

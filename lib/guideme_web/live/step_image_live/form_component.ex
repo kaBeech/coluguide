@@ -1,7 +1,7 @@
-defmodule GuidemeWeb.StepImageLive.FormComponent do
-  use GuidemeWeb, :live_component
+defmodule GuideMeWeb.StepImageLive.FormComponent do
+  use GuideMeWeb, :live_component
 
-  alias Guideme.{Steps, Images}
+  alias GuideMe.{Steps, Images}
 
   defp list_step_ids do
     Steps.list_steps()

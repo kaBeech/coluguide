@@ -1,7 +1,7 @@
-defmodule GuidemeWeb.ChapterLive.Show do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.ChapterLive.Show do
+  use GuideMeWeb, :live_view
 
-  alias Guideme.Chapters
+  alias GuideMe.Chapters
 
   @impl true
   def mount(_params, _session, socket) do

@@ -1,12 +1,12 @@
-defmodule Guideme.Images do
+defmodule GuideMe.Images do
   @moduledoc """
   The Images context.
   """
 
   import Ecto.Query, warn: false
-  alias Guideme.Repo
+  alias GuideMe.Repo
 
-  alias Guideme.Images.Image
+  alias GuideMe.Images.Image
 
   @doc """
   Returns the list of images.

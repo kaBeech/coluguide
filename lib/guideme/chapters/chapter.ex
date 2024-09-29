@@ -1,10 +1,10 @@
-defmodule Guideme.Chapters.Chapter do
+defmodule GuideMe.Chapters.Chapter do
   use Ecto.Schema
   import Ecto.Changeset
 
   schema "chapters" do
     field :title, :string
-    has_many :guides, Guideme.Guides.Guide
+    has_many :guides, GuideMe.Guides.Guide
 
     timestamps(type: :utc_datetime)
   end

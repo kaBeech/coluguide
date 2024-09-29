@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.DetailsLinkLiveTest do
-  use GuidemeWeb.ConnCase
+defmodule GuideMeWeb.DetailsLinkLiveTest do
+  use GuideMeWeb.ConnCase
 
   import Phoenix.LiveViewTest
-  import Guideme.StepsFixtures
+  import GuideMe.StepsFixtures
 
   @create_attrs %{}
   @update_attrs %{}

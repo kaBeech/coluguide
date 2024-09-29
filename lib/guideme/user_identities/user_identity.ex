@@ -1,6 +1,6 @@
-defmodule Guideme.UserIdentities.UserIdentity do
+defmodule GuideMe.UserIdentities.UserIdentity do
   use Ecto.Schema
-  use PowAssent.Ecto.UserIdentities.Schema, user: Guideme.Users.User
+  use PowAssent.Ecto.UserIdentities.Schema, user: GuideMe.Users.User
 
   schema "user_identities" do
     pow_assent_user_identity_fields()

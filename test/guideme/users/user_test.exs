@@ -1,7 +1,7 @@
-defmodule Guideme.Users.UserTest do
-  use Guideme.DataCase
+defmodule GuideMe.Users.UserTest do
+  use GuideMe.DataCase
 
-  alias Guideme.Users.User
+  alias GuideMe.Users.User
 
   test "changeset/2 sets default role" do
     user =

@@ -1,5 +1,5 @@
 defmodule NavBar do
-  use GuidemeWeb, :html
+  use GuideMeWeb, :html
   use Phoenix.Component
 
   def render_navbar(assigns) do

@@ -1,8 +1,8 @@
-defmodule GuidemeWeb.ChapterLiveTest do
-  use GuidemeWeb.ConnCase
+defmodule GuideMeWeb.ChapterLiveTest do
+  use GuideMeWeb.ConnCase
 
   import Phoenix.LiveViewTest
-  import Guideme.ChaptersFixtures
+  import GuideMe.ChaptersFixtures
 
   @create_attrs %{title: "some title"}
   @update_attrs %{title: "some updated title"}

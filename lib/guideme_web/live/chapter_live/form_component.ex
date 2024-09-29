@@ -1,7 +1,7 @@
-defmodule GuidemeWeb.ChapterLive.FormComponent do
-  use GuidemeWeb, :live_component
+defmodule GuideMeWeb.ChapterLive.FormComponent do
+  use GuideMeWeb, :live_component
 
-  alias Guideme.Chapters
+  alias GuideMe.Chapters
 
   @impl true
   def update(%{chapter: chapter} = assigns, socket) do

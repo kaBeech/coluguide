@@ -1,10 +1,10 @@
-defmodule GuidemeWeb.ReviewedGuideLive.Index do
-  use GuidemeWeb, :live_view
+defmodule GuideMeWeb.ReviewedGuideLive.Index do
+  use GuideMeWeb, :live_view
   import NavBar
-  import GuidemeWeb.Guide.ReviewStatus
+  import GuideMeWeb.Guide.ReviewStatus
 
-  alias Guideme.{ReviewRecords, Users, Guides}
-  alias Guideme.ReviewRecords.ReviewedGuide
+  alias GuideMe.{ReviewRecords, Users, Guides}
+  alias GuideMe.ReviewRecords.ReviewedGuide
 
   def list_guides do
     Guides.list_guide_names_and_ids()
@@ -44,7 +44,7 @@ defmodule GuidemeWeb.ReviewedGuideLive.Index do
 
   @impl true
   def handle_info(
-        {GuidemeWeb.ReviewedGuideLive.FormComponent, {:saved, reviewed_guide}},
+        {GuideMeWeb.ReviewedGuideLive.FormComponent, {:saved, reviewed_guide}},
         socket
       ) do
     {:noreply, stream_insert(socket, :reviewed_guides, reviewed_guide)}

@@ -1,4 +1,4 @@
-defmodule Guideme.Steps.Step do
+defmodule GuideMe.Steps.Step do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -6,9 +6,9 @@ defmodule Guideme.Steps.Step do
     field :full_text, :string
     field :number, :integer
     field :external_link, :string
-    belongs_to :guide, Guideme.Guides.Guide
-    has_one :details_link, Guideme.Steps.DetailsLink
-    has_one :step_image, Guideme.Steps.StepImage
+    belongs_to :guide, GuideMe.Guides.Guide
+    has_one :details_link, GuideMe.Steps.DetailsLink
+    has_one :step_image, GuideMe.Steps.StepImage
 
     timestamps(type: :utc_datetime)
   end

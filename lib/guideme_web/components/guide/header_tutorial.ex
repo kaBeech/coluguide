@@ -1,5 +1,5 @@
 defmodule HeaderTutorial do
-  use GuidemeWeb, :html
+  use GuideMeWeb, :html
   use Phoenix.Component
 
   def render_header_tutorial(assigns) do

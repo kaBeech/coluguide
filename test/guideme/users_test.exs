@@ -1,7 +1,7 @@
-defmodule Guideme.UsersTest do
-  use Guideme.DataCase
+defmodule GuideMe.UsersTest do
+  use GuideMe.DataCase
 
-  alias Guideme.{Repo, Users, Users.User}
+  alias GuideMe.{Repo, Users, Users.User}
 
   @valid_params %{
     email: "test@example.com",
