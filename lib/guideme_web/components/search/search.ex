@@ -21,7 +21,7 @@ defmodule GuideMeWeb.Search do
   def search_guides(query, socket) do
     search_results =
       Enum.filter(GuideMe.Guides.list_guides(), fn guide ->
-        String.contains?(guide.name, query)
+        String.contains?(String.downcase(guide.name), String.downcase(query))
       end)
 
     {:noreply, assign(socket, :search_results, search_results)}
