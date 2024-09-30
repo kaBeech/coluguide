@@ -13,6 +13,7 @@ defmodule GuideMeWeb.GuideLive.Guide do
   def mount(_params, _session, socket) do
     {:ok,
      socket
+     |> assign(:backlinks_enabled, true)
      |> assign(:search_guides_enabled, true)}
   end
 
@@ -29,6 +30,15 @@ defmodule GuideMeWeb.GuideLive.Guide do
          id
        )
      )}
+  end
+
+  def handle_event("get_backlinks", _, socket) do
+    backlinks = Steps.get_backlinked_guide_names_and_ids(socket.assigns.guide.id)
+    {:noreply, assign(socket, backlinks: backlinks)}
+  end
+
+  def handle_event("clear_backlinks", _, socket) do
+    {:noreply, assign(socket, backlinks: [])}
   end
 
   def handle_event("search", %{"query" => query}, socket) do
