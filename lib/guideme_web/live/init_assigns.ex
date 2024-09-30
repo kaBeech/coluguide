@@ -37,7 +37,8 @@ defmodule GuideMeWeb.InitAssigns do
      socket
      |> assign(:guide_names, cache_guide_names)
      |> assign(:step_texts, cache_step_texts)
-     |> assign(:search_results, [])}
+     |> assign(:search_results, [])
+     |> assign(form: to_form(%{"query" => ""}))}
   end
 
   def on_mount(:default, _params, _session, socket) do

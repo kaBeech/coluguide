@@ -11,11 +11,6 @@ defmodule GuideMeWeb.GuideLive.Guide do
 
   @impl true
   def mount(_params, _session, socket) do
-    socket =
-      assign(socket,
-        form: to_form(%{"query" => ""})
-      )
-
     {:ok, socket}
   end
 
