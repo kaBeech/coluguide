@@ -20,7 +20,11 @@ defmodule GuideMeWeb.Search do
           <h2>Searching Guides for "<%= @search_query %>":</h2>
           <ul class="searchResultsList">
             <%= for guide <- @search_results do %>
-              <li><%= guide.name %></li>
+              <li>
+                <.link navigate={~p"/guide/#{guide.id}"}>
+                  <%= guide.name %>
+                </.link>
+              </li>
             <% end %>
           </ul>
         </section>
