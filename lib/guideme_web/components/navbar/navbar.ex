@@ -24,7 +24,7 @@ defmodule NavBar do
     <%= if length(@backlinks) > 0 do %>
       <div class="dimScreenImageHolder" phx-click="clear_backlinks">
         <section class="searchResultsContainer imageBorder">
-          <h2>Backlinks:</h2>
+          <h2>Guides that link to this Guide:</h2>
           <ul class="searchResultsList">
             <%= for backlink <- @backlinks do %>
               <li>
