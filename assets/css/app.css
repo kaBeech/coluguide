@@ -702,6 +702,11 @@ button {
   width: 30%;
 }
 
+#searchGuides {
+  width: 8rem;
+  padding: 0.2rem 0 0 0;
+}
+
 /* Color Scheme Preferences */
 
 /* @media (prefers-color-scheme: dark) {

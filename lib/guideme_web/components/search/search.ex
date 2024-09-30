@@ -6,7 +6,7 @@ defmodule GuideMeWeb.Search do
     ~H"""
     <%= if @current_user do %>
       <.form for={@form} phx-change="search" phx-click-away="clear_search">
-        <.input type="text" field={@form["query"]} />
+        <.input id="searchGuides" type="text" field={@form["query"]} placeholder="Search Guides" />
       </.form>
     <% end %>
     """
