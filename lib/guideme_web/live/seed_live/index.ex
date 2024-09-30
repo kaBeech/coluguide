@@ -160,7 +160,7 @@ defmodule GuideMeWeb.SeedLive do
     GuideMe.Repo.insert!(%GuideMe.Guides.Guide{
       title: "Use GuideMe",
       name: "Use GuideMe",
-      icon: "󱃔 ",
+      icon: "󱓷 ",
       template_id: GuideMe.Guides.get_template_id_by_name!("chapter"),
       chapter_id: GuideMe.Chapters.get_chapter_id_by_title!("Use GuideMe")
     })
