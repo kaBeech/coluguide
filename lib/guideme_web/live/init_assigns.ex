@@ -11,26 +11,33 @@ defmodule GuideMeWeb.InitAssigns do
   alias Pow.Store.CredentialsCache
   alias Pow.Store.Backend.EtsCache
 
+  @search_cache :data_cache
+  # 5 minutes
+  @default_ttl 1000 * 60 * 5
+
+  def with_cache(key, fun, ttl \\ @default_ttl) do
+    case Cachex.get(@search_cache, key) do
+      {:ok, nil} ->
+        result = fun.()
+        Cachex.put(@search_cache, key, result, ttl: ttl)
+        result
+
+      {:ok, result} ->
+        result
+    end
+  end
+
   def refresh_search_cache(socket) do
-    cache_guide_names = Guides.list_guide_names_and_ids()
-    cache_step_texts = Steps.list_step_guide_ids_and_full_texts()
-    last_cached = DateTime.utc_now()
+    cache_guide_names = with_cache(:guide_names, fn -> Guides.list_guide_names_and_ids() end)
+
+    cache_step_texts =
+      with_cache(:step_texts, fn -> Steps.list_step_guide_ids_and_full_texts() end)
 
     {:cont,
      socket
      |> assign(:guide_names, cache_guide_names)
      |> assign(:step_texts, cache_step_texts)
-     |> assign(:search_results, [])
-     |> assign(:last_cached, last_cached)}
-  end
-
-  def refresh_if_stale(socket) do
-    # TODO: Add cache checking here
-    if false do
-      {:cont, socket}
-    else
-      refresh_search_cache(socket)
-    end
+     |> assign(:search_results, [])}
   end
 
   def on_mount(:default, _params, _session, socket) do
@@ -44,7 +51,7 @@ defmodule GuideMeWeb.InitAssigns do
       end)
 
     if socket.assigns.current_user do
-      refresh_if_stale(socket)
+      refresh_search_cache(socket)
     else
       {:halt, redirect(socket, to: "/session/new")}
     end

@@ -17,7 +17,8 @@ defmodule GuideMe.Application do
       # Start a worker by calling: GuideMe.Worker.start_link(arg)
       # {GuideMe.Worker, arg},
       # Start to serve requests, typically the last entry
-      GuideMeWeb.Endpoint
+      GuideMeWeb.Endpoint,
+      {Cachex, name: :data_cache}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

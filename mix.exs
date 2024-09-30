@@ -71,7 +71,8 @@ defmodule GuideMe.MixProject do
       {:pow, "~> 1.0.38"},
       {:pow_assent, "~> 0.4.18"},
       {:certifi, "~> 2.4"},
-      {:ssl_verify_fun, "~> 1.1"}
+      {:ssl_verify_fun, "~> 1.1"},
+      {:cachex, "~> 3.6"}
     ]
   end
 
