@@ -2,8 +2,11 @@
   <a href={~p"/"} class="marginLeft2 marginRightAuto textMuchBigger">
      
   </a>
-  <span class="flex column alignRight marginLeftAuto marginRight2">
-    <%= render_user_menu(assigns) %>
+  <span class="flex gap1 marginLeftAuto marginRight2">
+    <%= render_search_guides(assigns) %>
+    <div class="flex column">
+      <%= render_user_menu(assigns) %>
+    </div>
   </span>
 </header>
 <main class="px-4 py-20 sm:px-6 lg:px-8">

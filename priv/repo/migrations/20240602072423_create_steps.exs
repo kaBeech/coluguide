@@ -12,6 +12,11 @@ defmodule GuideMe.Repo.Migrations.CreateSteps do
     end
 
     create index(:steps, [:guide_id])
-    create unique_index(:steps, [:number, :guide_id])
+    create unique_index(:steps, [:guide_id, :number])
+
+    create index(:steps, [:guide_id],
+             include: [:full_text],
+             name: :search_guides_by_step_text_covering_index
+           )
   end
 end

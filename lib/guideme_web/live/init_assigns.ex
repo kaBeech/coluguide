@@ -7,8 +7,31 @@ defmodule GuideMeWeb.InitAssigns do
   import Phoenix.LiveView
   import Phoenix.Component
 
+  alias GuideMe.{Guides, Steps}
   alias Pow.Store.CredentialsCache
   alias Pow.Store.Backend.EtsCache
+
+  def refresh_search_cache(socket) do
+    cache_guide_names = Guides.list_guide_names_and_ids()
+    cache_step_texts = Steps.list_step_guide_ids_and_full_texts()
+    last_cached = DateTime.utc_now()
+
+    {:cont,
+     socket
+     |> assign(:guide_names, cache_guide_names)
+     |> assign(:step_texts, cache_step_texts)
+     |> assign(:search_results, [])
+     |> assign(:last_cached, last_cached)}
+  end
+
+  def refresh_if_stale(socket) do
+    # TODO: Add cache checking here
+    if false do
+      {:cont, socket}
+    else
+      refresh_search_cache(socket)
+    end
+  end
 
   def on_mount(:default, _params, _session, socket) do
     {:cont, assign(socket, :page_title, "GuideMe")}
@@ -21,7 +44,7 @@ defmodule GuideMeWeb.InitAssigns do
       end)
 
     if socket.assigns.current_user do
-      {:cont, socket}
+      refresh_if_stale(socket)
     else
       {:halt, redirect(socket, to: "/session/new")}
     end

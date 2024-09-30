@@ -11,6 +11,11 @@ defmodule GuideMeWeb.GuideLive.Guide do
 
   @impl true
   def mount(_params, _session, socket) do
+    socket =
+      assign(socket,
+        form: to_form(%{query: ""})
+      )
+
     {:ok, socket}
   end
 
@@ -27,6 +32,10 @@ defmodule GuideMeWeb.GuideLive.Guide do
          id
        )
      )}
+  end
+
+  def handle_event("search", %{"query" => query}, socket) do
+    GuideMeWeb.Search.search_guides(query, socket)
   end
 
   @impl true
