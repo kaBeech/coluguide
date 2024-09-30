@@ -3,9 +3,9 @@
   <ul class="flex row wrap">
     <%= for guide <- @guides do %>
       <li class="flex column alignCenter">
-        <a class="logo glow" href={"/guide/" <> to_string(guide.id)}>
+        <.link navigate={"/guide/" <> to_string(guide.id)} class="logo glow">
           <span class="logoFont"><%= guide.icon %></span>
-        </a>
+        </.link>
         <p class="lineHeightBigger textBright">
           <%= guide.name %>
         </p>

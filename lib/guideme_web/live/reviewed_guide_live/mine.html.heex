@@ -24,9 +24,9 @@
       <%= for guide <-  Enum.find([@needs_review, @stale, @reviewed, @unreviewed], fn x -> x.name == @current_selection end).guides do %>
         <li class="flex column ">
           <span>
-            <a href={"/guide/#{guide.id}"} class="link pointer">
+            <.link navigate={"/guide/#{guide.id}"} class="link pointer">
               
-            </a>
+            </.link>
             <%= " " <> guide.name %>
           </span>
         </li>

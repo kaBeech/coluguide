@@ -10,13 +10,13 @@ defmodule GuideMeWeb.CRUDLive do
     <div class="flex column alignCenter gap1">
       <h1>CRUD</h1>
       <ul>
-        <.link href={~p"/chapters"}>Chapters</.link>
-        <.link href={~p"/guides"}>Guides</.link>
-        <.link href={~p"/steps"}>Steps</.link>
-        <.link href={~p"/step_images"}>Step Images</.link>
-        <.link href={~p"/details_links"}>Details Links</.link>
-        <.link href={~p"/reviewed_guides"}>Reviewed Guides</.link>
-        <.link href={~p"/images"}>Images</.link>
+        <.link navigate={~p"/chapters"}>Chapters</.link>
+        <.link navigate={~p"/guides"}>Guides</.link>
+        <.link navigate={~p"/steps"}>Steps</.link>
+        <.link navigate={~p"/step_images"}>Step Images</.link>
+        <.link navigate={~p"/details_links"}>Details Links</.link>
+        <.link navigate={~p"/reviewed_guides"}>Reviewed Guides</.link>
+        <.link navigate={~p"/images"}>Images</.link>
       </ul>
     </div>
     """

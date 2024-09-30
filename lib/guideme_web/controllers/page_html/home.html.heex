@@ -5,17 +5,17 @@
   <div :if={is_nil(Pow.Plug.current_user(@conn))} class="flex justifyCenter marginBottom2">
     <ul class="flex row wrap">
       <li class="flex column alignCenter">
-        <a class="logo glow" href="registration/new">
+        <.link navigate="registration/new" class="logo glow">
           <span class="logoFont"></span>
-        </a>
+        </.link>
         <p class="lineHeightBigger textBright">
           Register
         </p>
       </li>
       <li class="flex column alignCenter">
-        <a class="logo glow" href="session/new">
+        <.link navigate="session/new" class="logo glow">
           <span class="logoFont">󱃔</span>
-        </a>
+        </.link>
         <p class="lineHeightBigger textBright">
           Sign In
         </p>
@@ -25,41 +25,41 @@
   <div :if={Pow.Plug.current_user(@conn)} class="flex justifyCenter marginBottom2">
     <ul class="flex row wrap">
       <li class="flex column alignCenter">
-        <a class="logo glow" href="chapters/select">
+        <.link navigate="chapters/select" class="logo glow">
           <span class="logoFont"></span>
-        </a>
+        </.link>
         <p class="lineHeightBigger textBright">
           Chapters
         </p>
       </li>
       <li class="flex column alignCenter">
-        <a class="logo glow" href="guide/1">
+        <.link navigate="guide/1" class="logo glow" >
           <span class="logoFont">󱃔</span>
-        </a>
+        </.link>
         <p class="lineHeightBigger textBright">
           Using GuideMe
         </p>
       </li>
       <li class="flex column alignCenter">
-        <a class="logo glow" href="reviews/mine">
+        <.link navigate="reviews/mine" class="logo glow">
           <span class="logoFont">󰷊</span>
-        </a>
+        </.link>
         <p class="lineHeightBigger textBright">
           My Reviews
         </p>
       </li>
       <li :if={Pow.Plug.current_user(@conn).role in ["admin"]} class="flex column alignCenter">
-        <a class="logo glow" href="reviewed_guides">
+        <.link navigate="reviewed_guides" class="logo glow">
           <span class="logoFont"></span>
-        </a>
+        </.link>
         <p class="lineHeightBigger textBright">
           Assign Reviews
         </p>
       </li>
       <!-- <li :if={Pow.Plug.current_user(@conn).role in ["admin"]} class="flex column alignCenter"> -->
-      <!--   <a class="logo glow" href="teams"> -->
+      <!--   <.link navigate="teams" class="logo glow"> -->
       <!--     <span class="logoFont"></span> -->
-      <!--   </a> -->
+      <!--   </.link> -->
       <!--   <p class="lineHeightBigger textBright"> -->
       <!--     Manage Teams -->
       <!--   </p> -->
