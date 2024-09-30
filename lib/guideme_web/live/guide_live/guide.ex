@@ -53,6 +53,17 @@ defmodule GuideMeWeb.GuideLive.Guide do
      |> assign(:search_results, [])}
   end
 
+  def handle_event("keyup", %{"key" => "Escape"}, socket) do
+    {:noreply,
+     socket
+     |> assign(:form, to_form(%{"query" => ""}))
+     |> assign(:search_results, [])}
+  end
+
+  def handle_event("keyup", _, socket) do
+    {:noreply, socket}
+  end
+
   @impl true
   def handle_event("review_guide", _params, socket) do
     {:ok, _} =
