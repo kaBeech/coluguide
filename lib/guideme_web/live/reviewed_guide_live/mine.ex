@@ -65,4 +65,15 @@ defmodule GuideMeWeb.ReviewedGuideLive.Mine do
      |> assign(:form, to_form(%{"query" => ""}))
      |> assign(:search_results, [])}
   end
+
+  def handle_event("keyup", %{"key" => "Escape"}, socket) do
+    {:noreply,
+     socket
+     |> assign(:form, to_form(%{"query" => ""}))
+     |> assign(:search_results, [])}
+  end
+
+  def handle_event("keyup", _, socket) do
+    {:noreply, socket}
+  end
 end

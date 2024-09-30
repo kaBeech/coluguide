@@ -9,7 +9,13 @@ defmodule GuideMeWeb.Search do
   def render_search_guides(assigns) do
     ~H"""
     <%= if allow_search_guides(assigns) do %>
-      <.form for={@form} phx-change="search" phx-click-away="clear_search">
+      <.form
+        for={@form}
+        phx-change="search"
+        phx-window-keydown={JS.focus(to: "#searchGuides")}
+        phx-window-keyup="keyup"
+        phx-click-away="clear_search"
+      >
         <.input id="searchGuides" type="text" field={@form["query"]} placeholder="Search Guides" />
       </.form>
     <% end %>
