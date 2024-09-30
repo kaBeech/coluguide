@@ -685,6 +685,7 @@ button {
   top: 10%;
   left: 10%;
   background-color: var(--guideme-background-dark);
+  z-index: 1;
 }
 
 .searchResultsList {
