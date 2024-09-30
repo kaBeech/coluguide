@@ -2,13 +2,21 @@ defmodule NavBar do
   use GuideMeWeb, :html
   use Phoenix.Component
 
+  defp style_backlinks_icon(template_id) do
+    if template_id == 1 do
+      "textDull"
+    else
+      "link pointer"
+    end
+  end
+
   def render_navbar(assigns) do
     ~H"""
     <nav class="flex justifyCenter gap1 widthFull marginTop2 marginRight1Point5">
       <a href="javascript:window.history.back();"><%= "<-- Back" %></a>
       <span class="textDull">|</span>
-      <%= if @backlinks_enabled do %>
-        <span phx-click="get_backlinks" class="link pointer"></span>
+      <%= if @backlinks_enabled  do %>
+        <span phx-click="get_backlinks" class={style_backlinks_icon(@guide.template_id)}> </span>
         <span class="textDull">|</span>
       <% end %>
       <.link navigate="/">Home</.link>
