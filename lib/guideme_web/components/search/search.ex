@@ -5,10 +5,7 @@ defmodule GuideMeWeb.Search do
   def render_search_guides(assigns) do
     ~H"""
     <%= if @current_user do %>
-      <.form for={@form} phx-change="search">
-        <p>
-          Search cache last updated: <%= @last_cached %>
-        </p>
+      <.form for={@form} phx-change="search" phx-click-away="clear_search">
         <.input type="text" field={@form[:query]} />
       </.form>
       <%= for guide <- @search_results do %>

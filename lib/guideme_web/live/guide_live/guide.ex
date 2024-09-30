@@ -38,6 +38,13 @@ defmodule GuideMeWeb.GuideLive.Guide do
     GuideMeWeb.Search.search_guides(query, socket)
   end
 
+  def handle_event("clear_search", _params, socket) do
+    {:noreply,
+     socket
+     |> assign(:form, to_form(%{query: ""}))
+     |> assign(:search_results, [])}
+  end
+
   @impl true
   def handle_event("review_guide", _params, socket) do
     {:ok, _} =
