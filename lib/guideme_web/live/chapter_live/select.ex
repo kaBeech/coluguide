@@ -6,7 +6,10 @@ defmodule GuideMeWeb.ChapterLive.Select do
   alias GuideMe.{Guides}
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, guides: Guides.list_chapter_titles_for_selection())}
+    {:ok,
+     socket
+     |> assign(guides: Guides.list_chapter_titles_for_selection())
+     |> assign(:search_guides_enabled, true)}
   end
 
   def handle_event("search", %{"query" => query}, socket) do
