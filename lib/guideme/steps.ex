@@ -315,16 +315,19 @@ defmodule GuideMe.Steps do
 
   """
   def get_backlinked_guide_names_and_ids(guide_id) do
-    Repo.query!(
-      "SELECT DISTINCT guides.name, guides.id " <>
-        "FROM details_links " <>
-        "LEFT JOIN steps " <>
-        "ON details_links.step_id = steps.id " <>
-        "LEFT JOIN guides " <>
-        "ON steps.guide_id = guides.id " <>
-        "WHERE details_links.guide_id = $1",
-      [guide_id]
-    )
+    rows =
+      Repo.query!(
+        "SELECT DISTINCT guides.name, guides.id " <>
+          "FROM details_links " <>
+          "LEFT JOIN steps " <>
+          "ON details_links.step_id = steps.id " <>
+          "LEFT JOIN guides " <>
+          "ON steps.guide_id = guides.id " <>
+          "WHERE details_links.guide_id = $1",
+        [guide_id]
+      ).rows
+
+    Enum.map(rows, fn [name, id] -> %{name: name, id: id} end)
   end
 
   @doc """
