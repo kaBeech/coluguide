@@ -691,7 +691,10 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   overflow-y: auto;
+  scrollbar-color: var(--guideme-text-accent) var(--guideme-background-dark);
   height: 70%;
+  padding: 0 1rem;
+  gap: 0.5rem;
 }
 
 .searchResultsList li {
