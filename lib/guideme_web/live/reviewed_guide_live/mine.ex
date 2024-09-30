@@ -52,4 +52,16 @@ defmodule GuideMeWeb.ReviewedGuideLive.Mine do
   def handle_event("select_unreviewed", _, socket) do
     {:noreply, assign(socket, current_selection: "Unreviewed")}
   end
+
+  def handle_event("search", %{"query" => query}, socket) do
+    socket = assign(socket, :search_query, query)
+    GuideMeWeb.Search.search_guides(query, socket)
+  end
+
+  def handle_event("clear_search", _params, socket) do
+    {:noreply,
+     socket
+     |> assign(:form, to_form(%{"query" => ""}))
+     |> assign(:search_results, [])}
+  end
 end

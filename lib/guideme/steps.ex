@@ -35,7 +35,6 @@ defmodule GuideMe.Steps do
       ** (Ecto.NoResultsError)
 
   """
-
   def list_guide_steps!(id) do
     Repo.query!(
       "SELECT number, full_text, external_link, details_links.guide_id, src, alt " <>
@@ -49,6 +48,27 @@ defmodule GuideMe.Steps do
         "WHERE steps.guide_id = $1 " <>
         "ORDER BY steps.number",
       [id]
+    )
+  end
+
+  @doc """
+  Returns the list of all steps' full texts and guide ids. Used for searching
+  for guides.
+
+  ## Examples
+
+      iex> list_step_guide_ids_and_full_texts()
+      [%{guide_id: 1, full_text: "Understand the GuideMe Philosophy"}, ...]
+
+  """
+  def list_step_guide_ids_and_full_texts do
+    Repo.all(
+      from(s in Step,
+        select: %{
+          guide_id: s.guide_id,
+          full_text: s.full_text
+        }
+      )
     )
   end
 

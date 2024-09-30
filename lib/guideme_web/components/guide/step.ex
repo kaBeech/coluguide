@@ -8,9 +8,9 @@ defmodule Step do
     <%= for step <- @steps do %>
       <div class="flex justifyLeft gap1">
         <%= if step["external_link"] do %>
-          <a href={step["external_link"]} target="_blank" rel="noopener noreferrer">
+          <.link navigate={step["external_link"]} target="_blank" rel="noopener noreferrer">
             
-          </a>
+          </.link>
         <% else %>
           <span class="textDull">
             
@@ -42,9 +42,9 @@ defmodule Step do
           </span>
         <% end %>
         <%= if step["guide_id"] do %>
-          <a href={"/guide/" <> to_string(step["guide_id"])}>
+          <.link navigate={"/guide/" <> to_string(step["guide_id"])}>
             
-          </a>
+          </.link>
         <% else %>
           <span class="textDull">
             

@@ -10,7 +10,7 @@ defmodule GuideMeWeb.UserMenu do
     <div id="userMenu" class="hidden">
       <nav class="fixed widthMax flex column alignEnd moveLeft gapPoint5 paddingTopPoint5">
         <%= if @current_user do %>
-          <.link href={~p"/session"} method="delete">Sign out</.link>
+          <.link navigate={~p"/session"} method="delete">Sign out</.link>
           <.link navigate={~p"/chapters/select"}>
             Chapters
           </.link>
@@ -38,7 +38,7 @@ defmodule GuideMeWeb.UserMenu do
           </.link>
           <.link navigate={~p"/session/new"}>Sign In</.link>
         <% end %>
-        <a href="/">Home</a>
+        <.link navigate="/">Home</.link>
       </nav>
     </div>
     """

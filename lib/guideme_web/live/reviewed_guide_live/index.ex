@@ -57,4 +57,16 @@ defmodule GuideMeWeb.ReviewedGuideLive.Index do
 
     {:noreply, stream_delete(socket, :reviewed_guides, reviewed_guide)}
   end
+
+  def handle_event("search", %{"query" => query}, socket) do
+    socket = assign(socket, :search_query, query)
+    GuideMeWeb.Search.search_guides(query, socket)
+  end
+
+  def handle_event("clear_search", _params, socket) do
+    {:noreply,
+     socket
+     |> assign(:form, to_form(%{"query" => ""}))
+     |> assign(:search_results, [])}
+  end
 end
