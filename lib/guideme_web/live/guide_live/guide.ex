@@ -13,7 +13,7 @@ defmodule GuideMeWeb.GuideLive.Guide do
   def mount(_params, _session, socket) do
     socket =
       assign(socket,
-        form: to_form(%{query: ""})
+        form: to_form(%{"query" => ""})
       )
 
     {:ok, socket}
@@ -35,13 +35,14 @@ defmodule GuideMeWeb.GuideLive.Guide do
   end
 
   def handle_event("search", %{"query" => query}, socket) do
+    socket = assign(socket, :search_query, query)
     GuideMeWeb.Search.search_guides(query, socket)
   end
 
   def handle_event("clear_search", _params, socket) do
     {:noreply,
      socket
-     |> assign(:form, to_form(%{query: ""}))
+     |> assign(:form, to_form(%{"query" => ""}))
      |> assign(:search_results, [])}
   end
 

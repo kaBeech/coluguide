@@ -552,6 +552,26 @@ button {
   line-height: 1.4rem;
 }
 
+.hidden {
+  display: none;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 /* Custom Classes */
 
 
@@ -585,22 +605,6 @@ button {
   color: var(--guideme-text-bright);
 }
 
-.hidden {
-  display: none;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
-.fixed {
-  position: fixed;
-}
-
 .navTut:hover .hidden {
   display: block;
   position: fixed;
@@ -632,14 +636,6 @@ button {
 
 .textStandardColor {
   color: var(--guideme-text-standard);
-}
-
-.hidden {
-  display: none;
-}
-
-.pointer {
-  cursor: pointer;
 }
 
 /* .popup {
@@ -680,6 +676,26 @@ button {
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.searchResultsContainer {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  top: 10%;
+  left: 10%;
+  background-color: var(--guideme-background-dark);
+}
+
+.searchResultsList {
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  height: 70%;
+}
+
+.searchResultsList li {
+  width: 30%;
 }
 
 /* Color Scheme Preferences */
