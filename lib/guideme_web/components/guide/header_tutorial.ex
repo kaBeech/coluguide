@@ -32,10 +32,18 @@ defmodule HeaderTutorial do
         </p>
         <p class="navTut textAccent">
           <span class="link">
+            
+          </span>
+          <span class="hidden marginTop3">
+            View Guides that link to this one by clicking the <span class="link">orange globe </span>
+          </span>
+        </p>
+        <p class="navTut textAccent">
+          <span class="link">
             󰷊
           </span>
           <span class="hidden marginTop3">
-            See a Guide's review status by clicking an <span class="link">orange review icon 󰷊</span>
+            See a Guide's review status by clicking the <span class="link">orange review icon 󰷊</span>
           </span>
         </p>
         <p class="navTut textAccent">
