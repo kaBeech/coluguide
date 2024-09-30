@@ -2,9 +2,13 @@ defmodule GuideMeWeb.Search do
   use GuideMeWeb, :live_component
   use Phoenix.Component
 
+  defp allow_search_guides(assigns) do
+    assigns.current_user && assigns.search_guides_enabled
+  end
+
   def render_search_guides(assigns) do
     ~H"""
-    <%= if @current_user do %>
+    <%= if allow_search_guides(assigns) do %>
       <.form for={@form} phx-change="search" phx-click-away="clear_search">
         <.input id="searchGuides" type="text" field={@form["query"]} placeholder="Search Guides" />
       </.form>
@@ -14,7 +18,7 @@ defmodule GuideMeWeb.Search do
 
   def render_search_results(assigns) do
     ~H"""
-    <%= if @current_user && length(@search_results) > 0 do %>
+    <%= if allow_search_guides(assigns) && length(@search_results) > 0 do %>
       <div class="dimScreenImageHolder" phx-click-away="clear_search">
         <section class="searchResultsContainer imageBorder">
           <h2>Searching Guides for "<%= @search_query %>":</h2>

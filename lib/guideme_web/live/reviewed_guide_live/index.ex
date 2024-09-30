@@ -16,6 +16,7 @@ defmodule GuideMeWeb.ReviewedGuideLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
+    socket = assign(socket, :search_guides_enabled, true)
     {:ok, stream(socket, :reviewed_guides, ReviewRecords.list_reviewed_guides())}
   end
 

@@ -51,6 +51,8 @@ defmodule GuideMeWeb.InitAssigns do
         get_user(socket, session)
       end)
 
+    socket = assign(socket, :search_guides_enabled, false)
+
     if socket.assigns.current_user do
       refresh_search_cache(socket)
     else

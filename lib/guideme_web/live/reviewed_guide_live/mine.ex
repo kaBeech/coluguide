@@ -21,6 +21,7 @@ defmodule GuideMeWeb.ReviewedGuideLive.Mine do
          guides: needs_review,
          action: "select_needs_review"
        },
+       search_guides_enabled: true,
        stale: %{name: "Stale", guides: stale, action: "select_stale"},
        reviewed: %{name: "Reviewed", guides: reviewed, action: "select_reviewed"},
        unreviewed: %{name: "Unreviewed", guides: unreviewed, action: "select_unreviewed"},

@@ -11,7 +11,9 @@ defmodule GuideMeWeb.GuideLive.Guide do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    {:ok,
+     socket
+     |> assign(:search_guides_enabled, true)}
   end
 
   @impl true
