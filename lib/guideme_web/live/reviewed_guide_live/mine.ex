@@ -60,6 +60,10 @@ defmodule GuideMeWeb.ReviewedGuideLive.Mine do
     GuideMeWeb.Search.search_guides(query, socket)
   end
 
+  def handle_event("focus_search", _params, socket) do
+    {:noreply, assign(socket, :search_guides_focused, true)}
+  end
+
   def handle_event("clear_search", _params, socket) do
     clear_search(socket)
   end

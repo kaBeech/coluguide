@@ -31,6 +31,10 @@ defmodule GuideMeWeb.CRUDLive do
   end
 
   @impl true
+  def handle_event("focus_search", _params, socket) do
+    {:noreply, assign(socket, :search_guides_focused, true)}
+  end
+
   def handle_event("clear_search", _params, socket) do
     clear_search(socket)
   end
