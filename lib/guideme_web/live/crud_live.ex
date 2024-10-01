@@ -1,5 +1,6 @@
 defmodule GuideMeWeb.CRUDLive do
   use GuideMeWeb, :live_view
+  import GuideMeWeb.Search
 
   @impl true
   def mount(_params, _session, socket) do
@@ -31,10 +32,7 @@ defmodule GuideMeWeb.CRUDLive do
 
   @impl true
   def handle_event("clear_search", _params, socket) do
-    {:noreply,
-     socket
-     |> assign(:form, to_form(%{"query" => ""}))
-     |> assign(:search_results, [])}
+    clear_search(socket)
   end
 
   def handle_event("keyup", %{"key" => "Escape"}, socket) do

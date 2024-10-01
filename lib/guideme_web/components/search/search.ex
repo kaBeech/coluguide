@@ -2,6 +2,14 @@ defmodule GuideMeWeb.Search do
   use GuideMeWeb, :live_component
   use Phoenix.Component
 
+  def clear_search(socket) do
+    {:noreply,
+     socket
+     |> assign(:form, to_form(%{"query" => ""}))
+     |> assign(:search_results, [])
+     |> assign(:search_guides_focused, false)}
+  end
+
   defp allow_search_guides(assigns) do
     assigns.current_user && assigns.search_guides_enabled
   end

@@ -2,6 +2,7 @@ defmodule GuideMeWeb.ReviewedGuideLive.Index do
   use GuideMeWeb, :live_view
   import NavBar
   import GuideMeWeb.Guide.ReviewStatus
+  import GuideMeWeb.Search
 
   alias GuideMe.{ReviewRecords, Users, Guides}
   alias GuideMe.ReviewRecords.ReviewedGuide
@@ -65,10 +66,7 @@ defmodule GuideMeWeb.ReviewedGuideLive.Index do
   end
 
   def handle_event("clear_search", _params, socket) do
-    {:noreply,
-     socket
-     |> assign(:form, to_form(%{"query" => ""}))
-     |> assign(:search_results, [])}
+    clear_search(socket)
   end
 
   def handle_event("keyup", %{"key" => "Escape"}, socket) do

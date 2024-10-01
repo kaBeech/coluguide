@@ -1,6 +1,7 @@
 defmodule GuideMeWeb.ReviewedGuideLive.Mine do
   use GuideMeWeb, :live_view
   import NavBar
+  import GuideMeWeb.Search
 
   alias GuideMe.ReviewRecords
   alias GuideMe.Guides
@@ -60,10 +61,7 @@ defmodule GuideMeWeb.ReviewedGuideLive.Mine do
   end
 
   def handle_event("clear_search", _params, socket) do
-    {:noreply,
-     socket
-     |> assign(:form, to_form(%{"query" => ""}))
-     |> assign(:search_results, [])}
+    clear_search(socket)
   end
 
   def handle_event("keyup", %{"key" => "Escape"}, socket) do
