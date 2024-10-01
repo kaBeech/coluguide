@@ -46,7 +46,7 @@ defmodule GuideMeWeb.Search do
               </li>
               <li>
                 <input type="checkbox" />
-                Checkboxes don't do anything, but they can be satisfying to click on.
+                Checkboxes don't do anything, but they can be satisfying to click on!
               </li>
               <li>
                 <span class="link">  orange globes</span> show Guides that

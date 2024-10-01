@@ -31,6 +31,15 @@ defmodule HeaderTutorial do
           </span>
         </p>
         <p class="navTut textAccent">
+          <span>
+            <input type="checkbox" />
+          </span>
+          <span class="hidden marginTop3">
+            Checkboxes <input type="checkbox" /> don't do anything, but they
+            can be satisfying to click on!
+          </span>
+        </p>
+        <p class="navTut textAccent">
           <span class="link">
             
           </span>
@@ -44,14 +53,6 @@ defmodule HeaderTutorial do
           </span>
           <span class="hidden marginTop3">
             See a Guide's review status by clicking the <span class="link">orange review icon 󰷊</span>
-          </span>
-        </p>
-        <p class="navTut textAccent">
-          <span>
-            <input type="checkbox" />
-          </span>
-          <span class="hidden marginTop3">
-            Click a <input type="checkbox" /> checkbox to track your progress
           </span>
         </p>
         <span class="hoverHidden marginTop3 marginBottom1">
