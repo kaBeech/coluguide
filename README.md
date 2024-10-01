@@ -1,19 +1,21 @@
 # GuideMe
 
-GuideMe is a knowledge enhancement tool I originally built using
-[Tauri](https://tauri.app/) and am now rebuilding as a web application in
-[Elixir](https://elixir-lang.org/) with
-[Phoenix](https://phoenixframework.org/) and
-[LiveView](https://github.com/phoenixframework/phoenix_live_view)
+GuideMe is a simple, declarative knowledge enhancement tool built to help
+ease cognitive load for myself and our team at a nation-wide long-term care
+pharmacy.
+
+It's built to quickly find resources for accomplishing tasks and display the
+information in the simplest terms possible. If the simple declarative
+instructions are not enough, a link to a more specific guide is provided.
+
+There is a small, self-documenting demo site available
+[here](https://guideme-demo.gigalixirapp.com/). Please use a desktop for now to
+access it - we don't use mobile at work and I have a very limited time budget
+for this project. Mobile support is planned for the future.
 
 Currently the functionality is specific to how we're using it at work, but I
 figure I'll make the code available in case it's interesting/useful for someone
 out there.
-
-There is a small, self-documenting demo site available
-[here](https://guideme-demo.gigalixirapp.com/). Please use a desktop for now to
-access it - we don't use mobile at work and I have a very limited time budget.
-Mobile support is planned for the future.
 
 Hosting it yourself may require access to/knowledge of: 
 
