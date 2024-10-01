@@ -7,15 +7,15 @@ GuideMe is a knowledge enhancement tool I originally built using
 [LiveView](https://github.com/phoenixframework/phoenix_live_view)
 
 Currently the functionality is specific to how we're using it at work, but I
-figure I'll make the code available in case it's useful for someone out there.
+figure I'll make the code available in case it's interesting/useful for someone
+out there.
 
-There is a small demo site available [here](https://guideme.gigalixirapp.com/).
+There is a small, self-documenting demo site available
+[here](https://guideme-demo.gigalixirapp.com/). Please use a desktop for now to
+access it - we don't use mobile at work and I have a very limited time budget.
+Mobile support is planned for the future.
 
-Eventually I plan to make a fully functional demo and actual documentation as 
-well but for now I'm focused on building out the functionality we need and our
-specific implementation (i.e. our data, custom pages, deployment, etc.)
-
-May require access to/knowledge of: 
+Hosting it yourself may require access to/knowledge of: 
 
   * [Linux](https://linux.org/) (such as [Ubuntu](https://ubuntu.com/) or
     [WSL2 for Windows](https://learn.microsoft.com/en-us/windows/wsl/install))
