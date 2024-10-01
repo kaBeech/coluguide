@@ -43,21 +43,20 @@ defmodule GuideMeWeb.GuideLive.Guide do
 
   def handle_event("search", %{"query" => query}, socket) do
     socket = assign(socket, :search_query, query)
-    GuideMeWeb.Search.search_guides(query, socket)
+
+    GuideMeWeb.Search.search_guides(
+      query,
+      socket
+      |> assign(:search_guides_focused, true)
+    )
   end
 
   def handle_event("clear_search", _params, socket) do
-    {:noreply,
-     socket
-     |> assign(:form, to_form(%{"query" => ""}))
-     |> assign(:search_results, [])}
+    clear_search(socket)
   end
 
   def handle_event("keyup", %{"key" => "Escape"}, socket) do
-    {:noreply,
-     socket
-     |> assign(:form, to_form(%{"query" => ""}))
-     |> assign(:search_results, [])}
+    clear_search(socket)
   end
 
   def handle_event("keyup", _, socket) do
@@ -82,6 +81,14 @@ defmodule GuideMeWeb.GuideLive.Guide do
          socket.assigns.guide.id
        )
      )}
+  end
+
+  defp clear_search(socket) do
+    {:noreply,
+     socket
+     |> assign(:form, to_form(%{"query" => ""}))
+     |> assign(:search_results, [])
+     |> assign(:search_guides_focused, false)}
   end
 
   defp review_guide(reviewed_guide, guide_id, user) do
