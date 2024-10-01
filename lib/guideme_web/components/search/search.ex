@@ -78,6 +78,9 @@ defmodule GuideMeWeb.Search do
     search_results =
       guide_names_with_all_query_words ++ guides_with_query_in_steps_but_not_name
 
-    {:noreply, assign(socket, :search_results, search_results)}
+    {:noreply,
+     socket
+     |> assign(:search_guides_focused, true)
+     |> assign(:search_results, search_results)}
   end
 end

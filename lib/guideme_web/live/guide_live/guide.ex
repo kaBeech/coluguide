@@ -45,11 +45,7 @@ defmodule GuideMeWeb.GuideLive.Guide do
   def handle_event("search", %{"query" => query}, socket) do
     socket = assign(socket, :search_query, query)
 
-    search_guides(
-      query,
-      socket
-      |> assign(:search_guides_focused, true)
-    )
+    search_guides(query, socket)
   end
 
   def handle_event("clear_search", _params, socket) do
