@@ -53,7 +53,10 @@ defmodule GuideMeWeb.InitAssigns do
 
     socket =
       socket
+      |> assign(:keydown_last, nil)
       |> assign(:search_guides_enabled, false)
+      |> assign(:search_guides_focused, false)
+      |> assign(:search_query, nil)
       |> assign(:backlinks_enabled, false)
       |> assign(:backlinks, [])
 

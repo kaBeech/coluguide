@@ -6,8 +6,9 @@ defmodule GuideMeWeb.GuideLive.Guide do
   import NavBar
   import Step
   import GuideMeWeb.Guide.ReviewStatus
+  import GuideMeWeb.Search
 
-  alias GuideMe.{Guides, Steps, ReviewRecords}
+  alias GuideMe.{Guides, ReviewRecords, Steps}
 
   @impl true
   def mount(_params, _session, socket) do
@@ -43,21 +44,20 @@ defmodule GuideMeWeb.GuideLive.Guide do
 
   def handle_event("search", %{"query" => query}, socket) do
     socket = assign(socket, :search_query, query)
-    GuideMeWeb.Search.search_guides(query, socket)
+
+    search_guides(query, socket)
+  end
+
+  def handle_event("focus_search", _params, socket) do
+    {:noreply, assign(socket, :search_guides_focused, true)}
   end
 
   def handle_event("clear_search", _params, socket) do
-    {:noreply,
-     socket
-     |> assign(:form, to_form(%{"query" => ""}))
-     |> assign(:search_results, [])}
+    clear_search(socket)
   end
 
   def handle_event("keyup", %{"key" => "Escape"}, socket) do
-    {:noreply,
-     socket
-     |> assign(:form, to_form(%{"query" => ""}))
-     |> assign(:search_results, [])}
+    clear_search(socket)
   end
 
   def handle_event("keyup", _, socket) do

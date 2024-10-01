@@ -1,6 +1,8 @@
 defmodule GuideMeWeb.ChapterLive.Index do
   use GuideMeWeb, :live_view
 
+  import GuideMeWeb.Search
+
   alias GuideMe.Chapters
   alias GuideMe.Chapters.Chapter
 
@@ -50,11 +52,12 @@ defmodule GuideMeWeb.ChapterLive.Index do
     GuideMeWeb.Search.search_guides(query, socket)
   end
 
+  def handle_event("focus_search", _params, socket) do
+    {:noreply, assign(socket, :search_guides_focused, true)}
+  end
+
   def handle_event("clear_search", _params, socket) do
-    {:noreply,
-     socket
-     |> assign(:form, to_form(%{"query" => ""}))
-     |> assign(:search_results, [])}
+    clear_search(socket)
   end
 
   def handle_event("keyup", %{"key" => "Escape"}, socket) do

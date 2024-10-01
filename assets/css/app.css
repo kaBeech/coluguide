@@ -522,6 +522,34 @@ button {
   margin-bottom: 2rem;
 }
 
+.padding1 {
+  padding: 1rem;
+}
+
+.padding2 {
+  padding: 2rem;
+}
+
+.padding3 {
+  padding: 3rem;
+}
+
+.padding4 {
+  padding: 4rem;
+}
+
+.padding5 {
+  padding: 5rem;
+}
+
+.padding8 {
+  padding: 8rem;
+}
+
+.padding10 {
+  padding: 10rem;
+}
+
 .paddingTop1 {
   padding-top: 1rem;
 }
