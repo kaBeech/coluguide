@@ -629,6 +629,13 @@ button {
   padding-bottom: 0.5rem;
 }
 
+.notificationDot {
+  color: var(--guideme-text-dull);
+  position: absolute;
+  font-size: 4rem;
+  transform: translate(-250%, -30%);
+}
+
 .hoverBright:hover {
   color: var(--guideme-text-bright);
 }

@@ -7,8 +7,8 @@ defmodule GuideMeWeb.ReviewedGuideLive.Mine do
   alias GuideMe.Guides
   alias GuideMeWeb.Guide.ReviewStatus
 
-  @impl true
-  def mount(_params, _session, socket) do
+  def assign_guide_review_statistics(socket) do
+    # TODO: Yo. Make this one query, silly.
     my_reviewed_guides = ReviewRecords.list_my_reviewed_guides(socket.assigns.current_user.id)
     my_guides = Guides.list_guides_for_my_reviews()
 
@@ -28,6 +28,11 @@ defmodule GuideMeWeb.ReviewedGuideLive.Mine do
        unreviewed: %{name: "Unreviewed", guides: unreviewed, action: "select_unreviewed"},
        current_selection: nil
      )}
+  end
+
+  @impl true
+  def mount(_params, _session, socket) do
+    assign_guide_review_statistics(socket)
   end
 
   @impl true
