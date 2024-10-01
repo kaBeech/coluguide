@@ -55,7 +55,7 @@ defmodule HeaderTutorial do
           </span>
         </p>
         <span class="hoverHidden marginTop3 marginBottom1">
-          Press Spacebar or hover over an <span class="link">orange icon</span> above to view hints
+          Press any key or hover over an <span class="link">orange icon</span> above to view hints
         </span>
       </div>
     </div>
