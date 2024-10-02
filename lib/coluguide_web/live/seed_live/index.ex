@@ -208,6 +208,13 @@ defmodule ColuguideWeb.SeedLive do
     })
 
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
+      title: "Understand Coluguide's name",
+      name: "Understand Coluguide's name",
+      template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
+      chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
+    })
+
+    Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
       title: "Use a Guide",
       name: "Use a Guide in Coluguide",
       template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
@@ -257,7 +264,7 @@ defmodule ColuguideWeb.SeedLive do
     })
 
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
-      title: "Manage Guide Reviews ",
+      title: "Manage Guide Reviews",
       name: "Manage Guide Reviews in Coluguide",
       template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
       chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
@@ -419,39 +426,45 @@ defmodule ColuguideWeb.SeedLive do
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
-      full_text: "Use a Guide",
+      full_text: "Understand Coluguide's name",
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Use Coluguide"),
       number: 2
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
-      full_text: "Review a Guide",
+      full_text: "Use a Guide",
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Use Coluguide"),
       number: 3
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
-      full_text: "See which Guides have been updated since last review",
+      full_text: "Review a Guide",
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Use Coluguide"),
       number: 4
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
-      full_text: "Assign Guides to Users for review",
+      full_text: "See which Guides have been updated since last review",
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Use Coluguide"),
       number: 5
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
-      full_text: "Create, update, and delete Guides",
+      full_text: "Assign Guides to Users for review",
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Use Coluguide"),
       number: 6
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
-      full_text: "Manage Teams (coming soon!)",
+      full_text: "Create, update, and delete Guides",
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Use Coluguide"),
       number: 7
+    })
+
+    Coluguide.Repo.insert!(%Coluguide.Steps.Step{
+      full_text: "Manage Teams (coming soon!)",
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use Coluguide"),
+      number: 8
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
@@ -485,144 +498,182 @@ defmodule ColuguideWeb.SeedLive do
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
+      external_link: "https://en.wikipedia.org/wiki/Colugo",
+      full_text: "Coluguide is named after the noble colugo, or flying lemur",
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Understand Coluguide's name"),
+      number: 1
+    })
+
+    Coluguide.Repo.insert!(%Coluguide.Steps.Step{
+      external_link: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2600906/",
+      full_text: "Colugos can glide great distances (up to 150 meters) to
+        quickly get from one tree to another",
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Understand Coluguide's name"),
+      number: 2
+    })
+
+    Coluguide.Repo.insert!(%Coluguide.Steps.Step{
+      full_text: "This resonates with Coluguide's ability to quickly find and
+        jump to any Guide in the database",
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Understand Coluguide's name"),
+      number: 3
+    })
+
+    Coluguide.Repo.insert!(%Coluguide.Steps.Step{
+      external_link: "https://academic.oup.com/jmammal/article/92/2/444/869618?login=false",
+      full_text: "Once landed in a tree, colugos only make short hops to
+        explore their branches",
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Understand Coluguide's name"),
+      number: 4
+    })
+
+    Coluguide.Repo.insert!(%Coluguide.Steps.Step{
+      full_text: "One landed in a Guide, Coluguide shows only the simplest
+        necessary information and provides short hops to related guides for
+        more details",
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Understand Coluguide's name"),
+      number: 5
+    })
+
+    Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "A complex system can be understood as a structure of simple
         abstractions",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple (Coluguide Philosophy)"),
       number: 1
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Each Guide is short enough to understand",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple (Coluguide Philosophy)"),
       number: 2
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Each Step is short enough to understand",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple (Coluguide Philosophy)"),
       number: 3
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "If a Guide or Step gets too complicated, break it down into
         simpler parts",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple (Coluguide Philosophy)"),
       number: 4
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Our jobs require us to have vast amounts of knowledge
       available at a moment's notice",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly (Coluguide Philosophy)"),
       number: 1
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Make necessary information quick to find",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly (Coluguide Philosophy)"),
       number: 2
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Each Guide gives a complete high-level overview of the
         necessary information",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly (Coluguide Philosophy)"),
       number: 3
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "When more detail on a Step is needed, a link to a Guide with
         more detail is provided",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly (Coluguide Philosophy)"),
       number: 4
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Our jobs require intense focus. Distractions can put
       Patients' lives at risk",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Avoid distractions"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Avoid distractions (Coluguide Philosophy)"),
       number: 1
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Keep extraneous information to a minimum",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Avoid distractions"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Avoid distractions (Coluguide Philosophy)"),
       number: 2
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Build applications that operate in a predictable manner",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Avoid distractions"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Avoid distractions (Coluguide Philosophy)"),
       number: 3
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Comfort and style matter",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Avoid distractions"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Avoid distractions (Coluguide Philosophy)"),
       number: 4
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Our jobs require high levels of critical thinking",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Don't think too hard"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Don't think too hard (Coluguide Philosophy)"),
       number: 1
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Brainpower spent searching for information could be better
       spent solving problems",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Don't think too hard"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Don't think too hard (Coluguide Philosophy)"),
       number: 2
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Build applications that can be used with low expense to
       braipower",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Don't think too hard"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Don't think too hard (Coluguide Philosophy)"),
       number: 3
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "We work in an environment that is constantly evolving",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Good information changes"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Good information changes (Coluguide Philosophy)"),
       number: 1
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Living information changes. When important changes occur,
       Users need to be informed",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Good information changes"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Good information changes (Coluguide Philosophy)"),
       number: 2
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Some small changes may not need to be communicated",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Good information changes"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Good information changes (Coluguide Philosophy)"),
       number: 3
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Each Guide's title is shown near the top of the page",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide in Coluguide"),
       number: 1
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Some Guides have introductory information before the Steps 
         begin",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide in Coluguide"),
       number: 2
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Follow the steps underneath the title",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide in Coluguide"),
       number: 3
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Use the Step Icons to interact with the Guide",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide in Coluguide"),
       number: 4
     })
 
@@ -664,35 +715,35 @@ defmodule ColuguideWeb.SeedLive do
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Each Guide has a Review section near the bottom of the page",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide in Coluguide"),
       number: 1
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "The dull teal review indicator gives quick information on a
         Guide's review status",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide in Coluguide"),
       number: 2
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "If the Guide needs review, the Review section will be
         outlined in orange",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide in Coluguide"),
       number: 3
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Click the orange 󰷊 icon to open the full Review
         section",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide in Coluguide"),
       number: 4
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Click the Review button and confirm that you've reviewed the
         Guide",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide in Coluguide"),
       number: 5
     })
 
@@ -1532,39 +1583,39 @@ defmodule ColuguideWeb.SeedLive do
       image_id: Coluguide.Images.get_image_id_by_src!("guide_template_standard.png"),
       alt: "An example Guide page showing the title, steps, and icons for each 
         step's external link, image, and details link.",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(2, "Use Coluguide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(3, "Use Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
       image_id: Coluguide.Images.get_image_id_by_src!("guide_review.png"),
       alt: "A Guide's Review section is shown near the bottom of the page",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(3, "Use Coluguide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Use Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
       image_id: Coluguide.Images.get_image_id_by_src!("guide_title.png"),
       alt: "A Guide's title is shown above its steps",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(1, "Use a Guide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(1, "Use a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
       image_id: Coluguide.Images.get_image_id_by_src!("guide_introduction.png"),
       alt: "If a Guide has introductory information, it's shown below the title 
         and above the steps",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(2, "Use a Guide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(2, "Use a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
       image_id: Coluguide.Images.get_image_id_by_src!("guide_steps.png"),
       alt: "A Guide's steps are shown below its title (and introduction if any)",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(3, "Use a Guide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(3, "Use a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
       image_id: Coluguide.Images.get_image_id_by_src!("guide_icons.png"),
       alt: "The  ,  , and  icons and checkbox are shown before each step's 
         number and full text",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Use a Guide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Use a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
@@ -1604,28 +1655,28 @@ defmodule ColuguideWeb.SeedLive do
       alt: "A Guide's Review section, shown near the bottom of the page shows
         only the Review Status Indicator and the orange 󰷊 icon when a page is
         first loaded",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(1, "Review a Guide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(1, "Review a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
       image_id: Coluguide.Images.get_image_id_by_src!("guide_rsi.png"),
       alt: "The Review Status Indicator next to the orange 󰷊 icon shows the
         Guide's Review Status",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(2, "Review a Guide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(2, "Review a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
       image_id: Coluguide.Images.get_image_id_by_src!("guide_needs_review.png"),
       alt: "The small Review Section outlined in orange, indicating that the
         Guide needs review",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(3, "Review a Guide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(3, "Review a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
       image_id: Coluguide.Images.get_image_id_by_src!("guide_full_review_section.png"),
       alt: "The orange 󰷊 icon next to the Review Status Indicator can be
         clicked to open the full Review section",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Review a Guide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Review a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
@@ -1633,7 +1684,7 @@ defmodule ColuguideWeb.SeedLive do
       alt: "Clicking the Review button brings up an alert notification at the
         top of the screen. Clicking OK on this notification to confirm that
         you've reviewed the Guide will record your review",
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(5, "Review a Guide")
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(5, "Review a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.StepImage{
@@ -1745,66 +1796,81 @@ defmodule ColuguideWeb.SeedLive do
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(2, "Use Coluguide"),
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide")
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Understand Coluguide's name")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(3, "Use Coluguide"),
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide")
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Use Coluguide"),
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("View your Review Statistics")
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Review a Guide in Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(5, "Use Coluguide"),
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Manage Guide Reviews in Coluguide")
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("View your Review Statistics")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(6, "Use Coluguide"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Manage Guide Reviews in Coluguide")
+    })
+
+    Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(7, "Use Coluguide"),
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Create, Update, and Delete Guides")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(3, "Understand Coluguide's name"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly (Coluguide Philosophy)")
+    })
+
+    Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(5, "Understand Coluguide's name"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple (Coluguide Philosophy)")
+    })
+
+    Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(1, "Understand the Coluguide Philosophy"),
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple")
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Everything is simple (Coluguide Philosophy)")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(2, "Understand the Coluguide Philosophy"),
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly")
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly (Coluguide Philosophy)")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(3, "Understand the Coluguide Philosophy"),
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Avoid distractions")
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Avoid distractions (Coluguide Philosophy)")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Understand the Coluguide Philosophy"),
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Don't think too hard")
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Don't think too hard (Coluguide Philosophy)")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(5, "Understand the Coluguide Philosophy"),
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Good information changes"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Good information changes (Coluguide Philosophy)"),
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Use a Guide"),
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Use a Guide in Coluguide"),
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Use Step Icons")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(2, "Review a Guide"),
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(2, "Review a Guide in Coluguide"),
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Read a Guide's Review Status Indicator")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
-      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Review a Guide"),
+      step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(4, "Review a Guide in Coluguide"),
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Use a Guide's Full Review Section")
     })
 
