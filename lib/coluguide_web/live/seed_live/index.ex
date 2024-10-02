@@ -180,8 +180,8 @@ defmodule ColuguideWeb.SeedLive do
     })
 
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
-      title: "Access necessary information quickly",
-      name: "Access necessary information quickly",
+      title: "Get the right information quickly",
+      name: "Get the right information quickly",
       template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
       chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
     })
@@ -461,7 +461,7 @@ defmodule ColuguideWeb.SeedLive do
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
-      full_text: "Access necessary information quickly",
+      full_text: "Get the right information quickly",
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Understand the Coluguide Philosophy"),
       number: 2
     })
@@ -513,27 +513,27 @@ defmodule ColuguideWeb.SeedLive do
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Our jobs require us to have vast amounts of knowledge
       available at a moment's notice",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Access necessary information quickly"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly"),
       number: 1
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Make necessary information quick to find",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Access necessary information quickly"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly"),
       number: 2
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "Each Guide gives a complete high-level overview of the
         necessary information",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Access necessary information quickly"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly"),
       number: 3
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
       full_text: "When more detail on a Step is needed, a link to a Guide with
         more detail is provided",
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Access necessary information quickly"),
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly"),
       number: 4
     })
 
@@ -1775,7 +1775,7 @@ defmodule ColuguideWeb.SeedLive do
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
       step_id: Coluguide.Steps.get_step_id_by_number_and_guide_name!(2, "Understand the Coluguide Philosophy"),
-      guide_id: Coluguide.Guides.get_guide_id_by_name!("Access necessary information quickly")
+      guide_id: Coluguide.Guides.get_guide_id_by_name!("Get the right information quickly")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.DetailsLink{
