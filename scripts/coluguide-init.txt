@@ -1,0 +1,8 @@
+---------------------
+
+Coluguide is now ready!
+
+You can start the Coluguide server with `mix phx.server` or inside IEx 
+with `iex -S mix phx.server`
+
+Have fun!

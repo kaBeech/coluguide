@@ -1,3 +1,3 @@
-GuideMe.Repo.start_link()
+Coluguide.Repo.start_link()
 
 Guidme.Init.run()

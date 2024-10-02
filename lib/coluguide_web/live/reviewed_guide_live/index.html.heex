@@ -1,0 +1,66 @@
+<.header>
+  Guide Reviews
+  <:actions>
+    <.link patch={~p"/reviewed_guides/new"}>
+      <.button class="textSmaller">Assign New Review</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="reviewed_guides"
+  rows={@streams.reviewed_guides}
+  row_click={fn {_id, reviewed_guide} -> JS.navigate(~p"/reviewed_guides/#{reviewed_guide}") end}
+>
+  <:col :let={{_id, reviewed_guide}} label="Status">
+    <span class="textDull">
+      <%= if get_review_status(
+               reviewed_guide,
+               Guides.get_guide!(reviewed_guide.guide_id)
+             ) == "Reviewed" do
+        " "
+      else
+        " "
+      end %>
+    </span>
+    <%= get_review_status(
+      reviewed_guide,
+      Guides.get_guide!(reviewed_guide.guide_id)
+    ) %>
+  </:col>
+  <:col :let={{_id, reviewed_guide}} label="Guide">
+    <%= Enum.find(list_guides(), &(&1.id == reviewed_guide.guide_id)).name %>
+  </:col>
+  <:col :let={{_id, reviewed_guide}} label="User">
+    <%= Enum.find(list_users(), &(&1.id == reviewed_guide.user_id)).email %>
+  </:col>
+  <:col :let={{_id, reviewed_guide}} label="Reviewed at">
+    <%= reviewed_guide.reviewed_at || "Never" %>
+  </:col>
+  <:action :let={{id, reviewed_guide}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: reviewed_guide.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal
+  :if={@live_action in [:new, :edit]}
+  id="reviewed_guide-modal"
+  show
+  on_cancel={JS.patch(~p"/reviewed_guides")}
+>
+  <.live_component
+    module={ColuguideWeb.ReviewedGuideLive.FormComponent}
+    id={@reviewed_guide.id || :new}
+    title={@page_title}
+    action={@live_action}
+    reviewed_guide={@reviewed_guide}
+    patch={~p"/reviewed_guides"}
+  />
+</.modal>
+
+<%= render_navbar(assigns) %>

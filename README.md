@@ -1,6 +1,6 @@
-# GuideMe
+# Coluguide
 
-GuideMe is a simple, declarative knowledge enhancement tool built to help
+Coluguide is a simple, declarative knowledge enhancement tool built to help
 ease cognitive load for myself and our team at a nation-wide long-term care
 pharmacy.
 
@@ -9,7 +9,7 @@ information in the simplest terms possible. If the simple declarative
 instructions are not enough, a link to a more specific guide is provided.
 
 There is a small, self-documenting demo site available
-[here](https://guideme-demo.gigalixirapp.com/). Please use a desktop for now to
+[here](https://coluguide-demo.gigalixirapp.com/). Please use a desktop for now to
 access it - we don't use mobile at work and I have a very limited time budget
 for this project. Mobile support is planned for the future.
 
@@ -35,11 +35,11 @@ To run :
   * [Ensure Postgres is running](https://www.postgresql.org/docs/current/tutorial-start.html)
     (the method for this will depend on your operating system/setup)
   * [Clone this repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository):
-    `git clone https://github.com/kaBeech/guideme.git`
-  * Enter the newly cloned directory with `cd guideme`
-  * Enter the GuideMe development shell with `nix develop`
-  * Initialize GuideMe with `guideme-init`
-  * Start the GuideMe endpoint with `mix phx.server` or inside IEx with
+    `git clone https://github.com/kaBeech/coluguide.git`
+  * Enter the newly cloned directory with `cd coluguide`
+  * Enter the Coluguide development shell with `nix develop`
+  * Initialize Coluguide with `coluguide-init`
+  * Start the Coluguide endpoint with `mix phx.server` or inside IEx with
     `iex -S mix phx.server`
 
 Then you can visit [`localhost:4000`](http://localhost:4000) from your browser!

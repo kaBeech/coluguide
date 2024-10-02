@@ -1,9 +1,9 @@
-defmodule GuideMe.MixProject do
+defmodule Coluguide.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :guideme,
+      app: :coluguide,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -13,7 +13,7 @@ defmodule GuideMe.MixProject do
     ]
   end
 
-  # config :guideme, :pow_assent,
+  # config :coluguide, :pow_assent,
   #   providers: [
   #     github: [
   #       client_id: "CLIENT_ID",
@@ -27,7 +27,7 @@ defmodule GuideMe.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {GuideMe.Application, []},
+      mod: {Coluguide.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -89,10 +89,10 @@ defmodule GuideMe.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind guideme", "esbuild guideme"],
+      "assets.build": ["tailwind coluguide", "esbuild coluguide"],
       "assets.deploy": [
-        "tailwind guideme --minify",
-        "esbuild guideme --minify",
+        "tailwind coluguide --minify",
+        "esbuild coluguide --minify",
         "phx.digest"
       ]
     ]

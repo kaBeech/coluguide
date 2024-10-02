@@ -1,4 +1,4 @@
-defmodule GuideMe.Repo.Migrations.CreateSteps do
+defmodule Coluguide.Repo.Migrations.CreateSteps do
   use Ecto.Migration
 
   def change do

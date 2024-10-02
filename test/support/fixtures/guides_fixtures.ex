@@ -1,7 +1,7 @@
-defmodule GuideMe.GuidesFixtures do
+defmodule Coluguide.GuidesFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `GuideMe.Guides` context.
+  entities via the `Coluguide.Guides` context.
   """
 
   @doc """
@@ -17,7 +17,7 @@ defmodule GuideMe.GuidesFixtures do
         name: "some name",
         title: "some title"
       })
-      |> GuideMe.Guides.create_guide()
+      |> Coluguide.Guides.create_guide()
 
     guide
   end
@@ -31,7 +31,7 @@ defmodule GuideMe.GuidesFixtures do
       |> Enum.into(%{
         name: "some name"
       })
-      |> GuideMe.Guides.create_template()
+      |> Coluguide.Guides.create_template()
 
     template
   end

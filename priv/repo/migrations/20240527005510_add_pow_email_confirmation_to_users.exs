@@ -1,4 +1,4 @@
-defmodule GuideMe.Repo.Migrations.AddPowEmailConfirmationToUsers do
+defmodule Coluguide.Repo.Migrations.AddPowEmailConfirmationToUsers do
   use Ecto.Migration
 
   def change do
