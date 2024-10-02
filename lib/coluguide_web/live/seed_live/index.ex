@@ -174,42 +174,42 @@ defmodule ColuguideWeb.SeedLive do
 
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
       title: "Everything is simple",
-      name: "Everything is simple",
+      name: "Everything is simple (Coluguide Philosophy)",
       template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
       chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
       title: "Get the right information quickly",
-      name: "Get the right information quickly",
+      name: "Get the right information quickly (Coluguide Philosophy)",
       template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
       chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
       title: "Avoid distractions",
-      name: "Avoid distractions",
+      name: "Avoid distractions (Coluguide Philosophy)",
       template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
       chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
       title: "Don't think too hard",
-      name: "Don't think too hard",
+      name: "Don't think too hard (Coluguide Philosophy)",
       template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
       chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
       title: "Good information changes",
-      name: "Good information changes",
+      name: "Good information changes (Coluguide Philosophy)",
       template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
       chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
     })
 
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
       title: "Use a Guide",
-      name: "Use a Guide",
+      name: "Use a Guide in Coluguide",
       template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
       chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
     })
@@ -223,7 +223,7 @@ defmodule ColuguideWeb.SeedLive do
 
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
       title: "Review a Guide",
-      name: "Review a Guide",
+      name: "Review a Guide in Coluguide",
       template_id: Coluguide.Guides.get_template_id_by_name!("standard"),
       chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
     })
