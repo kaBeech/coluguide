@@ -1,7 +1,7 @@
-defmodule GuideMe.ImagesFixtures do
+defmodule Coluguide.ImagesFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `GuideMe.Images` context.
+  entities via the `Coluguide.Images` context.
   """
 
   @doc """
@@ -13,7 +13,7 @@ defmodule GuideMe.ImagesFixtures do
       |> Enum.into(%{
         src: "some src"
       })
-      |> GuideMe.Images.create_image()
+      |> Coluguide.Images.create_image()
 
     image
   end

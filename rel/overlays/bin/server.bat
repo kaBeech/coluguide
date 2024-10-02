@@ -1,2 +1,2 @@
 set PHX_SERVER=true
-call "%~dp0\guideme" start
+call "%~dp0\coluguide" start

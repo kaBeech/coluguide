@@ -1,0 +1,21 @@
+<header class="px-4 sm:px-6 lg:px-8 widthFull flex">
+  <.link
+    navigate={~p"/"}
+    class="marginLeft2 marginRightAuto textMuchBigger hoverShowContainer flex row"
+  >
+     <span class="textSmaller hidden marginLeftPoint2 flex alignCenter"> Coluguide </span>
+  </.link>
+  <span class="flex gap1 marginLeftAuto marginRight2">
+    <%= render_search_guides(assigns) %>
+    <div class="flex column">
+      <%= render_user_menu(assigns) %>
+    </div>
+  </span>
+</header>
+<main class="px-4 py-20 sm:px-6 lg:px-8">
+  <%= render_search_results(assigns) %>
+  <div class="mx-auto max-w-2xl">
+    <.flash_group flash={@flash} />
+    <%= @inner_content %>
+  </div>
+</main>

@@ -7,26 +7,26 @@
 # General application configuration
 import Config
 
-config :guideme,
-  ecto_repos: [GuideMe.Repo],
+config :coluguide,
+  ecto_repos: [Coluguide.Repo],
   generators: [timestamp_type: :utc_datetime]
 
-config :guideme, :pow,
-  user: GuideMe.Users.User,
-  repo: GuideMe.Repo,
+config :coluguide, :pow,
+  user: Coluguide.Users.User,
+  repo: Coluguide.Repo,
   extensions: [PowResetPassword, PowEmailConfirmation],
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
-  mailer_backend: GuideMeWeb.Pow.Mailer
+  mailer_backend: ColuguideWeb.Pow.Mailer
 
 # Configures the endpoint
-config :guideme, GuideMeWeb.Endpoint,
+config :coluguide, ColuguideWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: GuideMeWeb.ErrorHTML, json: GuideMeWeb.ErrorJSON],
+    formats: [html: ColuguideWeb.ErrorHTML, json: ColuguideWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: GuideMe.PubSub,
+  pubsub_server: Coluguide.PubSub,
   live_view: [signing_salt: "j+qXVUct"]
 
 # Configures the mailer
@@ -36,12 +36,12 @@ config :guideme, GuideMeWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :guideme, GuideMe.Mailer, adapter: Swoosh.Adapters.Local
+config :coluguide, Coluguide.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  guideme: [
+  coluguide: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -51,7 +51,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.0",
-  guideme: [
+  coluguide: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css
@@ -68,10 +68,10 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :guideme, :pow,
-  web_module: GuideMeWeb,
-  user: GuideMe.Users.User,
-  repo: GuideMe.Repo
+config :coluguide, :pow,
+  web_module: ColuguideWeb,
+  user: Coluguide.Users.User,
+  repo: Coluguide.Repo
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

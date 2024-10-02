@@ -1,0 +1,70 @@
+<.flash_group flash={@flash} />
+<PowAssent.Phoenix.HTML.CoreComponents.provider_links conn={@conn} />
+<div class="container flex column alignCenter">
+  <h1 class="marginBottom1">Welcome to Coluguide!</h1>
+  <div :if={is_nil(Pow.Plug.current_user(@conn))} class="flex justifyCenter marginBottom2">
+    <ul class="flex row wrap">
+      <li class="flex column alignCenter">
+        <.link navigate="registration/new" class="logo glow">
+          <span class="logoFont">󱃔 </span>
+        </.link>
+        <p class="lineHeightBigger textBright">
+          Register
+        </p>
+      </li>
+      <li class="flex column alignCenter">
+        <.link navigate="session/new" class="logo glow">
+          <span class="logoFont"> </span>
+        </.link>
+        <p class="lineHeightBigger textBright">
+          Sign In
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div :if={Pow.Plug.current_user(@conn)} class="flex justifyCenter marginBottom2">
+    <ul class="flex row wrap">
+      <li class="flex column alignCenter">
+        <.link navigate="chapters/select" class="logo glow">
+          <span class="logoFont">󱓷 </span>
+        </.link>
+        <p class="lineHeightBigger textBright">
+          Chapters
+        </p>
+      </li>
+      <li class="flex column alignCenter">
+        <.link navigate="guide/1" class="logo glow">
+          <span class="logoFont"> </span>
+        </.link>
+        <p class="lineHeightBigger textBright">
+          Using Coluguide
+        </p>
+      </li>
+      <li class="flex column alignCenter">
+        <.link navigate="reviews/mine" class="logo glow">
+          <span class="logoFont">󰷊 </span>
+        </.link>
+        <p class="lineHeightBigger textBright">
+          My Reviews
+        </p>
+      </li>
+      <li :if={Pow.Plug.current_user(@conn).role in ["admin"]} class="flex column alignCenter">
+        <.link navigate="reviewed_guides" class="logo glow">
+          <span class="logoFont"> </span>
+        </.link>
+        <p class="lineHeightBigger textBright">
+          Assign Reviews
+        </p>
+      </li>
+      <!-- <li :if={Pow.Plug.current_user(@conn).role in ["admin"]} class="flex column alignCenter"> -->
+      <!--   <.link navigate="teams" class="logo glow"> -->
+      <!--     <span class="logoFont"></span> -->
+      <!--   </.link> -->
+      <!--   <p class="lineHeightBigger textBright"> -->
+      <!--     Manage Teams -->
+      <!--   </p> -->
+      <!-- </li> -->
+    </ul>
+  </div>
+  <.link :if={Pow.Plug.current_user(@conn)} href={~p"/session"} method="delete">Sign out</.link>
+</div>

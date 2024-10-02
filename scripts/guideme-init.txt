@@ -1,8 +1,0 @@
----------------------
-
-GuideMe is now ready!
-
-You can start the GuideMe server with `mix phx.server` or inside IEx 
-with `iex -S mix phx.server`
-
-Have fun!

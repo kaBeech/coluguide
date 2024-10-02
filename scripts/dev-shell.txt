@@ -1,10 +1,10 @@
 -----------------------------------------------
 
-Welcome to the GuideMe Development Shell!
+Welcome to the Coluguide Development Shell!
   
-If you haven't yet done so, run `guideme-init` initalize GuideMe
+If you haven't yet done so, run `coluguide-init` initalize Coluguide
 
-After that, you can start the GuideMe server with `mix phx.server`
+After that, you can start the Coluguide server with `mix phx.server`
 or inside IEx with `iex -S mix phx.server`
 
 Have fun!

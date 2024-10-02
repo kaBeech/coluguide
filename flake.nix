@@ -1,5 +1,5 @@
 {
-  description = "A flake for starting a GuideMe development shell";
+  description = "A flake for starting a Coluguide development shell";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -9,7 +9,7 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    guideme-init = import ./scripts/guideme-init.nix { inherit pkgs; };
+    coluguide-init = import ./scripts/coluguide-init.nix { inherit pkgs; };
   in
   {
     devShells.${system}.default = 
@@ -19,7 +19,7 @@
             elixir
             erlang
             inotify-tools
-            guideme-init
+            coluguide-init
           ];
 
           shellHook = ''
