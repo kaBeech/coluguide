@@ -6,7 +6,7 @@
     <ul class="flex row wrap">
       <li class="flex column alignCenter">
         <.link navigate="registration/new" class="logo glow">
-          <span class="logoFont">󱓷</span>
+          <span class="logoFont">󱃔 </span>
         </.link>
         <p class="lineHeightBigger textBright">
           Register
@@ -14,7 +14,7 @@
       </li>
       <li class="flex column alignCenter">
         <.link navigate="session/new" class="logo glow">
-          <span class="logoFont">󱃔</span>
+          <span class="logoFont"> </span>
         </.link>
         <p class="lineHeightBigger textBright">
           Sign In
@@ -26,15 +26,15 @@
     <ul class="flex row wrap">
       <li class="flex column alignCenter">
         <.link navigate="chapters/select" class="logo glow">
-          <span class="logoFont">󱓷</span>
+          <span class="logoFont">󱓷 </span>
         </.link>
         <p class="lineHeightBigger textBright">
           Chapters
         </p>
       </li>
       <li class="flex column alignCenter">
-        <.link navigate="guide/1" class="logo glow" >
-          <span class="logoFont">󰋗</span>
+        <.link navigate="guide/1" class="logo glow">
+          <span class="logoFont"> </span>
         </.link>
         <p class="lineHeightBigger textBright">
           Using Coluguide
@@ -42,7 +42,7 @@
       </li>
       <li class="flex column alignCenter">
         <.link navigate="reviews/mine" class="logo glow">
-          <span class="logoFont">󰷊</span>
+          <span class="logoFont">󰷊 </span>
         </.link>
         <p class="lineHeightBigger textBright">
           My Reviews
@@ -50,7 +50,7 @@
       </li>
       <li :if={Pow.Plug.current_user(@conn).role in ["admin"]} class="flex column alignCenter">
         <.link navigate="reviewed_guides" class="logo glow">
-          <span class="logoFont"></span>
+          <span class="logoFont"> </span>
         </.link>
         <p class="lineHeightBigger textBright">
           Assign Reviews

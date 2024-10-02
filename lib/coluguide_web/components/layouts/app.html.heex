@@ -1,6 +1,9 @@
 <header class="px-4 sm:px-6 lg:px-8 widthFull flex">
-  <.link navigate={~p"/"} class="marginLeft2 marginRightAuto textMuchBigger">
-     
+  <.link
+    navigate={~p"/"}
+    class="marginLeft2 marginRightAuto textMuchBigger hoverShowContainer flex row"
+  >
+     <span class="textSmaller hidden marginLeftPoint2 flex alignCenter"> Coluguide </span>
   </.link>
   <span class="flex gap1 marginLeftAuto marginRight2">
     <%= render_search_guides(assigns) %>

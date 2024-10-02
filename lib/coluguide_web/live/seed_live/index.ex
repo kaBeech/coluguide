@@ -160,7 +160,7 @@ defmodule ColuguideWeb.SeedLive do
     Coluguide.Repo.insert!(%Coluguide.Guides.Guide{
       title: "Use Coluguide",
       name: "Use Coluguide",
-      icon: "󱓷 ",
+      icon: " ",
       template_id: Coluguide.Guides.get_template_id_by_name!("chapter"),
       chapter_id: Coluguide.Chapters.get_chapter_id_by_title!("Use Coluguide")
     })
