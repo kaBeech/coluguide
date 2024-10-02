@@ -9,7 +9,7 @@ information in the simplest terms possible. If the simple declarative
 instructions are not enough, a link to a more specific guide is provided.
 
 There is a small, self-documenting demo site available
-[here](https://coluguide-demo.gigalixirapp.com/). Please use a desktop for now to
+[here](https://www.coluguide.com/). Please use a desktop for now to
 access it - we don't use mobile at work and I have a very limited time budget
 for this project. Mobile support is planned for the future.
 
