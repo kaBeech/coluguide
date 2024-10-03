@@ -502,7 +502,7 @@ defmodule ColuguideWeb.Seed do
     })
 
     Coluguide.Repo.insert!(%Coluguide.Steps.Step{
-      full_text: "One landed in a Guide, Coluguide shows only the simplest
+      full_text: "Once landed in a Guide, Coluguide shows only the simplest
         necessary information and provides short hops to related guides for
         more details",
       guide_id: Coluguide.Guides.get_guide_id_by_name!("Understand Coluguide's name"),
