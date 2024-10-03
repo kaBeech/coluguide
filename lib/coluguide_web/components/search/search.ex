@@ -60,7 +60,7 @@ defmodule ColuguideWeb.Search do
                 There's a <span class="link">  User Menu </span> in the upper
                 right corner of the screen.
               </li>
-              <li>Click anywhere to close this window.</li>
+              <li>Click anywhere or press Escape to close this hints screen.</li>
               <li>Have fun!</li>
             </ul>
           </section>

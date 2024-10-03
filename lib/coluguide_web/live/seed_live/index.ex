@@ -1,35 +1,9 @@
-defmodule ColuguideWeb.SeedLive do
+defmodule ColuguideWeb.Seed do
   @moduledoc """
   This is a hacky workaround to seed the database without using Mix.
   """
-  use ColuguideWeb, :live_view
 
-  @impl true
-  def mount(_params, _session, socket) do
-    {:ok, socket}
-  end
-
-  @impl true
-  def render(assigns) do
-    ~H"""
-    <div class="flex column gap1">
-      <h1>Seed Database</h1>
-        <.link
-          phx-click={JS.push("seed")}
-          data-confirm="Are you sure?"
-        >
-          SEED THE DATABASE!!!
-        </.link>
-    </div>
-    """
-  end
-
-  @impl true
-  def handle_event("seed", _, _socket) do
-    {:ok, _} = seed()
-  end
-
-  defp seed do
+  def seed do
     # Core data
     Coluguide.Repo.insert!(%Coluguide.Guides.Template{
       name: "chapter"

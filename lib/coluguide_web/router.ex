@@ -143,8 +143,6 @@ defmodule ColuguideWeb.Router do
       live "/reviewed_guides/:id", ReviewedGuideLive.Show, :show
       live "/reviewed_guides/:id/show/edit", ReviewedGuideLive.Show, :edit
 
-      # Hacky Mix-free database seeding
-      live "/seed", SeedLive
     end
   end
 
