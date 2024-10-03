@@ -8,7 +8,7 @@ defmodule ColuguideWeb.Search do
       <.form for={@form} phx-change="search" phx-window-keyup="keyup" phx-click-away="clear_search">
         <.input id="searchGuides" type="text" field={@form["query"]} placeholder="Search Guides" />
       </.form>
-      <%= if !@search_guides_focused do %>
+      <%= if !@search_guides_focused && @leader_key_enabled do %>
         <div phx-window-keydown={JS.focus(to: "#searchGuides")} id="keydownController"></div>
         <div phx-window-keydown="focus_search"></div>
       <% end %>
@@ -26,11 +26,12 @@ defmodule ColuguideWeb.Search do
             <ul class="textBigger alignCenter widthFit gap1 textAccent">
               <li>Start typing to search for Guides.</li>
               <li>
-                Refresh the page and then press any key to bring up this screen.
+                Refresh the page and then press Spacebar twice to bring up this
+                screen.
               </li>
               <li>
-                Things will happen when you
-                click <span class="link">orange stuff</span> (usually).
+                Stuff will happen when you
+                click <span class="link">orange things</span> (usually).
               </li>
               <li>
                 <span class="link">  orange links</span> 
@@ -132,6 +133,7 @@ defmodule ColuguideWeb.Search do
      |> assign(:form, to_form(%{"query" => ""}))
      |> assign(:search_results, [])
      |> assign(:search_guides_focused, false)
+     |> assign(:leader_key_enabled, false)
      |> assign(:search_query, nil)}
   end
 end

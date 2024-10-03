@@ -46,7 +46,11 @@ defmodule ColuguideWeb.CRUDLive do
      |> assign(:search_results, [])}
   end
 
+  def handle_event("keyup", %{"key" => " "}, socket) do
+    {:noreply, assign(socket, :leader_key_enabled, true)}
+  end
+
   def handle_event("keyup", _, socket) do
-    {:noreply, socket}
+    {:noreply, assign(socket, :leader_key_enabled, false)}
   end
 end
