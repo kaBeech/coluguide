@@ -36,11 +36,9 @@ defmodule ColuguideWeb.UserMenu do
             Register
           </.link>
           <.link navigate={~p"/session/new"}>Sign In</.link>
-        <% end %>
-        <.link navigate="/">Home</.link>
-        <%= if @current_user do %>
           <.link navigate={~p"/session"} method="delete">Sign out</.link>
         <% end %>
+        <.link navigate="/">Home</.link>
       </nav>
     </div>
     """
