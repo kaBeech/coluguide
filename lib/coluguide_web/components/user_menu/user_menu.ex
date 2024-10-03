@@ -10,7 +10,6 @@ defmodule ColuguideWeb.UserMenu do
     <div id="userMenu" class="hidden">
       <nav class="fixed widthMax flex column alignEnd moveLeft gapPoint5 paddingTopPoint5">
         <%= if @current_user do %>
-          <.link navigate={~p"/session"} method="delete">Sign out</.link>
           <.link navigate={~p"/chapters/select"}>
             Chapters
           </.link>
@@ -39,6 +38,9 @@ defmodule ColuguideWeb.UserMenu do
           <.link navigate={~p"/session/new"}>Sign In</.link>
         <% end %>
         <.link navigate="/">Home</.link>
+        <%= if @current_user do %>
+          <.link navigate={~p"/session"} method="delete">Sign out</.link>
+        <% end %>
       </nav>
     </div>
     """
