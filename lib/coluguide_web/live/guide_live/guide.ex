@@ -60,8 +60,12 @@ defmodule ColuguideWeb.GuideLive.Guide do
     clear_search(socket)
   end
 
+  def handle_event("keyup", %{"key" => " "}, socket) do
+    {:noreply, assign(socket, :leader_key_enabled, true)}
+  end
+
   def handle_event("keyup", _, socket) do
-    {:noreply, socket}
+    {:noreply, assign(socket, :leader_key_enabled, false)}
   end
 
   @impl true

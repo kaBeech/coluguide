@@ -54,6 +54,7 @@ defmodule ColuguideWeb.InitAssigns do
     socket =
       socket
       |> assign(:keydown_last, nil)
+      |> assign(:leader_key_enabled, false)
       |> assign(:search_guides_enabled, false)
       |> assign(:search_guides_focused, false)
       |> assign(:search_query, nil)
