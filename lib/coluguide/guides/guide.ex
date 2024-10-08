@@ -46,7 +46,6 @@ defmodule Coluguide.Guides.Guide do
     # entry in the (currently non-existent) ChangeHistory table will be created
     # with this User, a timestamp, and an EctoDiff with the details of the
     # changes.
-    has_one :last_updated_by, Coluguide.Users.User
 
     timestamps(type: :utc_datetime)
   end
@@ -61,8 +60,7 @@ defmodule Coluguide.Guides.Guide do
       :template_id,
       :icon,
       :introduction,
-      :updated_for_review_at,
-      :last_updated_by_id
+      :updated_for_review_at
     ])
     |> validate_required([:chapter_id, :title, :name, :template_id])
     |> unique_constraint(:name)
