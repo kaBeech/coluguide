@@ -15,45 +15,6 @@ defmodule ColuguideWeb.GuideLive.FormComponent do
   end
 
   @impl true
-  def render(assigns) do
-    ~H"""
-    <div>
-      <.header>
-        <%= @title %>
-        <:subtitle>Use this form to manage guide records in your database.</:subtitle>
-      </.header>
-
-      <.simple_form
-        for={@form}
-        id="guide-form"
-        phx-target={@myself}
-        phx-change="validate"
-        phx-submit="save"
-      >
-        <.input field={@form[:title]} type="text" label="Title" />
-        <.input
-          field={@form[:template_id]}
-          type="select"
-          options={list_template_ids()}
-          label="Template ID"
-        />
-        <.input
-          field={@form[:chapter_id]}
-          type="select"
-          options={list_chapter_ids()}
-          label="Chapter ID"
-        />
-        <.input field={@form[:name]} type="text" label="Short title" />
-        <.input field={@form[:icon]} type="text" label="Icon" />
-        <:actions>
-          <.button phx-disable-with="Saving...">Save Guide</.button>
-        </:actions>
-      </.simple_form>
-    </div>
-    """
-  end
-
-  @impl true
   def update(%{guide: guide} = assigns, socket) do
     changeset = Guides.change_guide(guide)
 
