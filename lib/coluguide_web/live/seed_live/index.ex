@@ -4,7 +4,22 @@ defmodule ColuguideWeb.Seed do
   """
 
   def seed do
+
+    # Initial user
+
+    init_email = System.get_env("CG_INIT_EMAIL") || "test@example.com"
+    init_password = System.get_env("CG_INIT_PASSWORD") || "password123"
+
+    Coluguide.Users.create_admin(%{
+      email: init_email,
+      password: init_password,
+      password_confirmation: init_password
+    })
+
+    Coluguide.Users.confirm_user_email(Coluguide.Users.get_user!(1))
+
     # Core data
+
     Coluguide.Repo.insert!(%Coluguide.Guides.Template{
       name: "chapter"
     })

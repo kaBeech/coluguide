@@ -41,6 +41,16 @@ defmodule Coluguide.Users do
     |> Repo.update()
   end
 
+  @spec confirm_user_email(t()) :: {:ok, t()} | {:error, Ecto.Changeset.t()}
+  def confirm_user_email(user) do
+    user
+    |> User.changeset_confirm_email(%{
+      email_confirmed_at: DateTime.utc_now(),
+      email_confirmation_token: nil
+    })
+    |> Repo.update()
+  end
+
   @spec get_user!(t()) :: {:ok, t()} | {:error, Ecto.Changeset.t()}
   def get_user!(id), do: Repo.get!(User, id)
 

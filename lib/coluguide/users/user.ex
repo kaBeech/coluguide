@@ -30,6 +30,13 @@ defmodule Coluguide.Users.User do
     |> Ecto.Changeset.validate_required([:reviewed_guide_ids])
   end
 
+  @spec changeset_confirm_email(Ecto.Schema.t() | Ecto.Changeset.t(), map()) ::
+          Ecto.Changeset.t()
+  def changeset_confirm_email(user_or_changeset, attrs) do
+    user_or_changeset
+    |> Ecto.Changeset.cast(attrs, [:email_confirmed_at, :email_confirmation_token])
+  end
+
   def changeset(user_or_changeset, attrs) do
     user_or_changeset
     |> pow_changeset(attrs)
