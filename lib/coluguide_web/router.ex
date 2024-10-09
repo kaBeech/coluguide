@@ -88,6 +88,7 @@ defmodule ColuguideWeb.Router do
       # Chapter CRUD
       live "/chapters", ChapterLive.Index, :index
       live "/chapters/new", ChapterLive.Index, :new
+      live "/chapters/edit", ChapterLive.Index, :editor_index
       live "/chapters/:id/edit", ChapterLive.Index, :edit
 
       live "/chapters/:id", ChapterLive.Show, :show
@@ -137,6 +138,7 @@ defmodule ColuguideWeb.Router do
 
       # Assign Reviews View
       live "/reviewed_guides", ReviewedGuideLive.Index, :index
+      live "/reviewed_guides/edit", ReviewedGuideLive.Index, :editor_index
       live "/reviewed_guides/new", ReviewedGuideLive.Index, :new
       live "/reviewed_guides/:id/edit", ReviewedGuideLive.Index, :edit
 

@@ -60,6 +60,7 @@ defmodule ColuguideWeb.InitAssigns do
       |> assign(:search_query, nil)
       |> assign(:backlinks_enabled, false)
       |> assign(:backlinks, [])
+      |> assign(:editor_mode_enabled, false)
 
     if socket.assigns.current_user do
       refresh_search_cache(socket)

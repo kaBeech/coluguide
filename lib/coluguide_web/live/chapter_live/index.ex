@@ -1,19 +1,29 @@
 defmodule ColuguideWeb.ChapterLive.Index do
   use ColuguideWeb, :live_view
 
+  import NavBar
   import ColuguideWeb.Search
 
-  alias Coluguide.Chapters
   alias Coluguide.Chapters.Chapter
+  alias Coluguide.{Guides, Chapters}
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, stream(socket, :chapters, Chapters.list_chapters())}
+    {:ok,
+     socket
+     |> assign(guides: Guides.list_chapter_titles_for_selection())
+     |> assign(:search_guides_enabled, true)}
   end
 
   @impl true
   def handle_params(params, _url, socket) do
     {:noreply, apply_action(socket, socket.assigns.live_action, params)}
+  end
+
+  defp apply_action(socket, :editor_index, _params) do
+    socket
+    |> assign(:page_title, "Chapters | Editor Mode")
+    |> assign(:chapter, nil)
   end
 
   defp apply_action(socket, :edit, %{"id" => id}) do

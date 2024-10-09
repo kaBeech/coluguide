@@ -1,33 +1,29 @@
-<.header>
-  Listing Chapters
-  <:actions>
-    <.link patch={~p"/chapters/new"}>
-      <.button>New Chapter</.button>
-    </.link>
-  </:actions>
-</.header>
-
-<.table
-  id="chapters"
-  rows={@streams.chapters}
-  row_click={fn {_id, chapter} -> JS.navigate(~p"/chapters/#{chapter}") end}
->
-  <:col :let={{_id, chapter}} label="Title"><%= chapter.title %></:col>
-  <:action :let={{_id, chapter}}>
-    <div class="sr-only">
-      <.link navigate={~p"/chapters/#{chapter}"}>Show</.link>
-    </div>
-    <.link patch={~p"/chapters/#{chapter}/edit"}>Edit</.link>
-  </:action>
-  <:action :let={{id, chapter}}>
-    <.link
-      phx-click={JS.push("delete", value: %{id: chapter.id}) |> hide("##{id}")}
-      data-confirm="Are you sure?"
-    >
-      Delete
-    </.link>
-  </:action>
-</.table>
+<div class="flex column alignCenter">
+  <h1>Chapters</h1>
+  <ul class="flex row wrap">
+    <%= for guide <- @guides do %>
+      <li class="flex column alignCenter">
+        <.link navigate={"/guide/" <> to_string(guide.id)} class="logo glow">
+          <span class="logoFont"><%= guide.icon %></span>
+        </.link>
+        <p class="lineHeightBigger textBright">
+          <%= guide.name %>
+        </p>
+      </li>
+    <% end %>
+    <li :if={@live_action in [:editor_index]} class="flex column alignCenter">
+      <.link navigate={~p"/chapters/new"} class="logo glow">
+        <span class="logoFont">+</span>
+      </.link>
+      <p class="lineHeightBigger textBright">
+        [ Add a Chapter ]
+      </p>
+    </li>
+  </ul>
+  <div class="flex justifyCenter marginTop2">
+    <%= render_navbar(assigns) %>
+  </div>
+</div>
 
 <.modal
   :if={@live_action in [:new, :edit]}
