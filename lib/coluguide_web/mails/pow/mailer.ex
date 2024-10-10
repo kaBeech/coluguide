@@ -11,6 +11,6 @@ defmodule ColuguideWeb.Pow.Mailer do
   def process(email) do
     # Send email
 
-    Logger.info("E-mail sent: #{inspect(email)}")
+    Logger.debug("E-mail sent: #{inspect(email)}")
   end
 end
